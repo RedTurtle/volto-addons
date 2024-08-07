@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.2 (2024-08-07)
+
+### Internal
+
+- Fixed package.json for npm provenance @pnicolli [#52190](https://redturtle.tpondemand.com/entity/52190)
+
 ## 1.0.1 (2024-08-07)
 
 ### Internal
