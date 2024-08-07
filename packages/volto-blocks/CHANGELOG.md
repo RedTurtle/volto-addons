@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.1 (2024-08-07)
+
+### Internal
+
+- Fixed release ci script @pnicolli [#52190](https://redturtle.tpondemand.com/entity/52190)
+
 ## 1.0.0 (2024-08-07)
 
 ### Internal
