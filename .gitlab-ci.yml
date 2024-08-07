@@ -40,6 +40,8 @@ acceptance:
     - name: plone/server-acceptance:6
       alias: backend
   script:
+    #- apt-get install -y firefoxdriver
+    - apt-get install -y xvfb
     - (cd core/packages/volto; make cypress-install)
     - RAZZLE_API_PATH=http://backend:55001/plone pnpm build && pnpm start:prod &
     - until $(curl --output /dev/null --silent --head --fail http://backend:55001/plone/ok); do printf '.'; sleep 1; done
