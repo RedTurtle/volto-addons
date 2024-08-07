@@ -14,7 +14,7 @@
   "homepage": "https://github.com/redturtle/volto-blocks#readme",
   "repository": {
     "type": "git",
-    "url": "git@github.com:redturtle/volto-blocks.git"
+    "url": "https://github.com/redturtle/volto-blocks"
   },
   "bugs": {
     "url": "https://github.com/redturtle/volto-blocks/issues"
