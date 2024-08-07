@@ -1,0 +1,57 @@
+image: node:20
+
+cache:
+  key:
+    files:
+      - pnpm-lock.yaml
+  paths:
+    - .pnpm-store
+    - node_modules/
+    - ~/.cache/Cypress
+
+stages:
+  - test
+  - release
+
+before_script:
+  - corepack enable
+  - corepack prepare --activate
+  - pnpm config set store-dir .pnpm-store
+
+test:
+  stage: test
+  script:
+    - make install
+    - make test-ci
+  only:
+    - main
+    - merge_requests
+    - tags
+
+acceptance:
+  stage: test
+  variables:
+    CYPRESS_RETRIES: 2
+  script:
+    - make install
+    - make cypress-install
+    - make ci-acceptance-backend-start &
+    - make acceptance-frontend-prod-start &
+    - until $(curl --output /dev/null --silent --head --fail http://localhost:55001/plone/ok); do printf '.'; sleep 1; done
+    - until $(curl --output /dev/null --silent --head --fail http://localhost:3000/ok); do printf '.'; sleep 1; done
+    - make ci-acceptance-test
+  only:
+    - main
+    - merge_requests
+    - tags
+
+release:
+  stage: release
+  script:
+    - echo "unsafe-perm = true" >> .npmrc
+    - node --version
+    - echo "@redturtle:registry=https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" >> .npmrc
+    - echo "//gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    - tags
