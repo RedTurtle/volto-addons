@@ -23,7 +23,11 @@ jobs:
 
       - run: npm install -g npm
 
-      - run: yarn
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          run_install: |
+            - args: [--frozen-lockfile]
 
       - name: Release to npm
         run: npm publish --provenance --access public
