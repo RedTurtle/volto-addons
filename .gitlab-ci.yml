@@ -46,6 +46,7 @@ acceptance:
     - RAZZLE_API_PATH=http://backend:55001/plone pnpm build && pnpm start:prod &
     - until $(curl --output /dev/null --silent --head --fail http://backend:55001/plone/ok); do printf '.'; sleep 1; done
     - until $(curl --output /dev/null --silent --head --fail http://localhost:3000/ok); do printf '.'; sleep 1; done
+    - export CYPRESS_API_PATH=http://backend:55001/plone
     - make ci-acceptance-test
   only:
     - main
