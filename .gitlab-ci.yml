@@ -37,7 +37,7 @@ acceptance:
   variables:
     CYPRESS_RETRIES: 2
   script:
-    - make cypress-install
+    - (cd core/packages/volto; make cypress-install)
     - make ci-acceptance-backend-start &
     - make acceptance-frontend-prod-start &
     - until $(curl --output /dev/null --silent --head --fail http://localhost:55001/plone/ok); do printf '.'; sleep 1; done
