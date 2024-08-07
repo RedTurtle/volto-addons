@@ -36,11 +36,13 @@ acceptance:
   stage: test
   variables:
     CYPRESS_RETRIES: 2
+  services:
+    - name: plone/server-acceptance:6
+      alias: backend
   script:
     - (cd core/packages/volto; make cypress-install)
-    - make ci-acceptance-backend-start &
-    - make acceptance-frontend-prod-start &
-    - until $(curl --output /dev/null --silent --head --fail http://localhost:55001/plone/ok); do printf '.'; sleep 1; done
+    - RAZZLE_API_PATH=http://backend:55001/plone pnpm build && pnpm start:prod &
+    - until $(curl --output /dev/null --silent --head --fail http://backend:55001/plone/ok); do printf '.'; sleep 1; done
     - until $(curl --output /dev/null --silent --head --fail http://localhost:3000/ok); do printf '.'; sleep 1; done
     - make ci-acceptance-test
   only:
