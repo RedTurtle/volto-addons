@@ -31,6 +31,6 @@ jobs:
 
       - name: Release to npm
         run: npm publish --provenance --access public
-        working-directory: packages/volto-blocks
+        working-directory: ./packages/volto-blocks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

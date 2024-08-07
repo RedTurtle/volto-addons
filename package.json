@@ -3,7 +3,14 @@
   "version": "1.0.2",
   "description": "Common blocks to reuse for building Plone sites",
   "author": "RedTurtle",
-  "homepage": "https://github.com/redturtle/volto-blocks",
+  "homepage": "https://github.com/RedTurtle/volto-blocks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RedTurtle/volto-blocks"
+  },
+  "bugs": {
+    "url": "https://github.com/RedTurtle/volto-blocks/issues"
+  },
   "license": "MIT",
   "keywords": [
     "volto-addon",
