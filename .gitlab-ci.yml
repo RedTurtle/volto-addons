@@ -17,13 +17,15 @@ before_script:
   - corepack enable
   - corepack prepare --activate
   - pnpm config set store-dir .pnpm-store
+  - apt-get update && apt-get install jq -y
+  - 'VOLTO_VERSION=$(jq -r ".core.tag" mrs.developer.json)'
+  - git clone -b $VOLTO_VERSION --depth 1 https://github.com/plone/volto core
+  - pnpm install
+  - pnpm build:deps
 
 test:
   stage: test
   script:
-    - git clone -b $VOLTO_VERSION --depth 1 https://github.com/plone/volto core
-    - pnpm install
-    - pnpm build:deps
     - make test-ci
   only:
     - main
@@ -35,9 +37,6 @@ acceptance:
   variables:
     CYPRESS_RETRIES: 2
   script:
-    - git clone -b $VOLTO_VERSION --depth 1 https://github.com/plone/volto core
-    - pnpm install
-    - pnpm build:deps
     - make cypress-install
     - make ci-acceptance-backend-start &
     - make acceptance-frontend-prod-start &
@@ -50,6 +49,7 @@ acceptance:
     - tags
 
 release:
+  before_script: []
   stage: release
   script:
     - echo "unsafe-perm = true" >> .npmrc
