@@ -16,6 +16,9 @@
     "type": "git",
     "url": "git@github.com:redturtle/volto-blocks.git"
   },
+  "bugs": {
+    "url": "https://github.com/redturtle/volto-blocks/issues"
+  },
   "publishConfig": {
     "access": "public"
   },
