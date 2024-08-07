@@ -1,6 +1,6 @@
 {
   "name": "@redturtle/volto-blocks-dev",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Common blocks to reuse for building Plone sites",
   "author": "RedTurtle",
   "homepage": "https://github.com/RedTurtle/volto-blocks",
