@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-07T10:49:21.095Z\n"
+"POT-Creation-Date: 2024-08-13T17:19:18.989Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -13,4 +13,49 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
+#. Default: "Alignment"
+#: components/blocks/Text7/schema
+msgid "Alignment"
+msgstr ""
 
+#. Default: "Link Title"
+#: components/blocks/Text7/schema
+msgid "Link title"
+msgstr ""
+
+#. Default: "Link to"
+#: components/blocks/Text7/schema
+msgid "Link to"
+msgstr ""
+
+#. Default: "Text"
+#: components/blocks/Text7/Edit
+#: components/blocks/Text7/schema
+msgid "Text"
+msgstr ""
+
+#. Default: "Title"
+#: components/blocks/Text7/Edit
+#: components/blocks/Text7/schema
+msgid "Title"
+msgstr ""
+
+#. Default: "Call to action"
+#: components/blocks/Text7/schema
+msgid "redturtle__volto-blocks__cta_fieldset_title"
+msgstr ""
+
+#. Default: "Read more"
+#: components/blocks/Text7/schema
+msgid "redturtle__volto-blocks__cta_title_default"
+msgstr ""
+
+#. Default: "Image"
+#: components/blocks/Text7/schema
+msgid "redturtle__volto-blocks__text7_image_title"
+msgstr ""
+
+#. Default: "Text 7"
+#: components/blocks/Text7/schema
+msgid "redturtle__volto-blocks__text7_title"
+msgstr ""

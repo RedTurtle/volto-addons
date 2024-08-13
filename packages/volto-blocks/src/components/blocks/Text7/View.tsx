@@ -1,81 +1,92 @@
-import React from 'react';
-// import redraft from 'redraft';
-// import { defineMessages, useIntl } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
+import cx from 'classnames';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
+import type { BlockViewProps } from '@plone/types';
+
+import styles from '@redturtle/volto-blocks/components/blocks/Text7/styles.module.css';
+import type { Text7Data } from '@redturtle/volto-blocks/components/blocks/Text7/schema';
 
 import config from '@plone/registry';
 
-// const messages = defineMessages({
-//   cta_title_default: {
-//     id: 'cta_title_default',
-//     defaultMessage: 'Go to content',
-//   },
-// });
-
-type Props = {
-  data: Record<string, any>;
+type Props = Omit<BlockViewProps, 'data'> & {
+  data: Text7Data;
+  className?: string;
+  style?: Record<string, string | number>;
 };
 
-export default function View(props: Props) {
+export default function View({ data, className, style }: Props) {
   // const intl = useIntl();
-  const { data } = props;
 
   const img_column_width = data.img_column_width
     ? parseInt(data.img_column_width)
     : 6;
 
+  const Container = config.getComponent('Container').component || 'div';
+  const Image = config.getComponent('Image').component;
+
   return (
-    <div className="block-text7">
-      TEST
-      {/* <Grid className="block-content" verticalAlign="middle">
-        <Grid.Row
-          columns={2}
-          className={cx({
-            'block-right': data.right,
-          })}
+    <section
+      className={cx('block-text7', styles.block, className)}
+      style={style}
+      aria-label={data.title}
+    >
+      <Container className={cx('block-text7-container', styles.container)}>
+        <div
+          className={cx(
+            'block-text7-image-wrapper',
+            `column-width-${img_column_width}`,
+            styles['image-wrapper'],
+            styles[`column-width-${img_column_width}`],
+          )}
         >
-          <Grid.Column computer={img_column_width} tablet={12} mobile={12}>
-            {data.url && (
-              <Image
-                src={`${flattenToAppURL(props.data.url)}/@@images/image/larger`}
-                className="block-text7-image"
-              />
-            )}
-          </Grid.Column>
-          <Grid.Column computer={12 - img_column_width} tablet={12} mobile={12}>
-            <div className="block-text7-body">
-              {data.title && <h3 className="title">{data.title}</h3>}
-              <div className="content">
-                {redraft(
-                  data.content,
-                  config.settings.richtextViewSettings.ToHTMLRenderers,
-                  config.settings.richtextViewSettings.ToHTMLOptions,
-                )}
-              </div>
-              {data.has_cta && (
-                <div className="buttonBottom">
-                  <Button
-                    as={UniversalLink}
-                    size="small"
-                    href={
-                      data.link_to
-                        ? flattenToAppURL(data.link_to[0]?.['@id'])
-                        : data.link_to_external
-                        ? data.link_to_external
-                        : null
-                    }
-                    arrow={true}
-                  >
-                    {data.cta_title ||
-                      intl.formatMessage(messages.cta_title_default)}
-                  </Button>
-                </div>
-              )}
+          {data.image && (
+            <Image
+              className={cx('block-text7-image', styles.image)}
+              // TODO serialize image brain in the backend
+              src={`${data.image}/@@images/image/large`}
+              loading="lazy"
+              alt=""
+            />
+          )}
+        </div>
+        <div
+          className={cx(
+            'block-text7-body',
+            `column-width-${12 - img_column_width}`,
+            styles.body,
+            styles[`column-width-${12 - img_column_width}`],
+          )}
+        >
+          {data.title && (
+            <h2 className={cx('block-text7-title', styles.title)}>
+              {data.title}
+            </h2>
+          )}
+          {data.text && (
+            <div className={cx('block-text7-text', styles.text)}>
+              <TextBlockView data={{ value: data.text ?? {} }} />
             </div>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid> */}
-    </div>
+          )}
+          {data.linkHref?.[0] && (
+            <div className={cx('block-text7-cta', styles.cta)}>
+              <UniversalLink
+                href={
+                  data.linkHref
+                    ? flattenToAppURL(data.linkHref[0]['@id'])
+                    : undefined
+                }
+                openLinkInNewTab={false}
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                {data.linkTitle}
+              </UniversalLink>
+            </div>
+          )}
+        </div>
+      </Container>
+    </section>
   );
 }

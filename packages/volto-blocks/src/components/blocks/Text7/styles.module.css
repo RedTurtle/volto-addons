@@ -1,0 +1,67 @@
+.block {
+  container-type: inline-size;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+@container (width > 700px) {
+  .container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .image-wrapper {
+    flex-shrink: 0;
+  }
+
+  .body {
+    flex-grow: 1;
+  }
+
+  .column-width-1 {
+    flex-basis: 8%;
+  }
+
+  .column-width-2 {
+    flex-basis: 16%;
+  }
+
+  .column-width-3 {
+    flex-basis: 25%;
+  }
+
+  .column-width-4 {
+    flex-basis: 33%;
+  }
+
+  .column-width-5 {
+    flex-basis: 41%;
+  }
+
+  .column-width-6 {
+    flex-basis: 50%;
+  }
+
+  .column-width-7 {
+    flex-basis: 58%;
+  }
+
+  .column-width-8 {
+    flex-basis: 66%;
+  }
+
+  .column-width-9 {
+    flex-basis: 75%;
+  }
+
+  .column-width-10 {
+    flex-basis: 83%;
+  }
+
+  .column-width-11 {
+    flex-basis: 91%;
+  }
+}

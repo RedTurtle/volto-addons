@@ -1,231 +1,188 @@
-import { useState } from 'react';
-// import { defineMessages } from 'react-intl';
+import { useIntl, defineMessages } from 'react-intl';
+import cx from 'classnames';
 // import { isEqual } from 'lodash';
 // import { Input, Button, Message, Grid, Image } from 'semantic-ui-react';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { SidebarPortal, Icon, UniversalLink } from '@plone/volto/components';
-import clearSVG from '@plone/volto/icons/clear.svg';
+import { BlockDataForm } from '@plone/volto/components/manage/Form';
 
-// import { PresetWrapper, ShareButtons } from '@package/components';
-// import { ImageWidget, TextEditorWidget } from '@package/components/Widgets';
-// import Sidebar from './Sidebar';
+import '@plone/components/src/styles/basic/TextField.css';
+import '@plone/components/src/styles/quanta/TextField.css';
+import type { BlockEditProps } from '@plone/types';
 
-// const messages = defineMessages({
-//   title: {
-//     id: 'Title',
-//     defaultMessage: 'Title',
-//   },
-//   description: {
-//     id: 'Description',
-//     defaultMessage: 'Description',
-//   },
-//   placeholder: {
-//     id: 'Upload a new image',
-//     defaultMessage: 'Upload a new image',
-//   },
-//   image: {
-//     id: 'Image',
-//     defaultMessage: 'Image',
-//   },
-//   cta_title_default: {
-//     id: 'cta_title_default',
-//     defaultMessage: 'Go to content',
-//   },
-// });
+import {
+  TextEditorWidget,
+  useHandleDetachedBlockFocus,
+} from '@redturtle/volto-rt-slate';
 
-type Props = {
-  data: {
-    title?: string;
-    content?: object;
-    right?: boolean;
-    share_social?: boolean;
-    link_to?: Array<any>;
-    link_to_external?: string;
-    cta_title?: string;
-    placeholder?: any;
-    have_cta?: any;
-    linkHref?: any;
-    linkTitle?: any;
-    url?: any;
-    img_column_width?: any;
-  };
-  selected?: boolean;
-  block: string;
-  onChangeBlock: Function;
-  onSelectBlock: Function;
-  editable: boolean;
+import styles from '@redturtle/volto-blocks/components/blocks/Text7/styles.module.css';
+import blockIcon from '@redturtle/volto-blocks/icons/text7.svg';
+import type { Text7Data } from '@redturtle/volto-blocks/components/blocks/Text7/schema';
+
+import config from '@plone/registry';
+
+type Text7EditProps = Omit<BlockEditProps, 'data'> & {
+  data: Text7Data;
 };
 
-export default function Edit(props: Props) {
-  const { data, selected, block, onChangeBlock, editable } = props;
+export default function Edit(props: Text7EditProps) {
+  const {
+    data,
+    selected,
+    block,
+    onChangeBlock,
+    // editable,
+    blocksConfig,
+    // navRoot,
+    // contentType,
+    // blocksErrors,
+  } = props;
+  const intl = useIntl();
+
   const img_column_width = data.img_column_width
     ? parseInt(data.img_column_width)
     : 6;
 
-  const [focusOn, setFocusOn] = useState('title');
+  const { selectedField, setSelectedField } = useHandleDetachedBlockFocus(
+    props,
+    'title',
+  );
 
-  const onChange = (obj, fieldName) => {
-    // if (!isEqual(obj[fieldName], data[fieldName])) {
-    //   onChangeBlock(block, {
-    //     ...data,
-    //     [fieldName]: obj[fieldName],
-    //   });
-    // }
-  };
-  const focusField = (field) => {
-    setFocusOn(field);
+  const schema = blocksConfig[data['@type']].blockSchema({
+    data,
+    intl,
+  });
 
-    if (!selected) {
-      props.onSelectBlock(block);
-    }
-  };
+  if (__SERVER__) {
+    return <div />;
+  }
 
-  // if (__SERVER__) {
-  //   return <div />;
-  // }
+  const Container = config.getComponent('Container').component || 'div';
+  const Image = config.getComponent('Image').component;
 
   return (
-    <div className="block-text7">
-      {/* <>
-        {data.share_social && (
-          <div className="content-social">
-            <ShareButtons showLabel={false} />
-          </div>
-        )}
-        <Grid className="block-content" verticalAlign="middle">
-          <Grid.Row
-            className={cx({
-              'block-right': data?.right,
-            })}
-            columns={2}
+    <>
+      <section
+        className={cx('block-text7', styles.block)}
+        aria-label={data.title}
+      >
+        <Container className={cx('block-text7-container', styles.container)}>
+          <div
+            className={cx(
+              'block-text7-image-wrapper',
+              `column-width-${img_column_width}`,
+              styles['image-wrapper'],
+              styles[`column-width-${img_column_width}`],
+            )}
           >
-            {props.selected && props.editable && !!props.data.url && (
-              <div className="toolbar">
-                <Button.Group>
-                  <Button
-                    icon
-                    basic
-                    onClick={() =>
-                      onChangeBlock(props.block, {
-                        ...props.data,
-                        url: '',
-                      })
-                    }
-                  >
-                    <Icon name={clearSVG} size="24px" color="#e40166" />
-                  </Button>
-                </Button.Group>
+            {data.image ? (
+              <Image
+                className={cx('block-text7-image', styles.image)}
+                // TODO serialize image brain in the backend
+                src={`${data.image}/@@images/image/large`}
+                loading="lazy"
+                alt=""
+              />
+            ) : (
+              <div className="image-add">Upload image</div>
+            )}
+          </div>
+          <div
+            className={cx(
+              'block-text7-body',
+              `column-width-${12 - img_column_width}`,
+              styles.body,
+              styles[`column-width-${12 - img_column_width}`],
+            )}
+          >
+            <TextEditorWidget
+              {...props}
+              className={cx('block-text7-title', styles.title)}
+              as="h2"
+              data={data}
+              fieldName="title"
+              selected={selected && selectedField === 'title'}
+              setSelected={setSelectedField}
+              focusNextField={() => {
+                setSelectedField('text');
+              }}
+              showToolbar={false}
+              placeholder={intl.formatMessage(messages.title)}
+            />
+            <TextEditorWidget
+              {...props}
+              fieldName="text"
+              selected={selected && selectedField === 'text'}
+              setSelected={setSelectedField}
+              focusPrevField={() => {
+                setSelectedField('title');
+              }}
+              placeholder={intl.formatMessage(messages.text)}
+            />
+            {data.linkHref?.[0] && (
+              <div className={cx('block-text7-cta', styles.cta)}>
+                <UniversalLink
+                  href={
+                    data.linkHref
+                      ? flattenToAppURL(data.linkHref[0]['@id'])
+                      : undefined
+                  }
+                  openLinkInNewTab={false}
+                  onClick={(e) => {
+                    e.preventDefault();
+                  }}
+                >
+                  {data.linkTitle}
+                </UniversalLink>
               </div>
             )}
-            <Grid.Column
-              computer={img_column_width}
-              tablet={img_column_width}
-              mobile={12}
-            >
-              {props.data?.url ? (
-                <Image
-                  className="block-text7-image"
-                  src={`${flattenToAppURL(props.data.url)}/@@images/image`}
-                  loading="lazy"
-                  alt=""
-                />
-              ) : (
-                <div className="image-add">
-                  <Message className="image-message">
-                    <center>
-                      <h4>{intl.formatMessage(messages.image)}</h4>
-                      {editable && (
-                        <>
-                          <p>{intl.formatMessage(messages.placeholder)}</p>
-
-                          <ImageWidget
-                            id={'image' + block}
-                            wrapped={false}
-                            value={props.data.url}
-                            onChange={(id, value) => {
-                              onChangeBlock(block, { ...data, url: value });
-                            }}
-                            openObjectBrowser={props.openObjectBrowser}
-                            imagePlaceholder={false}
-                            showInput={false}
-                          />
-                        </>
-                      )}
-                    </center>
-                  </Message>
-                </div>
-              )}
-            </Grid.Column>
-            <Grid.Column
-              computer={12 - img_column_width}
-              tablet={12 - img_column_width}
-              mobile={12}
-            >
-              <div className="block-text7-body">
-                <Input
-                  as="h3"
-                  className="input-title title"
-                  transparent
-                  placeholder={props.intl.formatMessage(messages.title)}
-                  value={data.title ?? ''}
-                  onClick={(e) => {
-                    focusField('title');
-                    e.stopPropagation();
-                  }}
-                  selected={selected && focusOn === 'title'}
-                  onChange={(e) => onChange({ title: e.target.value }, 'title')}
-                />
-                <div onClick={() => focusField('content')}>
-                  <TextEditorWidget
-                    data={data}
-                    fieldName="content"
-                    selected={selected && focusOn === 'content'}
-                    block={block}
-                    onChangeBlock={(data) => onChange(data, 'content')}
-                    placeholder={props.intl.formatMessage(messages.description)}
-                    prevFocus="title"
-                    setFocus={(f) => focusField(f)}
-                    showToolbar={true}
-                    key="content"
-                    disableMoveToNearest={true}
-                  />
-                </div>
-                {data.has_cta && (
-                  <div className="buttonBottom">
-                    <Button
-                      as={UniversalLink}
-                      size="small"
-                      href={
-                        data.link_to
-                          ? flattenToAppURL(data.link_to[0]?.['@id'])
-                          : data.link_to_external
-                          ? data.link_to_external
-                          : null
-                      }
-                      arrow={true}
-                    >
-                      {data.cta_title ||
-                        intl.formatMessage(messages.cta_title_default)}
-                    </Button>
-                  </div>
-                )}
-              </div>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </>
+          </div>
+        </Container>
+      </section>
+      {/* @ts-ignore TODO */}
       <SidebarPortal selected={selected}>
-        <Sidebar
-          {...data}
-          onChange={(fieldName, value) => {
-            const newValue = fieldName === 'cta_title' ? value ?? '' : value;
-            onChangeBlock(block, {
-              ...data,
-              [fieldName]: newValue,
-            });
-          }}
-        />
-      </SidebarPortal> */}
-    </div>
+        {schema && (
+          <BlockDataForm
+            icon={<Icon size="24px" name={blockIcon} />}
+            schema={schema}
+            title={schema.title}
+            onChangeField={(id: string, value: unknown) => {
+              onChangeBlock(block, {
+                ...data,
+                [id]: value,
+              });
+            }}
+            onChangeBlock={onChangeBlock}
+            formData={data}
+            block={block}
+            // blocksConfig={blocksConfig}
+            // headerActions={HeaderActions}
+            // actionButton={data.overwrite && ActionButton}
+            // navRoot={navRoot}
+            // contentType={contentType}
+            // errors={blocksErrors}
+          />
+        )}
+      </SidebarPortal>
+    </>
   );
 }
+
+const messages = defineMessages({
+  title: {
+    id: 'Title',
+    defaultMessage: 'Title',
+  },
+  text: {
+    id: 'Text',
+    defaultMessage: 'Text',
+  },
+  // placeholder: {
+  //   id: 'Upload a new image',
+  //   defaultMessage: 'Upload a new image',
+  // },
+  // image: {
+  //   id: 'Image',
+  //   defaultMessage: 'Image',
+  // },
+});

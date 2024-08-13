@@ -11,4 +11,49 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "Alignment"
+#: components/blocks/Text7/schema
+msgid "Alignment"
+msgstr ""
 
+#. Default: "Link Title"
+#: components/blocks/Text7/schema
+msgid "Link title"
+msgstr ""
+
+#. Default: "Link to"
+#: components/blocks/Text7/schema
+msgid "Link to"
+msgstr ""
+
+#. Default: "Text"
+#: components/blocks/Text7/Edit
+#: components/blocks/Text7/schema
+msgid "Text"
+msgstr "Testo"
+
+#. Default: "Title"
+#: components/blocks/Text7/Edit
+#: components/blocks/Text7/schema
+msgid "Title"
+msgstr "Titolo"
+
+#. Default: "Call to action"
+#: components/blocks/Text7/schema
+msgid "redturtle__volto-blocks__cta_fieldset_title"
+msgstr "Call to action"
+
+#. Default: "Read more"
+#: components/blocks/Text7/schema
+msgid "redturtle__volto-blocks__cta_title_default"
+msgstr "Leggi di più"
+
+#. Default: "Image"
+#: components/blocks/Text7/schema
+msgid "redturtle__volto-blocks__text7_image_title"
+msgstr "Immagine"
+
+#. Default: "Text 7"
+#: components/blocks/Text7/schema
+msgid "redturtle__volto-blocks__text7_title"
+msgstr ""
