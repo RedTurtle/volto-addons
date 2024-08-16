@@ -1,0 +1,28 @@
+.block {
+  container-type: inline-size;
+}
+
+:global(.block-text1.has--align--right) .wide,
+:global(.block-editor-text1.has--align--right) .wide {
+  order: 1;
+}
+
+:global(.block-text1.has--align--right) .narrow,
+:global(.block-editor-text1.has--align--right) .narrow {
+  order: 2;
+}
+
+@container (width > 700px) {
+  .container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .narrow {
+    flex: 0 0 33%;
+  }
+
+  .wide {
+    flex-grow: 1;
+  }
+}

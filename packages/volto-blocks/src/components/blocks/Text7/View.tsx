@@ -75,9 +75,6 @@ export default function View({ data, className, style }: Props) {
                     : undefined
                 }
                 openLinkInNewTab={false}
-                onClick={(e) => {
-                  e.preventDefault();
-                }}
               >
                 {data.linkTitle}
               </UniversalLink>

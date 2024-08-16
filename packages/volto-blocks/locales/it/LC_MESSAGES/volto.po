@@ -12,26 +12,24 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. Default: "Alignment"
-#: components/blocks/Testimonials/schema
-#: components/blocks/Text7/schema
+#: components/blocks/extenders/styles
 msgid "Alignment"
 msgstr ""
 
 #. Default: "Link Title"
-#: components/blocks/Testimonials/schema
-#: components/blocks/Text7/schema
+#: components/blocks/extenders/cta
 msgid "Link title"
 msgstr ""
 
 #. Default: "Link to"
-#: components/blocks/Testimonials/schema
-#: components/blocks/Text7/schema
+#: components/blocks/extenders/cta
 msgid "Link to"
 msgstr ""
 
 #. Default: "Text"
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
+#: components/blocks/Text1/Edit
 #: components/blocks/Text7/Edit
 #: components/blocks/Text7/schema
 msgid "Text"
@@ -40,20 +38,20 @@ msgstr "Testo"
 #. Default: "Title"
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
+#: components/blocks/Text1/Edit
+#: components/blocks/Text1/schema
 #: components/blocks/Text7/Edit
 #: components/blocks/Text7/schema
 msgid "Title"
 msgstr "Titolo"
 
 #. Default: "Call to action"
-#: components/blocks/Testimonials/schema
-#: components/blocks/Text7/schema
+#: components/blocks/extenders/cta
 msgid "redturtle__volto-blocks__cta_fieldset_title"
 msgstr "Call to action"
 
 #. Default: "Read more"
-#: components/blocks/Testimonials/schema
-#: components/blocks/Text7/schema
+#: components/blocks/extenders/cta
 msgid "redturtle__volto-blocks__cta_title_default"
 msgstr "Leggi di più"
 
@@ -70,6 +68,11 @@ msgstr ""
 #. Default: "Testimonials"
 #: components/blocks/Testimonials/schema
 msgid "redturtle__volto-blocks__testimonials_title"
+msgstr ""
+
+#. Default: "Text 1"
+#: components/blocks/Text1/schema
+msgid "redturtle__volto-blocks__text1_title"
 msgstr ""
 
 #. Default: "Image"

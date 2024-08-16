@@ -1,17 +1,17 @@
 import { defineMessages, type IntlShape } from 'react-intl';
-import { addStyling } from '@plone/volto/helpers/Extensions/withBlockSchemaEnhancer';
 import type { BlockConfigBase, JSONSchema } from '@plone/types';
+import { addAlignmentStyle } from '@redturtle/volto-blocks/components/blocks/extenders/styles';
+import {
+  addCtaFieldset,
+  type CtaBlockExtender,
+} from '@redturtle/volto-blocks/components/blocks/extenders/cta';
 
-export type TestimonialsData = {
+export interface TestimonialsData extends CtaBlockExtender {
   '@type': 'testimonials';
   testimonials?: Array<{ '@id': string; testimonial: string }>;
   title?: string;
   text?: object;
-  right?: boolean;
-  // TODO fix any
-  linkHref?: any;
-  linkTitle?: string;
-};
+}
 
 export const TestimonialsSchema = ({
   data,
@@ -27,11 +27,6 @@ export const TestimonialsSchema = ({
         id: 'default',
         title: 'Default',
         fields: ['title', 'testimonials'],
-      },
-      {
-        id: 'cta',
-        title: intl.formatMessage(messages.cta_fieldset_title),
-        fields: ['linkHref', 'linkTitle'],
       },
     ],
     properties: {
@@ -63,34 +58,12 @@ export const TestimonialsSchema = ({
       //   title: intl.formatMessage(messages.text_title),
       //   widget: 'slate',
       // },
-      linkTitle: {
-        title: intl.formatMessage(messages.LinkTitle),
-        default: intl.formatMessage(messages.cta_title_default),
-      },
-      linkHref: {
-        title: intl.formatMessage(messages.LinkTo),
-        widget: 'object_browser',
-        mode: 'link',
-        selectedItemAttrs: ['Title', 'Description'],
-        allowExternals: true,
-      },
     },
     required: ['title'],
   };
 
-  addStyling({ schema, intl, formData: data });
-
-  // @ts-ignore
-  schema.properties.styles.schema.properties.align = {
-    widget: 'align',
-    title: intl.formatMessage(messages.align),
-    // actions: ['left', 'right', 'center'],
-    actions: ['left', 'right'],
-    default: 'left',
-  };
-
-  // @ts-ignore
-  schema.properties.styles.schema.fieldsets[0].fields = ['align'];
+  addCtaFieldset({ schema, intl });
+  addAlignmentStyle({ schema, intl, formData: data });
 
   return schema;
 };
@@ -116,31 +89,9 @@ const messages = defineMessages({
     id: 'Text',
     defaultMessage: 'Text',
   },
-  cta_fieldset_title: {
-    id: 'redturtle__volto-blocks__cta_fieldset_title',
-    defaultMessage: 'Call to action',
-  },
-  // copied from core listing block
-  LinkTitle: {
-    id: 'Link title',
-    defaultMessage: 'Link Title',
-  },
-  // copied from core listing block
-  LinkTo: {
-    id: 'Link to',
-    defaultMessage: 'Link to',
-  },
-  cta_title_default: {
-    id: 'redturtle__volto-blocks__cta_title_default',
-    defaultMessage: 'Read more',
-  },
-  // copied from core teaser block
-  align: {
-    id: 'Alignment',
-    defaultMessage: 'Alignment',
-  },
 });
 
-export type TestimonialsConfig = Omit<BlockConfigBase, 'blockSchema'> & {
+export interface TestimonialsConfig
+  extends Omit<BlockConfigBase, 'blockSchema'> {
   blockSchema: typeof TestimonialsSchema;
-};
+}

@@ -52,9 +52,6 @@ export default function View({ data, className, style }: Props) {
               <UniversalLink
                 href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
                 openLinkInNewTab={false}
-                onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
-                  e.preventDefault();
-                }}
               >
                 {data.linkTitle}
               </UniversalLink>

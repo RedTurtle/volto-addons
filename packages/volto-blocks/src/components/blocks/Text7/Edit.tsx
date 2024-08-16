@@ -21,17 +21,8 @@ type Text7EditProps = Omit<BlockEditProps, 'data'> & {
 };
 
 export default function Edit(props: Text7EditProps) {
-  const {
-    data,
-    selected,
-    block,
-    onChangeBlock,
-    // editable,
-    blocksConfig,
-    // navRoot,
-    // contentType,
-    // blocksErrors,
-  } = props;
+  const { data, selected, block, onChangeBlock, blocksConfig, blocksErrors } =
+    props;
   const intl = useIntl();
 
   const img_column_width = data.img_column_width
@@ -133,7 +124,7 @@ export default function Edit(props: Text7EditProps) {
           </div>
         </Container>
       </section>
-      {/* @ts-ignore TODO */}
+      {/* @ts-expect-error TODO */}
       <SidebarPortal selected={selected}>
         {schema && (
           <BlockDataForm
@@ -149,12 +140,7 @@ export default function Edit(props: Text7EditProps) {
             onChangeBlock={onChangeBlock}
             formData={data}
             block={block}
-            // blocksConfig={blocksConfig}
-            // headerActions={HeaderActions}
-            // actionButton={data.overwrite && ActionButton}
-            // navRoot={navRoot}
-            // contentType={contentType}
-            // errors={blocksErrors}
+            errors={blocksErrors}
           />
         )}
       </SidebarPortal>
