@@ -25,3 +25,10 @@ repos:
         language: system
         files: '^packages/.*/src/.*/?.*.(js|jsx|ts|tsx)$'
         types: [file]
+      - id: typescript
+        name: typescript
+        entry: pnpm typescript
+        language: system
+        files: '^packages/.*/src/.*/?.*.(ts|tsx)$'
+        types: [file]
+        pass_filenames: false

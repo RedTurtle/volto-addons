@@ -1,17 +1,17 @@
 import View from './View';
-import configureStore from 'redux-mock-store';
-import { Provider } from 'react-intl-redux';
+// import configureStore from 'redux-mock-store';
+// import { Provider } from 'react-intl-redux';
 
-const mockStore = configureStore();
-const store = mockStore({
-  userSession: {
-    token: null,
-  },
-  intl: {
-    locale: 'en',
-    messages: {},
-  },
-});
+// const mockStore = configureStore();
+// const store = mockStore({
+//   userSession: {
+//     token: null,
+//   },
+//   intl: {
+//     locale: 'en',
+//     messages: {},
+//   },
+// });
 
 const Template = (args) => <View {...args} />;
 
@@ -54,7 +54,7 @@ ImageRight.args = { ...right };
 const meta = {
   title: 'Text/Testimonials',
   component: View,
-  decorators: [(Story) => <Provider store={store}>{Story()}</Provider>],
+  // decorators: [(Story) => <Provider store={store}>{Story()}</Provider>],
 };
 
 export default meta;

@@ -32,6 +32,7 @@
     "prettier:fix": "prettier --write 'packages/**/src/**/*.{js,jsx,ts,tsx}' ",
     "stylelint": "stylelint 'packages/**/src/**/*.{css,scss,less}' --allow-empty-input",
     "stylelint:fix": "stylelint 'packages/**/src/**/*.{css,scss,less}' --fix --allow-empty-input",
+    "typescript": "pnpm exec tsc --noEmit -p packages/volto-blocks",
     "dry-release": "pnpm --filter @redturtle/volto-blocks dry-release",
     "release": "pnpm --filter @redturtle/volto-blocks release",
     "release-major-alpha": "pnpm --filter @redturtle/volto-blocks release-major-alpha",
@@ -40,12 +41,13 @@
     "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook"
   },
   "dependencies": {
-    "@plone/volto": "workspace:*",
     "@plone/registry": "workspace:*",
+    "@plone/volto": "workspace:*",
     "@redturtle/volto-blocks": "workspace:*"
   },
   "devDependencies": {
-    "mrs-developer": "^2.2.0"
+    "mrs-developer": "^2.2.0",
+    "typescript": "^5.5.4"
   },
   "packageManager": "pnpm@9.1.1"
 }
