@@ -2,6 +2,16 @@
   container-type: inline-size;
 }
 
+:global(.block-text7.has--align--right) .body,
+:global(.block-editor-text7.has--align--right) .body {
+  order: 1;
+}
+
+:global(.block-text7.has--align--right) .image-wrapper,
+:global(.block-editor-text7.has--align--right) .image-wrapper {
+  order: 2;
+}
+
 .image {
   width: 100%;
   height: auto;

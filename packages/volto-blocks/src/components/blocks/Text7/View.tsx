@@ -11,13 +11,9 @@ import config from '@plone/registry';
 
 type Props = Omit<BlockViewProps, 'data'> & {
   data: Text7Data;
-  className?: string;
-  style?: Record<string, string | number>;
 };
 
 export default function View({ data, className, style }: Props) {
-  // const intl = useIntl();
-
   const img_column_width = data.img_column_width
     ? parseInt(data.img_column_width)
     : 6;
@@ -40,15 +36,17 @@ export default function View({ data, className, style }: Props) {
             styles[`column-width-${img_column_width}`],
           )}
         >
-          {data.image && (
-            <Image
-              className={cx('block-text7-image', styles.image)}
-              // TODO serialize image brain in the backend
-              src={`${data.image}/@@images/image/large`}
-              loading="lazy"
-              alt=""
-            />
-          )}
+          {data.images?.length > 0 &&
+            data.images.map((img) => (
+              <Image
+                key={img['@id']}
+                className={cx('block-text7-image', styles.image)}
+                // TODO serialize image brain in the backend
+                src={`${img.image}/@@images/image/large`}
+                loading="lazy"
+                alt=""
+              />
+            ))}
         </div>
         <div
           className={cx(

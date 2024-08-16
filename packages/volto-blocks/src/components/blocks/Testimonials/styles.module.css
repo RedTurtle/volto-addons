@@ -1,0 +1,28 @@
+.block {
+  container-type: inline-size;
+}
+
+:global(.block-testimonials.has--align--right) .body,
+:global(.block-editor-testimonials.has--align--right) .body {
+  order: 1;
+}
+
+:global(.block-testimonials.has--align--right) .testimonials-wrapper,
+:global(.block-editor-testimonials.has--align--right) .testimonials-wrapper {
+  order: 2;
+}
+
+@container (width > 700px) {
+  .container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .testimonials-wrapper {
+    flex-shrink: 0;
+  }
+
+  .body {
+    flex-grow: 1;
+  }
+}

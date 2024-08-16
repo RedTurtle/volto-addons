@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-13T17:19:18.989Z\n"
+"POT-Creation-Date: 2024-08-16T08:45:04.358Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -14,45 +14,84 @@ msgstr ""
 "Domain: volto\n"
 
 #. Default: "Alignment"
+#: components/blocks/Testimonials/schema
 #: components/blocks/Text7/schema
 msgid "Alignment"
 msgstr ""
 
 #. Default: "Link Title"
+#: components/blocks/Testimonials/schema
 #: components/blocks/Text7/schema
 msgid "Link title"
 msgstr ""
 
 #. Default: "Link to"
+#: components/blocks/Testimonials/schema
 #: components/blocks/Text7/schema
 msgid "Link to"
 msgstr ""
 
 #. Default: "Text"
+#: components/blocks/Testimonials/Edit
+#: components/blocks/Testimonials/schema
 #: components/blocks/Text7/Edit
 #: components/blocks/Text7/schema
 msgid "Text"
 msgstr ""
 
 #. Default: "Title"
+#: components/blocks/Testimonials/Edit
+#: components/blocks/Testimonials/schema
 #: components/blocks/Text7/Edit
 #: components/blocks/Text7/schema
 msgid "Title"
 msgstr ""
 
 #. Default: "Call to action"
+#: components/blocks/Testimonials/schema
 #: components/blocks/Text7/schema
 msgid "redturtle__volto-blocks__cta_fieldset_title"
 msgstr ""
 
 #. Default: "Read more"
+#: components/blocks/Testimonials/schema
 #: components/blocks/Text7/schema
 msgid "redturtle__volto-blocks__cta_title_default"
+msgstr ""
+
+#. Default: "Testimonial"
+#: components/blocks/Testimonials/schema
+msgid "redturtle__volto-blocks__testimonials_testimonial_title"
+msgstr ""
+
+#. Default: "Testimonials"
+#: components/blocks/Testimonials/schema
+msgid "redturtle__volto-blocks__testimonials_testimonials_title"
+msgstr ""
+
+#. Default: "Testimonials"
+#: components/blocks/Testimonials/schema
+msgid "redturtle__volto-blocks__testimonials_title"
 msgstr ""
 
 #. Default: "Image"
 #: components/blocks/Text7/schema
 msgid "redturtle__volto-blocks__text7_image_title"
+msgstr ""
+
+#. Default: "Images"
+#: components/blocks/Text7/schema
+msgid "redturtle__volto-blocks__text7_images_title"
+msgstr ""
+
+#. Default: "Width of the image column"
+#: components/blocks/Text7/schema
+msgid "redturtle__volto-blocks__text7_img_column_width_description"
+msgstr ""
+
+#. Default: "Image column width"
+#: components/blocks/Text7/schema
+msgid "redturtle__volto-blocks__text7_img_column_width_title"
 msgstr ""
 
 #. Default: "Text 7"

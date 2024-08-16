@@ -2,10 +2,9 @@ import { defineMessages, type IntlShape } from 'react-intl';
 import { addStyling } from '@plone/volto/helpers/Extensions/withBlockSchemaEnhancer';
 import type { BlockConfigBase, JSONSchema } from '@plone/types';
 
-export type Text7Data = {
-  '@type': 'text7';
-  images?: Array<{ '@id': string; image: string }>;
-  img_column_width?: string;
+export type TestimonialsData = {
+  '@type': 'testimonials';
+  testimonials?: Array<{ '@id': string; testimonial: string }>;
   title?: string;
   text?: object;
   right?: boolean;
@@ -14,11 +13,11 @@ export type Text7Data = {
   linkTitle?: string;
 };
 
-export const Text7Schema = ({
+export const TestimonialsSchema = ({
   data,
   intl,
 }: {
-  data: Text7Data;
+  data: TestimonialsData;
   intl: IntlShape;
 }): JSONSchema => {
   const schema = {
@@ -27,7 +26,7 @@ export const Text7Schema = ({
       {
         id: 'default',
         title: 'Default',
-        fields: ['title', 'img_column_width', 'images'],
+        fields: ['title', 'testimonials'],
       },
       {
         id: 'cta',
@@ -36,44 +35,25 @@ export const Text7Schema = ({
       },
     ],
     properties: {
-      images: {
-        title: intl.formatMessage(messages.images_title),
+      testimonials: {
+        title: intl.formatMessage(messages.testimonials_title),
         widget: 'object_list',
         schema: {
-          title: intl.formatMessage(messages.image_title),
+          title: intl.formatMessage(messages.testimonial_title),
           fieldsets: [
             {
               id: 'default',
               title: 'Default',
-              fields: ['image'],
+              fields: ['testimonial'],
             },
           ],
           properties: {
-            image: {
-              title: intl.formatMessage(messages.image_title),
-              widget: 'image',
+            testimonial: {
+              title: intl.formatMessage(messages.testimonial_title),
             },
           },
           required: [],
         },
-      },
-      img_column_width: {
-        title: intl.formatMessage(messages.img_column_width_title),
-        description: intl.formatMessage(messages.img_column_width_description),
-        default: '6',
-        choices: [
-          ['1', '8%'],
-          ['2', '16%'],
-          ['3', '25%'],
-          ['4', '33%'],
-          ['5', '41%'],
-          ['6', '50%'],
-          ['7', '58%'],
-          ['8', '66%'],
-          ['9', '75%'],
-          ['10', '83%'],
-          ['11', '91%'],
-        ],
       },
       title: {
         title: intl.formatMessage(messages.title_title),
@@ -117,24 +97,16 @@ export const Text7Schema = ({
 
 const messages = defineMessages({
   title: {
-    id: 'redturtle__volto-blocks__text7_title',
-    defaultMessage: 'Text 7',
+    id: 'redturtle__volto-blocks__testimonials_title',
+    defaultMessage: 'Testimonials',
   },
-  images_title: {
-    id: 'redturtle__volto-blocks__text7_images_title',
-    defaultMessage: 'Images',
+  testimonials_title: {
+    id: 'redturtle__volto-blocks__testimonials_testimonials_title',
+    defaultMessage: 'Testimonials',
   },
-  image_title: {
-    id: 'redturtle__volto-blocks__text7_image_title',
-    defaultMessage: 'Image',
-  },
-  img_column_width_title: {
-    id: 'redturtle__volto-blocks__text7_img_column_width_title',
-    defaultMessage: 'Image column width',
-  },
-  img_column_width_description: {
-    id: 'redturtle__volto-blocks__text7_img_column_width_description',
-    defaultMessage: 'Width of the image column',
+  testimonial_title: {
+    id: 'redturtle__volto-blocks__testimonials_testimonial_title',
+    defaultMessage: 'Testimonial',
   },
   title_title: {
     id: 'Title',
@@ -169,6 +141,6 @@ const messages = defineMessages({
   },
 });
 
-export type Text7Config = Omit<BlockConfigBase, 'blockSchema'> & {
-  blockSchema: typeof Text7Schema;
+export type TestimonialsConfig = Omit<BlockConfigBase, 'blockSchema'> & {
+  blockSchema: typeof TestimonialsSchema;
 };
