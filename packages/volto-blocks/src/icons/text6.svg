@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-text6">
+      <path d="M0 0h36v36H0z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip-text6)" data-name="text6">
+    <path fill-rule="evenodd" d="M6.022 2H0v2.409h1.2V3.2h3.613v9.52h-1.2v1.2h3.613v-1.2h-1.2V3.2h3.613v1.2h1.2V2Z" data-name="Raggruppa 2"/>
+    <g fill-rule="evenodd">
+      <path d="M0 18h36v-2H0Z" data-name="Tracciato 6"/>
+      <path d="M0 26h36v-2H0Z" data-name="Tracciato 7"/>
+      <path d="M0 34h36v-2H0Z" data-name="Tracciato 8"/>
+    </g>
+  </g>
+</svg>

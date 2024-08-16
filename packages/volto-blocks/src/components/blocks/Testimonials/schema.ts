@@ -63,7 +63,12 @@ export const TestimonialsSchema = ({
   };
 
   addCtaFieldset({ schema, intl });
-  addAlignmentStyle({ schema, intl, formData: data });
+  addAlignmentStyle({
+    schema,
+    intl,
+    formData: data,
+    alignments: ['left', 'right'],
+  });
 
   return schema;
 };

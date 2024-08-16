@@ -10,6 +10,14 @@ import {
   type Text1Config,
 } from '@redturtle/volto-blocks/components/blocks/Text1/schema';
 
+import text6SVG from '@redturtle/volto-blocks/icons/text6.svg';
+import Text6View from '@redturtle/volto-blocks/components/blocks/Text6/View';
+import { Text6Edit } from '@redturtle/volto-blocks/components/blocks/Text6';
+import {
+  Text6Schema,
+  type Text6Config,
+} from '@redturtle/volto-blocks/components/blocks/Text6/schema';
+
 import text7SVG from '@redturtle/volto-blocks/icons/text7.svg';
 import Text7View from '@redturtle/volto-blocks/components/blocks/Text7/View';
 import { Text7Edit } from '@redturtle/volto-blocks/components/blocks/Text7';
@@ -28,6 +36,7 @@ import {
 declare module '@plone/types' {
   interface BlocksConfigData {
     text1: Text1Config;
+    text6: Text6Config;
     text7: Text7Config;
     testimonials: TestimonialsConfig;
   }
@@ -35,7 +44,7 @@ declare module '@plone/types' {
 
 type RtBlocksConfig = Pick<
   BlocksConfigData,
-  'text1' | 'text7' | 'testimonials'
+  'text1' | 'text6' | 'text7' | 'testimonials'
 >;
 
 const defaultBlocksConfig = {
@@ -60,6 +69,17 @@ export const blocks: RtBlocksConfig = {
     edit: Text1Edit,
     blockHasOwnFocusManagement: true,
     blockSchema: Text1Schema,
+  },
+  text6: {
+    ...defaultBlocksConfig,
+    id: 'text6',
+    title: 'Text 6',
+    icon: text6SVG,
+    group: 'text',
+    view: Text6View,
+    edit: Text6Edit,
+    blockHasOwnFocusManagement: true,
+    blockSchema: Text6Schema,
   },
   text7: {
     ...defaultBlocksConfig,

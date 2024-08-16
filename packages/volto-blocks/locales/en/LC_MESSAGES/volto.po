@@ -30,6 +30,7 @@ msgstr ""
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
 #: components/blocks/Text1/Edit
+#: components/blocks/Text6/Edit
 #: components/blocks/Text7/Edit
 #: components/blocks/Text7/schema
 msgid "Text"
@@ -40,6 +41,8 @@ msgstr ""
 #: components/blocks/Testimonials/schema
 #: components/blocks/Text1/Edit
 #: components/blocks/Text1/schema
+#: components/blocks/Text6/Edit
+#: components/blocks/Text6/schema
 #: components/blocks/Text7/Edit
 #: components/blocks/Text7/schema
 msgid "Title"
@@ -73,6 +76,11 @@ msgstr ""
 #. Default: "Text 1"
 #: components/blocks/Text1/schema
 msgid "redturtle__volto-blocks__text1_title"
+msgstr ""
+
+#. Default: "Text 6"
+#: components/blocks/Text6/schema
+msgid "redturtle__volto-blocks__text6_title"
 msgstr ""
 
 #. Default: "Image"

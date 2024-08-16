@@ -6,10 +6,14 @@ export function addAlignmentStyle({
   schema,
   intl,
   formData,
+  alignments = ['left', 'center', 'right'],
+  defaultAlign = 'left',
 }: {
   schema: JSONSchema;
   intl: IntlShape;
   formData: unknown;
+  alignments?: string[];
+  defaultAlign?: 'left' | 'center' | 'right';
 }): JSONSchema {
   addStyling({ schema, intl, formData });
 
@@ -17,9 +21,8 @@ export function addAlignmentStyle({
   schema.properties.styles.schema.properties.align = {
     widget: 'align',
     title: intl.formatMessage(messages.align),
-    // actions: ['left', 'right', 'center'],
-    actions: ['left', 'right'],
-    default: 'left',
+    actions: alignments,
+    default: defaultAlign,
   };
 
   // @ts-ignore

@@ -1,0 +1,4 @@
+:global(.block-text6.has--align--center),
+:global(.block-editor-text6.has--align--center) .block {
+  text-align: center;
+}
