@@ -27,6 +27,8 @@ msgid "Link to"
 msgstr ""
 
 #. Default: "Text"
+#: components/blocks/Accordion/EditItem
+#: components/blocks/IconsAndText/Edit
 #: components/blocks/IconsAndText/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
@@ -38,6 +40,10 @@ msgid "Text"
 msgstr ""
 
 #. Default: "Title"
+#: components/blocks/Accordion/Edit
+#: components/blocks/Accordion/EditItem
+#: components/blocks/Accordion/schema
+#: components/blocks/IconsAndText/Edit
 #: components/blocks/IconsAndText/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
@@ -88,6 +94,26 @@ msgstr ""
 #. Default: "Do not fit the columns to the available space"
 #: components/blocks/IconsAndText/schema
 msgid "noAdaptColumns"
+msgstr ""
+
+#. Default: "Columns"
+#: components/blocks/Accordion/schema
+msgid "redturtle__volto-blocks__accordion_columns_title"
+msgstr ""
+
+#. Default: "Item"
+#: components/blocks/Accordion/schema
+msgid "redturtle__volto-blocks__accordion_item"
+msgstr ""
+
+#. Default: "Items"
+#: components/blocks/Accordion/schema
+msgid "redturtle__volto-blocks__accordion_items"
+msgstr ""
+
+#. Default: "Accordion"
+#: components/blocks/Accordion/schema
+msgid "redturtle__volto-blocks__accordion_title"
 msgstr ""
 
 #. Default: "Call to action"

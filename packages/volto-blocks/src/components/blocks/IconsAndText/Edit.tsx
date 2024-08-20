@@ -1,15 +1,15 @@
+import type { BlockEditProps } from '@plone/types';
 import { Icon, SidebarPortal } from '@plone/volto/components';
 import { BlockDataForm } from '@plone/volto/components/manage/Form';
-import { useIntl } from 'react-intl';
-
-import type { BlockEditProps } from '@plone/types';
-
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
+import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.css';
 import blockIcon from '@redturtle/volto-blocks/icons/icons_and_text.svg';
 import {
   TextEditorWidget,
   useHandleDetachedBlockFocus,
 } from '@redturtle/volto-rt-slate';
+import cx from 'classnames';
+import { defineMessages, useIntl } from 'react-intl';
 
 import config from '@plone/registry';
 
@@ -108,3 +108,14 @@ export default function Edit(props: IconsAndTextEditProps) {
     </>
   );
 }
+
+const messages = defineMessages({
+  title: {
+    id: 'Title',
+    defaultMessage: 'Title',
+  },
+  text: {
+    id: 'Text',
+    defaultMessage: 'Text',
+  },
+});

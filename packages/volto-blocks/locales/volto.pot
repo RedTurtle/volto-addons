@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-20T08:36:55.857Z\n"
+"POT-Creation-Date: 2024-08-20T08:53:33.327Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -29,6 +29,8 @@ msgid "Link to"
 msgstr ""
 
 #. Default: "Text"
+#: components/blocks/Accordion/EditItem
+#: components/blocks/IconsAndText/Edit
 #: components/blocks/IconsAndText/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
@@ -40,6 +42,10 @@ msgid "Text"
 msgstr ""
 
 #. Default: "Title"
+#: components/blocks/Accordion/Edit
+#: components/blocks/Accordion/EditItem
+#: components/blocks/Accordion/schema
+#: components/blocks/IconsAndText/Edit
 #: components/blocks/IconsAndText/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
@@ -90,6 +96,26 @@ msgstr ""
 #. Default: "Do not fit the columns to the available space"
 #: components/blocks/IconsAndText/schema
 msgid "noAdaptColumns"
+msgstr ""
+
+#. Default: "Columns"
+#: components/blocks/Accordion/schema
+msgid "redturtle__volto-blocks__accordion_columns_title"
+msgstr ""
+
+#. Default: "Item"
+#: components/blocks/Accordion/schema
+msgid "redturtle__volto-blocks__accordion_item"
+msgstr ""
+
+#. Default: "Items"
+#: components/blocks/Accordion/schema
+msgid "redturtle__volto-blocks__accordion_items"
+msgstr ""
+
+#. Default: "Accordion"
+#: components/blocks/Accordion/schema
+msgid "redturtle__volto-blocks__accordion_title"
 msgstr ""
 
 #. Default: "Call to action"

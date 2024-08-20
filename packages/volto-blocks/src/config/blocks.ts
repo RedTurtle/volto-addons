@@ -2,6 +2,14 @@ import type { BlocksConfigData } from '@plone/types';
 
 import BlockSettingsSchema from '@plone/volto/components/manage/Blocks/Block/Schema';
 
+import accordionSVG from '@plone/volto/icons/list-arrows.svg';
+import { AccordionEdit } from '@redturtle/volto-blocks/components/blocks/Accordion';
+import {
+  AccordionSchema,
+  type AccordionConfig,
+} from '@redturtle/volto-blocks/components/blocks/Accordion/schema';
+import AccordionView from '@redturtle/volto-blocks/components/blocks/Accordion/View';
+
 import { Text1Edit } from '@redturtle/volto-blocks/components/blocks/Text1';
 import {
   Text1Schema,
@@ -43,17 +51,18 @@ import iconsAndTextSVG from '@redturtle/volto-blocks/icons/icons_and_text.svg';
 
 declare module '@plone/types' {
   interface BlocksConfigData {
+    accordion: AccordionConfig;
     text1: Text1Config;
     text6: Text6Config;
     text7: Text7Config;
     testimonials: TestimonialsConfig;
-    iconandtext: IconsAndTextConfig;
+    iconsandtext: IconsAndTextConfig;
   }
 }
 
 type RtBlocksConfig = Pick<
   BlocksConfigData,
-  'text1' | 'text6' | 'text7' | 'testimonials' | 'iconandtext'
+  'accordion' | 'text1' | 'text6' | 'text7' | 'testimonials' | 'iconsandtext'
 >;
 
 const defaultBlocksConfig = {
@@ -68,6 +77,17 @@ const defaultBlocksConfig = {
 } as const;
 
 export const blocks: RtBlocksConfig = {
+  accordion: {
+    ...defaultBlocksConfig,
+    id: 'accordion',
+    title: 'Accordion',
+    icon: accordionSVG,
+    group: 'common',
+    view: AccordionView,
+    edit: AccordionEdit,
+    blockHasOwnFocusManagement: true,
+    blockSchema: AccordionSchema,
+  },
   text1: {
     ...defaultBlocksConfig,
     id: 'text1',
@@ -113,9 +133,9 @@ export const blocks: RtBlocksConfig = {
     blockHasOwnFocusManagement: true,
     blockSchema: TestimonialsSchema,
   },
-  iconandtext: {
+  iconsandtext: {
     ...defaultBlocksConfig,
-    id: 'iconandtext',
+    id: 'iconsandtext',
     title: 'Icon & Text',
     icon: iconsAndTextSVG,
     group: 'text',

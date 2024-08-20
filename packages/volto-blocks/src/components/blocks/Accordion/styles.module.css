@@ -1,0 +1,17 @@
+.block {
+  container-type: inline-size;
+}
+
+.wrapper {
+  column-count: var(--column-count, 1);
+}
+
+.item {
+  break-inside: avoid;
+}
+
+@container (width > 700px) {
+  .wrapper {
+    column-count: 1;
+  }
+}
