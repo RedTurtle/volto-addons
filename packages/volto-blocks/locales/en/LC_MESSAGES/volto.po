@@ -29,6 +29,7 @@ msgstr ""
 #. Default: "Text"
 #: components/blocks/Accordion/EditItem
 #: components/blocks/IconsAndText/Edit
+#: components/blocks/IconsAndText/EditItem
 #: components/blocks/IconsAndText/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
@@ -39,11 +40,17 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
+#. Default: "Header text"
+#: components/blocks/IconsAndText/EditItem
+msgid "Text placeholder"
+msgstr ""
+
 #. Default: "Title"
 #: components/blocks/Accordion/Edit
 #: components/blocks/Accordion/EditItem
 #: components/blocks/Accordion/schema
 #: components/blocks/IconsAndText/Edit
+#: components/blocks/IconsAndText/EditItem
 #: components/blocks/IconsAndText/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
