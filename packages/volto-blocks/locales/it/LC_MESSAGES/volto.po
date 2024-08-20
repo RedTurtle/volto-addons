@@ -27,6 +27,7 @@ msgid "Link to"
 msgstr ""
 
 #. Default: "Text"
+#: components/blocks/IconsAndText/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
 #: components/blocks/Text1/Edit
@@ -37,6 +38,7 @@ msgid "Text"
 msgstr "Testo"
 
 #. Default: "Title"
+#: components/blocks/IconsAndText/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
 #: components/blocks/Text1/Edit
@@ -47,6 +49,46 @@ msgstr "Testo"
 #: components/blocks/Text7/schema
 msgid "Title"
 msgstr "Titolo"
+
+#. Default: "Add column"
+#: components/blocks/IconsAndText/schema
+msgid "addColumn"
+msgstr ""
+
+#. Default: "Column"
+#: components/blocks/IconsAndText/schema
+msgid "column"
+msgstr ""
+
+#. Default: "Number of columns"
+#: components/blocks/IconsAndText/schema
+msgid "columnsNumber"
+msgstr ""
+
+#. Default: "Icon"
+#: components/blocks/IconsAndText/schema
+msgid "icon"
+msgstr ""
+
+#. Default: "Define the number of columns for this block"
+#: components/blocks/IconsAndText/schema
+msgid "icon_and_text_column_number_description"
+msgstr ""
+
+#. Default: "Column Number"
+#: components/blocks/IconsAndText/schema
+msgid "icon_and_text_column_number_title"
+msgstr ""
+
+#. Default: "Icon & Text block"
+#: components/blocks/IconsAndText/schema
+msgid "icons_and_text_title"
+msgstr ""
+
+#. Default: "Do not fit the columns to the available space"
+#: components/blocks/IconsAndText/schema
+msgid "noAdaptColumns"
+msgstr ""
 
 #. Default: "Call to action"
 #: components/blocks/extenders/cta
