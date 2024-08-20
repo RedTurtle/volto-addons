@@ -1,7 +1,11 @@
 import type { BlockConfigBase, JSONSchema } from '@plone/types';
-import { type CtaBlockExtender } from '@redturtle/volto-blocks/components/blocks/extenders/cta';
+import {
+  addCtaFieldset,
+  type CtaBlockExtender,
+} from '@redturtle/volto-blocks/components/blocks/extenders/cta';
+
 import { defineMessages, type IntlShape } from 'react-intl';
-import { v4 as uuid } from 'uuid';
+// import { v4 as uuid } from 'uuid';
 
 const messages = defineMessages({
   columnsNumber: { id: 'columnsNumber', defaultMessage: 'Number of columns' },
@@ -47,12 +51,16 @@ export interface IconsAndTextData extends CtaBlockExtender {
   '@type': 'iconsandtext';
   columns?: Array<{
     '@id': string;
-    iconImage: string;
-    iconSize: string;
-    headerTextPosition: string;
-    dividerPosition: string;
-    href: string;
-    href_title: string;
+    index?: number;
+    iconImage?: string;
+    iconSize?: string;
+    headerText?: string;
+    headerTextPosition?: string;
+    dividerPosition?: string;
+    href?: string;
+    href_title?: string;
+    title?: string;
+    text?: string;
   }>;
   column_number?: string;
   title?: string;
@@ -81,11 +89,11 @@ export const IconsAndTextSchema = ({
         title: intl.formatMessage(messages.column),
         addMessage: intl.formatMessage(messages.addColumn),
         widget: 'object_list',
-        default: [
-          { '@id': uuid(), dividerPosition: 'before_title', iconSize: 's' },
-          { '@id': uuid(), dividerPosition: 'before_title', iconSize: 's' },
-          { '@id': uuid(), dividerPosition: 'before_title', iconSize: 's' },
-        ],
+        // default: [
+        //   { '@id': uuid(), dividerPosition: 'before_title', iconSize: 's' },
+        //   { '@id': uuid(), dividerPosition: 'before_title', iconSize: 's' },
+        //   { '@id': uuid(), dividerPosition: 'before_title', iconSize: 's' },
+        // ],
         schema: {
           title: intl.formatMessage(messages.column),
           fieldsets: [
@@ -93,6 +101,7 @@ export const IconsAndTextSchema = ({
               id: 'default',
               title: 'Default',
               fields: [
+                // 'title',
                 'iconImage',
                 'iconSize',
                 'headerTextPosition',
@@ -103,7 +112,7 @@ export const IconsAndTextSchema = ({
             },
           ],
           properties: {
-            title: intl.formatMessage(messages.column),
+            title: { title: intl.formatMessage(messages.column) },
             iconImage: {
               title: intl.formatMessage(messages.icon),
               description:
@@ -131,6 +140,7 @@ export const IconsAndTextSchema = ({
             dividerPosition: {
               title: 'Divider position',
               type: 'choices',
+              default: 'no_divider',
               choices: [
                 ['before_title', 'Before title'],
                 ['after_title', 'After title'],
@@ -170,6 +180,7 @@ export const IconsAndTextSchema = ({
     },
     required: ['title'],
   };
+  addCtaFieldset({ schema, intl });
   return schema;
 };
 

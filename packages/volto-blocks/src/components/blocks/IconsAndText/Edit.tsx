@@ -1,15 +1,18 @@
 import type { BlockEditProps } from '@plone/types';
-import { Icon, SidebarPortal } from '@plone/volto/components';
+import { Icon, SidebarPortal, UniversalLink } from '@plone/volto/components';
 import { BlockDataForm } from '@plone/volto/components/manage/Form';
+import EditItem from '@redturtle/volto-blocks/components/blocks/IconsAndText/EditItem';
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
-import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.css';
+import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.scss';
 import blockIcon from '@redturtle/volto-blocks/icons/icons_and_text.svg';
 import {
   TextEditorWidget,
   useHandleDetachedBlockFocus,
 } from '@redturtle/volto-rt-slate';
 import cx from 'classnames';
+import React, { useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
+import { v4 as uuid } from 'uuid';
 
 import config from '@plone/registry';
 
@@ -29,6 +32,20 @@ export default function Edit(props: IconsAndTextEditProps) {
     'title',
   );
 
+  useEffect(() => {
+    if (!data?.columns || data?.columns?.length === 0) {
+      onChangeBlock(block, {
+        ...data,
+        columns: [
+          { '@id': uuid(), dividerPosition: 'before_title', iconSize: 's' },
+          { '@id': uuid(), dividerPosition: 'before_title', iconSize: 's' },
+          { '@id': uuid(), dividerPosition: 'before_title', iconSize: 's' },
+        ],
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [block]);
+
   const schema = blocksConfig[data['@type']].blockSchema({
     data,
     intl,
@@ -44,23 +61,20 @@ export default function Edit(props: IconsAndTextEditProps) {
   return (
     <>
       <section
-        className={cx('block-iconsandtext', styles.block)}
+        className={cx('block-icons-text', styles.block_icons_text)}
         aria-label={data.title}
       >
-        <Container
-          className={cx('block-iconsandtext-container', styles.container)}
-        >
+        <Container className={cx('block-iconsandtext-container')}>
           <div
             className={cx(
-              'block-iconsandtext-image-wrapper',
-              `column-width-${column_number}`,
+              styles['block-content-header'],
+              styles['header-align-center'],
               styles['image-wrapper'],
-              styles[`column-width-${column_number}`],
             )}
           >
             <TextEditorWidget
               {...props}
-              className={cx('block-text7-title', styles.title)}
+              className={cx('block-iconsandtext-title title', styles.title)}
               as="h2"
               data={data}
               fieldName="title"
@@ -83,6 +97,46 @@ export default function Edit(props: IconsAndTextEditProps) {
               placeholder={intl.formatMessage(messages.text)}
             />
           </div>
+          <div
+            className={cx(
+              styles['block-columns-wrapper'],
+              styles[`column-number-${column_number}`],
+            )}
+          >
+            {data.columns?.length > 0 &&
+              data.columns.map((item, i) => (
+                <EditItem
+                  key={item['@id']}
+                  index={i}
+                  data={item}
+                  focusOn={selectedField}
+                  setFocusOn={setSelectedField}
+                  onChange={(id, field, value) => {
+                    onChangeBlock(block, {
+                      ...data,
+                      columns: data.columns.map((i) =>
+                        i['@id'] === id ? { ...i, [field]: value } : i,
+                      ),
+                    });
+                  }}
+                  // @ts-expect-error TODO fix type in @plone/types
+                  selected={selected}
+                />
+              ))}
+          </div>
+          {data.linkHref?.[0] && (
+            <div className={cx('block-testimonials-cta', styles.cta)}>
+              <UniversalLink
+                href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
+                openLinkInNewTab={false}
+                onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
+                  e.preventDefault();
+                }}
+              >
+                {data.linkTitle}
+              </UniversalLink>
+            </div>
+          )}
         </Container>
       </section>
       {/* @ts-expect-error TODO */}
