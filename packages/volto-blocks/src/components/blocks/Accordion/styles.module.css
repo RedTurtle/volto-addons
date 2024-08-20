@@ -10,7 +10,27 @@
   break-inside: avoid;
 }
 
-@container (width > 700px) {
+.itemTitle,
+:global(.block) .itemTitle h3:last-child {
+  margin-top: 0;
+}
+
+.button {
+  padding: 0;
+  border: 0;
+  background: 0 none;
+  cursor: pointer;
+}
+
+.icon {
+  transition: 0.2s transform ease;
+}
+
+:global(.collapsed).icon {
+  transform: scaleY(-1);
+}
+
+@container (width < 700px) {
   .wrapper {
     column-count: 1;
   }

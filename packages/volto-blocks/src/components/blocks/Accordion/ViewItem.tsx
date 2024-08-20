@@ -23,19 +23,27 @@ export default function EditItem({ data }: Props) {
         <button
           type="button"
           aria-expanded={!collapsed}
-          aria-controls={'section' + data['@id']}
-          id={'accordion' + data['@id']}
+          aria-controls={'section-' + data['@id']}
+          id={'accordion-' + data['@id']}
           onClick={() => setCollapsed(!collapsed)}
+          className={cx('block-accordion-item-button', styles.button)}
         >
           {data.title}
-          <Icon className="arrow-button" name={arrowUpSVG} size="6px" />
+          <Icon
+            className={cx('block-accordion-button-icon', styles.icon, {
+              collapsed,
+            })}
+            name={arrowUpSVG}
+            size="0.5em"
+          />
         </button>
       </h3>
       <div
-        id={'section' + data['@id']}
+        id={'section-' + data['@id']}
         role="region"
-        aria-labelledby={'accordion' + data['@id']}
+        aria-labelledby={'accordion-' + data['@id']}
         hidden={collapsed}
+        className={cx('block-accordion-item-text', styles.itemText)}
       >
         <TextBlockView data={{ value: data.text ?? {} }} />
       </div>
