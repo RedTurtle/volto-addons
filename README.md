@@ -1,11 +1,11 @@
-# RedTurtle Blocks (@redturtle/volto-blocks)
+# RedTurtle Add-ons (@redturtle/volto-addons)
 
 Common blocks to reuse for building Plone sites
 
-[![npm](https://img.shields.io/npm/v/@redturtle/volto-blocks)](https://www.npmjs.com/package/@redturtle/volto-blocks)
-[![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://redturtle.github.io/volto-blocks/)
-[![Code analysis checks](https://github.com/redturtle/volto-blocks/actions/workflows/code.yml/badge.svg)](https://github.com/redturtle/volto-blocks/actions/workflows/code.yml)
-[![Unit tests](https://github.com/redturtle/volto-blocks/actions/workflows/unit.yml/badge.svg)](https://github.com/redturtle/volto-blocks/actions/workflows/unit.yml)
+[![npm](https://img.shields.io/npm/v/@redturtle/volto-addons)](https://www.npmjs.com/package/@redturtle/volto-addons)
+[![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://redturtle.github.io/volto-addons/)
+[![Code analysis checks](https://github.com/redturtle/volto-addons/actions/workflows/code.yml/badge.svg)](https://github.com/redturtle/volto-addons/actions/workflows/code.yml)
+[![Unit tests](https://github.com/redturtle/volto-addons/actions/workflows/unit.yml/badge.svg)](https://github.com/redturtle/volto-addons/actions/workflows/unit.yml)
 
 ## Features
 
@@ -64,12 +64,6 @@ Add `@redturtle/volto-blocks` to your `volto.config.js`:
 
 ```javascript
 const addons = ['@redturtle/volto-blocks'];
-```
-
-If this package provides a Volto theme, and you want to activate it, then add the following to your `volto.config.js`:
-
-```javascript
-const theme = '@redturtle/volto-blocks';
 ```
 
 ## Test installation
