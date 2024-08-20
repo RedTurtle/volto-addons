@@ -27,6 +27,7 @@ msgid "Link to"
 msgstr ""
 
 #. Default: "Text"
+#: components/blocks/Accordion/EditItem
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
 #: components/blocks/Text1/Edit
@@ -37,6 +38,9 @@ msgid "Text"
 msgstr ""
 
 #. Default: "Title"
+#: components/blocks/Accordion/Edit
+#: components/blocks/Accordion/EditItem
+#: components/blocks/Accordion/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
 #: components/blocks/Text1/Edit
@@ -46,6 +50,26 @@ msgstr ""
 #: components/blocks/Text7/Edit
 #: components/blocks/Text7/schema
 msgid "Title"
+msgstr ""
+
+#. Default: "Columns"
+#: components/blocks/Accordion/schema
+msgid "redturtle__volto-blocks__accordion_columns_title"
+msgstr ""
+
+#. Default: "Item"
+#: components/blocks/Accordion/schema
+msgid "redturtle__volto-blocks__accordion_item"
+msgstr ""
+
+#. Default: "Items"
+#: components/blocks/Accordion/schema
+msgid "redturtle__volto-blocks__accordion_items"
+msgstr ""
+
+#. Default: "Accordion"
+#: components/blocks/Accordion/schema
+msgid "redturtle__volto-blocks__accordion_title"
 msgstr ""
 
 #. Default: "Call to action"
