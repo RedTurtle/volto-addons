@@ -1,12 +1,11 @@
-import cx from 'classnames';
-import { defineMessages, useIntl } from 'react-intl';
-
 import type { ArrayElement } from '@plone/types';
 import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
 import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.scss';
 import { TextEditorWidget } from '@redturtle/volto-rt-slate';
+import cx from 'classnames';
+import { defineMessages, useIntl } from 'react-intl';
 
 type Props = {
   data: ArrayElement<IconsAndTextData['columns']>;
@@ -18,7 +17,6 @@ type Props = {
 
 export default function EditItem({
   data,
-  index,
   focusOn,
   setFocusOn,
   onChange,
@@ -30,7 +28,6 @@ export default function EditItem({
   if (__SERVER__) {
     return <div />;
   }
-  console.log(data.dividerPosition);
   return (
     <div
       className={cx(
@@ -64,7 +61,7 @@ export default function EditItem({
         )}
 
         {data.headerTextPosition && (
-          <div className="header-text">
+          <div className={cx(styles['header-text'])}>
             <TextEditorWidget
               className={cx(styles['column-title'])}
               as="h3"
@@ -131,14 +128,14 @@ export default function EditItem({
 const messages = defineMessages({
   title: {
     id: 'Title',
-    defaultMessage: 'Title',
+    defaultMessage: 'Title...',
   },
   text: {
     id: 'Text',
-    defaultMessage: 'Text',
+    defaultMessage: 'Type Text...',
   },
   textPlaceholder: {
     id: 'Text placeholder',
-    defaultMessage: 'Header text',
+    defaultMessage: 'Type header text...',
   },
 });

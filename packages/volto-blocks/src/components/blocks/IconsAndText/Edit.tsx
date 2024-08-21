@@ -56,7 +56,6 @@ export default function Edit(props: IconsAndTextEditProps) {
   }
 
   const Container = config.getComponent('Container').component || 'div';
-  const Image = config.getComponent('Image').component;
 
   return (
     <>
@@ -69,7 +68,6 @@ export default function Edit(props: IconsAndTextEditProps) {
             className={cx(
               styles['block-content-header'],
               styles['header-align-center'],
-              styles['image-wrapper'],
             )}
           >
             <TextEditorWidget
@@ -166,10 +164,10 @@ export default function Edit(props: IconsAndTextEditProps) {
 const messages = defineMessages({
   title: {
     id: 'Title',
-    defaultMessage: 'Title',
+    defaultMessage: 'Title...',
   },
   text: {
     id: 'Text',
-    defaultMessage: 'Text',
+    defaultMessage: 'Type text...',
   },
 });

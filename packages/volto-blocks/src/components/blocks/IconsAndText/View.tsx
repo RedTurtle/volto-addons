@@ -16,12 +16,11 @@ export default function View({ data, className, style }: Props) {
   const column_number = data.column_number ? parseInt(data.column_number) : 3;
 
   const Container = config.getComponent('Container').component || 'div';
-  const Image = config.getComponent('Image').component;
 
   return (
     <>
       <section
-        className={cx('block-icons-text', styles.block_icons_text)}
+        className={cx('block block-icons-text', styles.block_icons_text)}
         aria-label={data.title}
       >
         <Container className={cx('block-iconsandtext-container')}>

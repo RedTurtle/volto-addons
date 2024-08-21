@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-20T14:58:49.661Z\n"
+"POT-Creation-Date: 2024-08-21T08:58:57.178Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#. Default: "Header text"
+#. Default: "Type header text..."
 #: components/blocks/IconsAndText/EditItem
 msgid "Text placeholder"
 msgstr ""

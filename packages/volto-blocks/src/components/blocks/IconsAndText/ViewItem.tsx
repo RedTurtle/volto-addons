@@ -1,5 +1,4 @@
 import cx from 'classnames';
-import { useIntl } from 'react-intl';
 
 import type { ArrayElement } from '@plone/types';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
@@ -8,22 +7,12 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
 import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.scss';
 
+// XXX Queste con ? servono in view?
 type Props = {
   data: ArrayElement<IconsAndTextData['columns']>;
-  focusOn: string;
-  setFocusOn: Function;
-  onChange: (id: string, field: string, value: unknown) => void;
-  selected: boolean;
 };
 
-export default function ViewItem({
-  data,
-  focusOn,
-  setFocusOn,
-  onChange,
-  selected,
-}: Props) {
-  const intl = useIntl();
+export default function ViewItem({ data }: Props) {
   const icon = data.iconImage;
 
   return (
@@ -57,9 +46,8 @@ export default function ViewItem({
             />
           </div>
         )}
-
         {data.headerTextPosition && (
-          <div className="header-text">
+          <div className={cx(styles['header-text'])}>
             {data.title && (
               <h3
                 className={cx('block-iconsandtext-title title', styles.title)}
@@ -71,7 +59,7 @@ export default function ViewItem({
         )}
       </div>
       {data.title && (
-        <div className="column-title">
+        <div className={cx(styles['column-title'])}>
           {data.title && (
             <h4 className={cx('block-iconsandtext-column-title', styles.title)}>
               {data.title}

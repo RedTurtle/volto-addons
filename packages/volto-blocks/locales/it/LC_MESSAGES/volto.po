@@ -40,7 +40,7 @@ msgstr ""
 msgid "Text"
 msgstr "Testo"
 
-#. Default: "Header text"
+#. Default: "Type header text..."
 #: components/blocks/IconsAndText/EditItem
 msgid "Text placeholder"
 msgstr ""
