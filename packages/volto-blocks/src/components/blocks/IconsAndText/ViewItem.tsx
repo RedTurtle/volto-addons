@@ -7,7 +7,6 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
 import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.scss';
 
-// XXX Queste con ? servono in view?
 type Props = {
   data: ArrayElement<IconsAndTextData['columns']>;
 };
