@@ -46,7 +46,7 @@ export default function EditItem({
         {icon && (
           <div
             className={cx(
-              'column_icon size_',
+              `column_icon size_${data.iconSize}`,
               styles['column_icon'],
               styles[`size_${data.iconSize}`],
             )}
