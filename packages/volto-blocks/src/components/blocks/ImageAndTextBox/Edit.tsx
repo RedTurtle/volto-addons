@@ -1,9 +1,9 @@
-import { Icon, SidebarPortal } from '@plone/volto/components';
+import type { BlockEditProps } from '@plone/types';
+import { Icon, SidebarPortal, UniversalLink } from '@plone/volto/components';
 import { BlockDataForm } from '@plone/volto/components/manage/Form';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
-
-import type { BlockEditProps } from '@plone/types';
+import placeholder from './placeholder.png';
 
 import type { ImageAndTextBoxData } from '@redturtle/volto-blocks/components/blocks/ImageAndTextBox/schema';
 import styles from '@redturtle/volto-blocks/components/blocks/ImageAndTextBox/styles.module.css';
@@ -13,7 +13,7 @@ import {
 } from '@redturtle/volto-rt-slate';
 
 import config from '@plone/registry';
-// import EditItem from './EditItem';
+import EditItem from './EditItem';
 
 type ImageAndTextBoxEditProps = Omit<BlockEditProps, 'data'> & {
   data: ImageAndTextBoxData;
@@ -55,23 +55,24 @@ export default function Edit(props: ImageAndTextBoxEditProps) {
         className={cx('block-imageandtextbox', styles.imageandtextbox)}
         aria-label={data.title}
       >
-        <Container
-          className={cx(
-            'block-imageandtextbox-container',
-            styles['block-imageandtextbox-container'],
-          )}
-        >
-          {data.image ? (
-            <Image
-              className={cx('block-imageandtextbox-image', styles.image)}
-              // TODO serialize image brain in the backend
-              src={`${data.image}/@@images/image/large`}
-              loading="lazy"
-              alt=""
-            />
-          ) : (
-            <div className="image-add">Upload image</div>
-          )}
+        {data.image ? (
+          <Image
+            className={cx('block-imageandtextbox-image', styles.image)}
+            // TODO serialize image brain in the backend
+            src={`${data.image}/@@images/image/large`}
+            loading="lazy"
+            alt=""
+          />
+        ) : (
+          <Image
+            className={cx('block-imageandtextbox-image', styles.image)}
+            // TODO serialize image brain in the backend
+            src={placeholder}
+            loading="lazy"
+            alt=""
+          />
+        )}
+        <Container className={cx(styles['block-imageandtextbox-container'])}>
           <div className={cx('box-wrapper', styles['box-wrapper'])}>
             <TextEditorWidget
               {...props}
@@ -86,6 +87,8 @@ export default function Edit(props: ImageAndTextBoxEditProps) {
               }}
               showToolbar={false}
               placeholder={intl.formatMessage(messages.title)}
+              onFocusPreviousBlock={onFocusPreviousBlock}
+              onFocusNextBlock={onFocusNextBlock}
             />
             <TextEditorWidget
               {...props}
@@ -96,8 +99,42 @@ export default function Edit(props: ImageAndTextBoxEditProps) {
                 setSelectedField('title');
               }}
               placeholder={intl.formatMessage(messages.text)}
+              onFocusPreviousBlock={onFocusPreviousBlock}
+              onFocusNextBlock={onFocusNextBlock}
             />
-            {/* {data.boxes ? <EditItem /> : ''} */}
+            <div className={cx('block-imageandtextbox-boxes', styles.boxes)}>
+              {data.boxes?.length > 0 &&
+                data.boxes.map((item) => (
+                  <EditItem
+                    data={item}
+                    focusOn={selectedField}
+                    setFocusOn={setSelectedField}
+                    onChange={(id, field, value) => {
+                      onChangeBlock(block, {
+                        ...data,
+                        boxes: data.boxes.map((i) =>
+                          i['@id'] === id ? { ...i, [field]: value } : i,
+                        ),
+                      });
+                    }}
+                    // @ts-expect-error TODO fix type in @plone/types
+                    selected={selected}
+                  />
+                ))}
+            </div>
+            {data.linkHref?.[0] && (
+              <div className={cx(styles['block-imageandtextbox-cta'])}>
+                <UniversalLink
+                  href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
+                  openLinkInNewTab={false}
+                  onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
+                    e.preventDefault();
+                  }}
+                >
+                  {data.linkTitle}
+                </UniversalLink>
+              </div>
+            )}
           </div>
         </Container>
       </section>

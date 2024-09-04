@@ -39,6 +39,7 @@ msgstr ""
 #. Default: "Text"
 #: components/blocks/Accordion/EditItem
 #: components/blocks/ImageAndTextBox/Edit
+#: components/blocks/ImageAndTextBox/EditItem
 #: components/blocks/ImageAndTextBox/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
@@ -54,6 +55,7 @@ msgstr ""
 #: components/blocks/Accordion/EditItem
 #: components/blocks/Accordion/schema
 #: components/blocks/ImageAndTextBox/Edit
+#: components/blocks/ImageAndTextBox/EditItem
 #: components/blocks/ImageAndTextBox/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
@@ -148,7 +150,7 @@ msgstr ""
 msgid "redturtle__volto-blocks__text7_img_column_width_title"
 msgstr ""
 
-#. Default: "Text 7"
+#. Default: "Image and Text Boxes"
 #: components/blocks/ImageAndTextBox/schema
 #: components/blocks/Text7/schema
 msgid "redturtle__volto-blocks__text7_title"

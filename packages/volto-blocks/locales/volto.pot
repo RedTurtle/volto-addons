@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-09-04T09:08:41.235Z\n"
+"POT-Creation-Date: 2024-09-04T13:48:23.392Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -41,6 +41,7 @@ msgstr ""
 #. Default: "Text"
 #: components/blocks/Accordion/EditItem
 #: components/blocks/ImageAndTextBox/Edit
+#: components/blocks/ImageAndTextBox/EditItem
 #: components/blocks/ImageAndTextBox/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
@@ -56,6 +57,7 @@ msgstr ""
 #: components/blocks/Accordion/EditItem
 #: components/blocks/Accordion/schema
 #: components/blocks/ImageAndTextBox/Edit
+#: components/blocks/ImageAndTextBox/EditItem
 #: components/blocks/ImageAndTextBox/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
@@ -150,7 +152,7 @@ msgstr ""
 msgid "redturtle__volto-blocks__text7_img_column_width_title"
 msgstr ""
 
-#. Default: "Text 7"
+#. Default: "Image and Text Boxes"
 #: components/blocks/ImageAndTextBox/schema
 #: components/blocks/Text7/schema
 msgid "redturtle__volto-blocks__text7_title"

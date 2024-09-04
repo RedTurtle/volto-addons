@@ -15,7 +15,7 @@ export interface ImageAndTextBoxData extends CtaBlockExtender {
 const messages = defineMessages({
   title: {
     id: 'redturtle__volto-blocks__text7_title',
-    defaultMessage: 'Text 7',
+    defaultMessage: 'Image and Text Boxes',
   },
   images_title: {
     id: 'redturtle__volto-blocks__text7_images_title',

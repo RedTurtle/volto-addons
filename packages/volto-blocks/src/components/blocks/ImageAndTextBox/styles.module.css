@@ -1,10 +1,12 @@
 .imageandtextbox {
   position: relative;
+  display: flex;
   width: 100%;
-  height: 300px;
-  /* overflow: hidden; */
+  min-height: 300px;
+  align-items: center;
+  justify-content: flex-end;
 }
-.block-imageandtextbox-container img {
+.imageandtextbox img {
   position: absolute;
   z-index: 0;
   top: 0;
@@ -14,14 +16,35 @@
   object-fit: cover;
 }
 
-.box-wrapper {
+.block-imageandtextbox-container {
   position: relative;
   z-index: 1;
-  top: 50%;
-  right: 100px;
-  width: 30%;
-  padding: 20px;
+  width: 40%;
+  height: 80%;
+  padding: 1em;
   border-radius: 5px;
-  background-color: white;
-  float: right;
+  margin-top: 10%;
+  margin-right: 3%;
+  margin-bottom: 10%;
+  background-color: #ffffff;
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.block-imageandtextbox-box {
+  box-sizing: border-box; /* Include padding and border in width calculation */
+  flex: 1 1 33%; /* Flex-grow, flex-shrink, and flex-basis */
+  padding: 10px;
+}
+
+.block-imageandtextbox-box h3 {
+  border-bottom: 1px solid #ddd;
+}
+
+.block-imageandtextbox-cta {
+  margin-top: 1em;
+  text-align: center;
 }
