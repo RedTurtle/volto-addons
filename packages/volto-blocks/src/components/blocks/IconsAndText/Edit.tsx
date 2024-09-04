@@ -72,7 +72,7 @@ export default function Edit(props: IconsAndTextEditProps) {
           >
             <TextEditorWidget
               {...props}
-              className={cx('block-iconsandtext-title title', styles.title)}
+              className={cx('block-iconsandtext-title', styles.title)}
               as="h2"
               data={data}
               fieldName="title"
