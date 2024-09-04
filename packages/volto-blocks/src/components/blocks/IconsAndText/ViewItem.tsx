@@ -49,7 +49,7 @@ export default function ViewItem({ data }: Props) {
           <div className={cx(styles['header-text'])}>
             {data.title && (
               <h3
-                className={cx('block-iconsandtext-title title', styles.title)}
+                className={cx('block-iconsandtext-title', styles.title)}
               >
                 {data.headerText}
               </h3>
