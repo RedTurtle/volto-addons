@@ -1456,7 +1456,7 @@ importers:
         specifier: workspace:18.0.0-alpha.17
         version: link:../../core/packages/volto-slate
       '@redturtle/volto-slate-extras':
-        specifier: workspace:1.1.3
+        specifier: workspace:^2.0.1
         version: link:../volto-slate-extras
       classnames:
         specifier: 2.2.6

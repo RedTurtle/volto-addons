@@ -50,7 +50,7 @@
     "@loadable/component": "5.14.1",
     "@plone/components": "workspace:2.0.0-alpha.11",
     "@plone/volto-slate": "workspace:18.0.0-alpha.17",
-    "@redturtle/volto-slate-extras": "workspace:1.1.3",
+    "@redturtle/volto-slate-extras": "workspace:^2.0.1",
     "classnames": "2.2.6",
     "lodash": "4.17.21",
     "react-aria-components": "^1.2.0",
