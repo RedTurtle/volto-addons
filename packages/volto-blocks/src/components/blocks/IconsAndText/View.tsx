@@ -33,7 +33,7 @@ export default function View({ data, className, style }: Props) {
           >
             {data.title && (
               <h2
-                className={cx('block-iconsandtext-title title', styles.title)}
+                className={cx('block-iconsandtext-title', styles.title)}
               >
                 {data.title}
               </h2>
