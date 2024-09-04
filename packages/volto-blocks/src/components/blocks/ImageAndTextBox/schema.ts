@@ -14,15 +14,11 @@ export interface ImageAndTextBoxData extends CtaBlockExtender {
 
 const messages = defineMessages({
   title: {
-    id: 'redturtle__volto-blocks__text7_title',
+    id: 'redturtle__volto-blocks_imageandtext_title',
     defaultMessage: 'Image and Text Boxes',
   },
-  images_title: {
-    id: 'redturtle__volto-blocks__text7_images_title',
-    defaultMessage: 'Images',
-  },
   image_title: {
-    id: 'redturtle__volto-blocks__text7_image_title',
+    id: 'redturtle__volto-blocks_imageandtext_image_title',
     defaultMessage: 'Image',
   },
   title_title: {

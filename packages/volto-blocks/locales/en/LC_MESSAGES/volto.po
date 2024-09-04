@@ -129,13 +129,11 @@ msgid "redturtle__volto-blocks__text6_title"
 msgstr ""
 
 #. Default: "Image"
-#: components/blocks/ImageAndTextBox/schema
 #: components/blocks/Text7/schema
 msgid "redturtle__volto-blocks__text7_image_title"
 msgstr ""
 
 #. Default: "Images"
-#: components/blocks/ImageAndTextBox/schema
 #: components/blocks/Text7/schema
 msgid "redturtle__volto-blocks__text7_images_title"
 msgstr ""
@@ -150,8 +148,17 @@ msgstr ""
 msgid "redturtle__volto-blocks__text7_img_column_width_title"
 msgstr ""
 
-#. Default: "Image and Text Boxes"
-#: components/blocks/ImageAndTextBox/schema
+#. Default: "Text 7"
 #: components/blocks/Text7/schema
 msgid "redturtle__volto-blocks__text7_title"
+msgstr ""
+
+#. Default: "Image"
+#: components/blocks/ImageAndTextBox/schema
+msgid "redturtle__volto-blocks_imageandtext_image_title"
+msgstr ""
+
+#. Default: "Image and Text Boxes"
+#: components/blocks/ImageAndTextBox/schema
+msgid "redturtle__volto-blocks_imageandtext_title"
 msgstr ""
