@@ -24,7 +24,7 @@ export default function ViewItem({ data }: Props) {
     >
       <div
         className={cx(
-          'column-head',
+          'block-iconsandtext-column-head',
           styles['column-head'],
           styles['header-text-' + data.headerTextPosition],
         )}
