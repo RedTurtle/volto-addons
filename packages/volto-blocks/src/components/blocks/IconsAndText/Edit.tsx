@@ -123,7 +123,7 @@ export default function Edit(props: IconsAndTextEditProps) {
               ))}
           </div>
           {data.linkHref?.[0] && (
-            <div className={cx('block-testimonials-cta', styles.cta)}>
+            <div className={cx('block-iconsandtext-cta', styles.cta)}>
               <UniversalLink
                 href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
                 openLinkInNewTab={false}
