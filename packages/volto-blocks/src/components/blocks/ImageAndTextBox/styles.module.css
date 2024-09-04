@@ -48,3 +48,26 @@
   margin-top: 1em;
   text-align: center;
 }
+
+@media screen and (max-width: 1200px) {
+  .block-imageandtextbox-container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .block-imageandtextbox-container {
+    width: 94%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .block-imageandtextbox-container {
+    width: 94%;
+  }
+  .block-imageandtextbox-box {
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    flex: 1 1 100%; /* Flex-grow, flex-shrink, and flex-basis */
+    padding: 10px;
+  }
+}
