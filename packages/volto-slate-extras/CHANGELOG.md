@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.1 (2024-09-04)
+
+### Documentation
+
+- Updated README @pnicolli [#57559](https://redturtle.tpondemand.com/entity/57559)
+
 ## 2.0.0 (2024-09-04)
 
 ### Breaking
