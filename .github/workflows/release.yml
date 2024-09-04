@@ -35,7 +35,7 @@ jobs:
         id: get_package
         run: |
           RELEASE_TAG=${GITHUB_REF/refs/tags//}
-          echo "PACKAGE=$(echo $RELEASE_TAG | cut -d'@' -f1)" >> $GITHUB_OUTPUT
+          echo "PACKAGE=$(echo $RELEASE_TAG | cut -d'--' -f1)" >> $GITHUB_OUTPUT
 
       - name: Release to npm
         run: npm publish --provenance --access public

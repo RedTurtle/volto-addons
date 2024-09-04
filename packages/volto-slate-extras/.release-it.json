@@ -14,7 +14,7 @@
     "requireUpstream": false,
     "requireCleanWorkingDir": false,
     "commitMessage": "Release @redturtle/volto-slate-extras ${version}",
-    "tagName": "volto-slate-extras-${version}",
+    "tagName": "volto-slate-extras--${version}",
     "tagAnnotation": "Release @redturtle/volto-slate-extras ${version}"
   },
   "github": {

@@ -14,7 +14,7 @@
     "requireUpstream": false,
     "requireCleanWorkingDir": false,
     "commitMessage": "Release @redturtle/volto-blocks ${version}",
-    "tagName": "volto-blocks-${version}",
+    "tagName": "volto-blocks--${version}",
     "tagAnnotation": "Release @redturtle/volto-blocks ${version}"
   },
   "github": {
