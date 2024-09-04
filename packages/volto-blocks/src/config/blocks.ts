@@ -3,44 +3,50 @@ import type { BlocksConfigData } from '@plone/types';
 import BlockSettingsSchema from '@plone/volto/components/manage/Blocks/Block/Schema';
 
 import accordionSVG from '@plone/volto/icons/list-arrows.svg';
-import AccordionView from '@redturtle/volto-blocks/components/blocks/Accordion/View';
 import { AccordionEdit } from '@redturtle/volto-blocks/components/blocks/Accordion';
 import {
   AccordionSchema,
   type AccordionConfig,
 } from '@redturtle/volto-blocks/components/blocks/Accordion/schema';
+import AccordionView from '@redturtle/volto-blocks/components/blocks/Accordion/View';
 
-import text1SVG from '@redturtle/volto-blocks/icons/text1.svg';
-import Text1View from '@redturtle/volto-blocks/components/blocks/Text1/View';
 import { Text1Edit } from '@redturtle/volto-blocks/components/blocks/Text1';
 import {
   Text1Schema,
   type Text1Config,
 } from '@redturtle/volto-blocks/components/blocks/Text1/schema';
+import Text1View from '@redturtle/volto-blocks/components/blocks/Text1/View';
+import text1SVG from '@redturtle/volto-blocks/icons/text1.svg';
 
-import text6SVG from '@redturtle/volto-blocks/icons/text6.svg';
-import Text6View from '@redturtle/volto-blocks/components/blocks/Text6/View';
 import { Text6Edit } from '@redturtle/volto-blocks/components/blocks/Text6';
 import {
   Text6Schema,
   type Text6Config,
 } from '@redturtle/volto-blocks/components/blocks/Text6/schema';
+import Text6View from '@redturtle/volto-blocks/components/blocks/Text6/View';
+import text6SVG from '@redturtle/volto-blocks/icons/text6.svg';
 
-import text7SVG from '@redturtle/volto-blocks/icons/text7.svg';
-import Text7View from '@redturtle/volto-blocks/components/blocks/Text7/View';
 import { Text7Edit } from '@redturtle/volto-blocks/components/blocks/Text7';
 import {
   Text7Schema,
   type Text7Config,
 } from '@redturtle/volto-blocks/components/blocks/Text7/schema';
+import Text7View from '@redturtle/volto-blocks/components/blocks/Text7/View';
+import text7SVG from '@redturtle/volto-blocks/icons/text7.svg';
 
-import TestimonialsView from '@redturtle/volto-blocks/components/blocks/Testimonials/View';
 import { TestimonialsEdit } from '@redturtle/volto-blocks/components/blocks/Testimonials';
 import {
   TestimonialsSchema,
   type TestimonialsConfig,
 } from '@redturtle/volto-blocks/components/blocks/Testimonials/schema';
+import TestimonialsView from '@redturtle/volto-blocks/components/blocks/Testimonials/View';
 
+import { ImageAndTextBoxEdit } from '@redturtle/volto-blocks/components/blocks/ImageAndTextBox';
+import {
+  ImageAndTextBoxSchema,
+  type ImageAndTextBoxConfig,
+} from '@redturtle/volto-blocks/components/blocks/ImageAndTextBox/schema';
+import ImageAndTextBoxView from '@redturtle/volto-blocks/components/blocks/ImageAndTextBox/View';
 declare module '@plone/types' {
   interface BlocksConfigData {
     accordion: AccordionConfig;
@@ -48,12 +54,13 @@ declare module '@plone/types' {
     text6: Text6Config;
     text7: Text7Config;
     testimonials: TestimonialsConfig;
+    imageandtextbox: ImageAndTextBoxConfig;
   }
 }
 
 type RtBlocksConfig = Pick<
   BlocksConfigData,
-  'accordion' | 'text1' | 'text6' | 'text7' | 'testimonials'
+  'accordion' | 'text1' | 'text6' | 'text7' | 'testimonials' | 'imageandtextbox'
 >;
 
 const defaultBlocksConfig = {
@@ -123,5 +130,17 @@ export const blocks: RtBlocksConfig = {
     edit: TestimonialsEdit,
     blockHasOwnFocusManagement: true,
     blockSchema: TestimonialsSchema,
+  },
+  imageandtextbox: {
+    ...defaultBlocksConfig,
+    id: 'imageandtextbox',
+    title: 'Image and text box',
+    icon: accordionSVG,
+    group: 'text',
+    mostUsed: true,
+    view: ImageAndTextBoxView,
+    edit: ImageAndTextBoxEdit,
+    blockHasOwnFocusManagement: true,
+    blockSchema: ImageAndTextBoxSchema,
   },
 } as const;

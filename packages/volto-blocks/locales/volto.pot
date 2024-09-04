@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-20T08:35:27.767Z\n"
+"POT-Creation-Date: 2024-09-04T14:09:42.065Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -18,6 +18,16 @@ msgstr ""
 msgid "Alignment"
 msgstr ""
 
+#. Default: "Box"
+#: components/blocks/ImageAndTextBox/schema
+msgid "Box"
+msgstr ""
+
+#. Default: "Boxes"
+#: components/blocks/ImageAndTextBox/schema
+msgid "Boxes"
+msgstr ""
+
 #. Default: "Link Title"
 #: components/blocks/extenders/cta
 msgid "Link title"
@@ -30,6 +40,9 @@ msgstr ""
 
 #. Default: "Text"
 #: components/blocks/Accordion/EditItem
+#: components/blocks/ImageAndTextBox/Edit
+#: components/blocks/ImageAndTextBox/EditItem
+#: components/blocks/ImageAndTextBox/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
 #: components/blocks/Text1/Edit
@@ -43,6 +56,9 @@ msgstr ""
 #: components/blocks/Accordion/Edit
 #: components/blocks/Accordion/EditItem
 #: components/blocks/Accordion/schema
+#: components/blocks/ImageAndTextBox/Edit
+#: components/blocks/ImageAndTextBox/EditItem
+#: components/blocks/ImageAndTextBox/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
 #: components/blocks/Text1/Edit
@@ -52,6 +68,11 @@ msgstr ""
 #: components/blocks/Text7/Edit
 #: components/blocks/Text7/schema
 msgid "Title"
+msgstr ""
+
+#. Default: "Add column"
+#: components/blocks/ImageAndTextBox/schema
+msgid "addColumn"
 msgstr ""
 
 #. Default: "Columns"
@@ -132,4 +153,14 @@ msgstr ""
 #. Default: "Text 7"
 #: components/blocks/Text7/schema
 msgid "redturtle__volto-blocks__text7_title"
+msgstr ""
+
+#. Default: "Image"
+#: components/blocks/ImageAndTextBox/schema
+msgid "redturtle__volto-blocks_imageandtext_image_title"
+msgstr ""
+
+#. Default: "Image and Text Boxes"
+#: components/blocks/ImageAndTextBox/schema
+msgid "redturtle__volto-blocks_imageandtext_title"
 msgstr ""

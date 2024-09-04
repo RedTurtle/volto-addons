@@ -16,6 +16,16 @@ msgstr ""
 msgid "Alignment"
 msgstr ""
 
+#. Default: "Box"
+#: components/blocks/ImageAndTextBox/schema
+msgid "Box"
+msgstr ""
+
+#. Default: "Boxes"
+#: components/blocks/ImageAndTextBox/schema
+msgid "Boxes"
+msgstr ""
+
 #. Default: "Link Title"
 #: components/blocks/extenders/cta
 msgid "Link title"
@@ -28,6 +38,9 @@ msgstr ""
 
 #. Default: "Text"
 #: components/blocks/Accordion/EditItem
+#: components/blocks/ImageAndTextBox/Edit
+#: components/blocks/ImageAndTextBox/EditItem
+#: components/blocks/ImageAndTextBox/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
 #: components/blocks/Text1/Edit
@@ -41,6 +54,9 @@ msgstr ""
 #: components/blocks/Accordion/Edit
 #: components/blocks/Accordion/EditItem
 #: components/blocks/Accordion/schema
+#: components/blocks/ImageAndTextBox/Edit
+#: components/blocks/ImageAndTextBox/EditItem
+#: components/blocks/ImageAndTextBox/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
 #: components/blocks/Text1/Edit
@@ -50,6 +66,11 @@ msgstr ""
 #: components/blocks/Text7/Edit
 #: components/blocks/Text7/schema
 msgid "Title"
+msgstr ""
+
+#. Default: "Add column"
+#: components/blocks/ImageAndTextBox/schema
+msgid "addColumn"
 msgstr ""
 
 #. Default: "Columns"
@@ -130,4 +151,14 @@ msgstr ""
 #. Default: "Text 7"
 #: components/blocks/Text7/schema
 msgid "redturtle__volto-blocks__text7_title"
+msgstr ""
+
+#. Default: "Image"
+#: components/blocks/ImageAndTextBox/schema
+msgid "redturtle__volto-blocks_imageandtext_image_title"
+msgstr ""
+
+#. Default: "Image and Text Boxes"
+#: components/blocks/ImageAndTextBox/schema
+msgid "redturtle__volto-blocks_imageandtext_title"
 msgstr ""
