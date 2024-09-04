@@ -1,11 +1,11 @@
-import cx from 'classnames';
-
+import config from '@plone/registry';
 import type { ArrayElement } from '@plone/types';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
 import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.scss';
+import cx from 'classnames';
 
 type Props = {
   data: ArrayElement<IconsAndTextData['columns']>;
@@ -13,7 +13,7 @@ type Props = {
 
 export default function ViewItem({ data }: Props) {
   const icon = data.iconImage;
-
+  const Image = config.getComponent('Image').component;
   return (
     <div
       className={cx(
@@ -37,8 +37,10 @@ export default function ViewItem({ data }: Props) {
               styles[`size_${data.iconSize}`],
             )}
           >
-            <img
+            <Image
+              className={cx('block-iconandtext-image', styles.image)}
               src={flattenToAppURL(icon) + '/@@images/image/teaser'}
+              loading="lazy"
               alt=""
               role="presentation"
               aria-hidden="true"

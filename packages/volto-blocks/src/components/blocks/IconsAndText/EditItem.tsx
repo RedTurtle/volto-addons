@@ -1,3 +1,4 @@
+import config from '@plone/registry';
 import type { ArrayElement } from '@plone/types';
 import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
@@ -6,7 +7,6 @@ import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/style
 import { TextEditorWidget } from '@redturtle/volto-rt-slate';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
-
 type Props = {
   data: ArrayElement<IconsAndTextData['columns']>;
   focusOn: string;
@@ -24,10 +24,7 @@ export default function EditItem({
 }: Props) {
   const intl = useIntl();
   const icon = data.iconImage;
-
-  if (__SERVER__) {
-    return <div />;
-  }
+  const Image = config.getComponent('Image').component;
   return (
     <div
       className={cx(
@@ -51,8 +48,10 @@ export default function EditItem({
               styles[`size_${data.iconSize}`],
             )}
           >
-            <img
+            <Image
+              className={cx('block-iconandtext-image', styles.image)}
               src={flattenToAppURL(icon) + '/@@images/image/teaser'}
+              loading="lazy"
               alt=""
               role="presentation"
               aria-hidden="true"

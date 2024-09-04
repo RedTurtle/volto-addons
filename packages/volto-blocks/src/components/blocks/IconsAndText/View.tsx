@@ -6,7 +6,6 @@ import ViewItem from '@redturtle/volto-blocks/components/blocks/IconsAndText/Vie
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
 import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.scss';
 import cx from 'classnames';
-import React from 'react';
 
 type Props = Omit<BlockViewProps, 'data'> & {
   data: IconsAndTextData;

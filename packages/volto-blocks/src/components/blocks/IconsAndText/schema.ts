@@ -45,6 +45,39 @@ const messages = defineMessages({
     id: 'icons_and_text_title',
     defaultMessage: 'Icon & Text block',
   },
+  description: {
+    id: 'description',
+    defaultMessage:
+      'The image must be a PNG or SVG. The maximum recommended size for PNG is 200x200px.',
+  },
+  image_size: { id: 'image_size', defaultMessage: 'Image size' },
+  small: { id: 'small', defaultMessage: 'Small' },
+  medium: { id: 'medium', defaultMessage: 'Medium' },
+  large: { id: 'large', defaultMessage: 'Large' },
+  header_text_position: {
+    id: 'header_text_position',
+    defaultMessage: 'Header text position',
+  },
+  on_right: { id: 'on_right', defaultMessage: 'On right' },
+  on_bottom: { id: 'on_bottom', defaultMessage: 'On bottom' },
+  divider_position: {
+    id: 'divider_position',
+    defaultMessage: 'Divider position',
+  },
+  before_title: { id: 'before_title', defaultMessage: 'Before title' },
+  after_title: { id: 'after_title', defaultMessage: 'After title' },
+  before_header_text: {
+    id: 'before_header_text',
+    defaultMessage: 'Before header text',
+  },
+  no_divider: { id: 'no_divider', defaultMessage: 'Hide divider' },
+  link: { id: 'link', defaultMessage: 'Link' },
+  link_title: { id: 'link_title', defaultMessage: 'Link title' },
+  link_title_description: {
+    id: 'link_title_description',
+    defaultMessage:
+      'If no title is entered, and a link is selected, the link will be added to the block title.',
+  },
 });
 
 export interface IconsAndTextData extends CtaBlockExtender {
@@ -115,51 +148,52 @@ export const IconsAndTextSchema = ({
             title: { title: intl.formatMessage(messages.column) },
             iconImage: {
               title: intl.formatMessage(messages.icon),
-              description:
-                'The image must be a PNG or SVG. The maximum recommended size for PNG is 200x200px.',
+              description: intl.formatMessage(messages.description),
               widget: 'image',
             },
             iconSize: {
-              title: 'Image size',
+              title: intl.formatMessage(messages.image_size),
               type: 'choices',
               choices: [
-                ['s', 'Small'],
-                ['m', 'Medium'],
-                ['l', 'Large'],
+                ['s', intl.formatMessage(messages.small)],
+                ['m', intl.formatMessage(messages.medium)],
+                ['l', intl.formatMessage(messages.large)],
               ],
               noValueOption: false,
             },
             headerTextPosition: {
-              title: 'Header text position',
+              title: intl.formatMessage(messages.header_text_position),
               type: 'choices',
               choices: [
-                ['right', 'On right'],
-                ['bottom', 'On bottom'],
+                ['right', intl.formatMessage(messages.on_right)],
+                ['bottom', intl.formatMessage(messages.on_bottom)],
               ],
             },
             dividerPosition: {
-              title: 'Divider position',
+              title: intl.formatMessage(messages.divider_position),
               type: 'choices',
               default: 'no_divider',
               choices: [
-                ['before_title', 'Before title'],
-                ['after_title', 'After title'],
-                ['before_header_text', 'Before header text'],
-                ['no_divider', 'Hide divider'],
+                ['before_title', intl.formatMessage(messages.before_title)],
+                ['after_title', intl.formatMessage(messages.after_title)],
+                [
+                  'before_header_text',
+                  intl.formatMessage(messages.before_header_text),
+                ],
+                ['no_divider', intl.formatMessage(messages.no_divider)],
               ],
 
               noValueOption: false,
             },
             href: {
-              title: 'Link',
+              title: intl.formatMessage(messages.link),
               widget: 'object_browser',
               allowExternals: true,
               mode: 'link',
             },
             href_title: {
-              title: 'Link title',
-              description:
-                'If no title is entered, and a link is selected, the link will be added to the block title.',
+              title: intl.formatMessage(messages.link_title),
+              description: intl.formatMessage(messages.link_title_description),
             },
           },
           required: [],
