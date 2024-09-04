@@ -1,7 +1,7 @@
 {
-  "name": "@redturtle/volto-blocks",
-  "version": "1.0.3",
-  "description": "Common blocks to reuse for building Plone sites",
+  "name": "@redturtle/volto-slate-extras",
+  "version": "1.1.3",
+  "description": "volto-slate-extras: Volto add-on with RedTurtle's Slate customizations",
   "main": "src/index.js",
   "license": "MIT",
   "keywords": [
@@ -22,9 +22,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "addons": [
-    "@redturtle/volto-slate-extras"
-  ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
     "dry-release": "release-it --dry-run",
@@ -33,27 +30,15 @@
     "release-alpha": "release-it --preRelease=alpha"
   },
   "peerDependencies": {
+    "@plone/volto": ">=17.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@plone/scripts": "^3.6.1",
-    "@plone/types": "workspace:1.0.0-alpha.19",
-    "@types/classnames": "^2.2.11",
-    "@types/loadable__component": "^5.13.9",
-    "@types/lodash": "^4.14.201",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "release-it": "^17.1.1"
   },
-  "dependencies": {
-    "@loadable/component": "5.14.1",
-    "@plone/components": "workspace:2.0.0-alpha.11",
-    "@plone/volto-slate": "workspace:18.0.0-alpha.17",
-    "@redturtle/volto-slate-extras": "workspace:1.1.3",
-    "classnames": "2.2.6",
-    "lodash": "4.17.21",
-    "react-aria-components": "^1.2.0",
-    "react-intl": "3.12.1"
-  }
+  "dependencies": {}
 }

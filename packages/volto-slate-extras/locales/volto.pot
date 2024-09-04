@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"POT-Creation-Date: 2024-05-08T11:18:06.478Z\n"
+"Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: volto\n"
+
+#. Default: "Allinea a destra"
+#: config/Slate/Alignment/AlignMenu
+msgid "Allinea a destra"
+msgstr ""
+
+#. Default: "Allinea a sinistra"
+#: config/Slate/Alignment/AlignMenu
+msgid "Allinea a sinistra"
+msgstr ""
+
+#. Default: "Allinea al centro"
+#: config/Slate/Alignment/AlignMenu
+msgid "Allinea al centro"
+msgstr ""
+
+#. Default: "Allinea il testo giustificato"
+#: config/Slate/Alignment/AlignMenu
+msgid "Allinea il testo giustificato"
+msgstr ""
+
+#. Default: "Allineamento"
+#: config/Slate/Alignment/AlignMenu
+#: config/Slate/Alignment/index
+msgid "Allineamento"
+msgstr ""
+
+#. Default: "Titolo"
+#: config/Slate/Headings/HeadingsMenu
+msgid "Titolo"
+msgstr ""
+
+#. Default: "Type text…"
+#: components/Widgets/TextEditorWidget/SimpleTextEditorWidget
+#: components/Widgets/TextEditorWidget/TextEditorWidget
+msgid "Type text…"
+msgstr ""

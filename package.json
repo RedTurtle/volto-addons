@@ -1,6 +1,6 @@
 {
   "name": "@redturtle/volto-addons",
-  "version": "1.0.3",
+  "version": "0.0.0",
   "description": "Common blocks to reuse for building Plone sites",
   "author": "RedTurtle",
   "homepage": "https://github.com/RedTurtle/volto-addons",
@@ -34,16 +34,14 @@
     "stylelint:fix": "stylelint 'packages/**/src/**/*.{css,scss,less}' --fix --allow-empty-input",
     "typescript": "pnpm exec tsc --noEmit -p packages/volto-blocks",
     "dry-release": "pnpm --filter @redturtle/volto-blocks dry-release",
-    "release": "pnpm --filter @redturtle/volto-blocks release",
-    "release-major-alpha": "pnpm --filter @redturtle/volto-blocks release-major-alpha",
-    "release-alpha": "pnpm --filter @redturtle/volto-blocks release-alpha",
     "storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto storybook dev -p 6006 -c $(pwd)/.storybook",
     "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook"
   },
   "dependencies": {
     "@plone/registry": "workspace:*",
     "@plone/volto": "workspace:*",
-    "@redturtle/volto-blocks": "workspace:*"
+    "@redturtle/volto-blocks": "workspace:*",
+    "@redturtle/volto-slate-extras": "workspace:*"
   },
   "devDependencies": {
     "mrs-developer": "^2.2.0",

@@ -8,7 +8,7 @@ import type { BlockEditProps } from '@plone/types';
 import {
   TextEditorWidget,
   useHandleDetachedBlockFocus,
-} from '@redturtle/volto-rt-slate';
+} from '@redturtle/volto-slate-extras';
 
 import styles from '@redturtle/volto-blocks/components/blocks/Accordion/styles.module.css';
 import blockIcon from '@plone/volto/icons/list-arrows.svg';
