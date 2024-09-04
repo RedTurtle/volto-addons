@@ -7,9 +7,3 @@
 -->
 
 <!-- towncrier release notes start -->
-
-## 2.0.0 (2024-09-04)
-
-### Breaking
-
-- Renamed and moved from private repository to public github @pnicolli [#57559](https://redturtle.tpondemand.com/entity/57559)
