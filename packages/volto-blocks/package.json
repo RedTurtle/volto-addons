@@ -1,6 +1,6 @@
 {
   "name": "@redturtle/volto-blocks",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Common blocks to reuse for building Plone sites",
   "main": "src/index.js",
   "license": "MIT",
