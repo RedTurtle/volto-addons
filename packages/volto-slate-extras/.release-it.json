@@ -13,13 +13,13 @@
     "changelog": "pipx run towncrier build --draft --yes --version 0.0.0",
     "requireUpstream": false,
     "requireCleanWorkingDir": false,
-    "commitMessage": "Release @redturtle/volto-blocks ${version}",
-    "tagName": "volto-blocks@${version}",
-    "tagAnnotation": "Release @redturtle/volto-blocks ${version}"
+    "commitMessage": "Release @redturtle/volto-slate-extras ${version}",
+    "tagName": "volto-slate-extras@${version}",
+    "tagAnnotation": "Release @redturtle/volto-slate-extras ${version}"
   },
   "github": {
     "release": true,
-    "releaseName": "@redturtle/volto-blocks ${version}",
+    "releaseName": "@redturtle/volto-slate-extras ${version}",
     "releaseNotes": "cat .changelog.draft"
   }
 }

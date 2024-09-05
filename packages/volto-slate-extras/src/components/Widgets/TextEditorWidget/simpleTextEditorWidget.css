@@ -1,0 +1,13 @@
+.simple-text-editor-widget .simple-text-input {
+  display: inline-block;
+  min-width: 1px;
+  outline: none;
+}
+
+.simple-text-editor-widget .simple-text-input:empty:before {
+  display: block; /* For Firefox */
+  content: attr(placeholder);
+  font-weight: inherit;
+  opacity: 0.333;
+  pointer-events: none;
+}

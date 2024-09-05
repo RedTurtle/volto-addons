@@ -1,0 +1,82 @@
+.slate-toolbar .ui.dropdown#headings-menu .menu .item {
+  padding: 0 !important;
+  text-align: center;
+}
+.slate-toolbar .ui.dropdown#headings-menu .menu .item .button-wrapper {
+  margin: 0;
+}
+.slate-toolbar
+  .ui.dropdown#headings-menu
+  .menu
+  .item
+  .button-wrapper
+  .ui.button {
+  padding: 0.78571429rem 1.14285714rem !important;
+  border: none;
+  border-radius: 0;
+}
+.slate-toolbar
+  .ui.dropdown#headings-menu
+  .menu
+  .item
+  .button-wrapper
+  .ui.button {
+  background-color: transparent !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+.slate-toolbar
+  .ui.dropdown#headings-menu
+  .menu
+  .item
+  .button-wrapper
+  .ui.button.active {
+  color: #007eb1 !important;
+}
+.slate-toolbar
+  .ui.dropdown#headings-menu
+  .menu
+  .item
+  .button-wrapper
+  .ui.button.headings-h2 {
+  font-family: 'Titillium Web', Geneva, Tahoma, sans-serif;
+  font-size: 2.222rem;
+}
+.slate-toolbar
+  .ui.dropdown#headings-menu
+  .menu
+  .item
+  .button-wrapper
+  .ui.button.headings-h3 {
+  font-family: 'Titillium Web', Geneva, Tahoma, sans-serif;
+  font-size: 1.777rem;
+}
+.slate-toolbar
+  .ui.dropdown#headings-menu
+  .menu
+  .item
+  .button-wrapper
+  .ui.button.headings-h4 {
+  font-family: 'Titillium Web', Geneva, Tahoma, sans-serif;
+  font-size: 1.555rem;
+  font-weight: 600;
+}
+.slate-toolbar
+  .ui.dropdown#headings-menu
+  .menu
+  .item
+  .button-wrapper
+  .ui.button.headings-h5 {
+  font-family: 'Titillium Web', Geneva, Tahoma, sans-serif;
+  font-size: 1.333rem;
+  font-weight: 400;
+}
+.slate-toolbar
+  .ui.dropdown#headings-menu
+  .menu
+  .item
+  .button-wrapper
+  .ui.button.headings-h6 {
+  font-family: 'Titillium Web', Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}

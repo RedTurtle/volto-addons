@@ -1,0 +1,11 @@
+.cms-ui .slate-inline-toolbar .ui.buttons {
+  flex-wrap: wrap;
+}
+.cms-ui .slate-inline-toolbar .ui.dropdown .menu > .item.active {
+  background-color: lighten(#007eb1, 60);
+  color: #007eb1;
+}
+
+.cms-ui .slate-inline-toolbar .ui.dropdown .menu > .item > .icon {
+  margin-right: 0;
+}

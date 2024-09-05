@@ -31,6 +31,10 @@ module.exports = {
           ['@plone/volto-slate', `${coreLocation}/packages/volto-slate/src`],
           ['@plone/registry', `${coreLocation}/packages/registry/src`],
           ['@redturtle/volto-blocks', './packages/volto-blocks/src'],
+          [
+            '@redturtle/volto-slate-extras',
+            './packages/volto-slate-extras/src',
+          ],
           ...addonAliases,
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],

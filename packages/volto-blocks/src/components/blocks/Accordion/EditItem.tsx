@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import type { ArrayElement } from '@plone/types';
 
-import { TextEditorWidget } from '@redturtle/volto-rt-slate';
+import { TextEditorWidget } from '@redturtle/volto-slate-extras';
 
 import styles from '@redturtle/volto-blocks/components/blocks/Accordion/styles.module.css';
 import type { AccordionData } from '@redturtle/volto-blocks/components/blocks/Accordion/schema';

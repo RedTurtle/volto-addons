@@ -8,6 +8,19 @@
 
 <!-- towncrier release notes start -->
 
+## 1.1.0 (2024-09-04)
+
+### Feature
+
+- Added Text7 and Testimonials blocks @pnicolli [#57552](https://redturtle.tpondemand.com/entity/57552)
+- Added Text1 block @pnicolli [#57553](https://redturtle.tpondemand.com/entity/57553)
+- Added Accordion block @pnicolli [#57556](https://redturtle.tpondemand.com/entity/57556)
+- Added Text6 block @pnicolli [#57557](https://redturtle.tpondemand.com/entity/57557)
+
+### Internal
+
+- Moved volto-slate-extras to github @pnicolli [#57559](https://redturtle.tpondemand.com/entity/57559)
+
 ## 1.0.3 (2024-08-07)
 
 ### Internal
