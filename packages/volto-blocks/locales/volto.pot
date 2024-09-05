@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-20T08:35:27.767Z\n"
+"POT-Creation-Date: 2024-09-04T09:44:50.487Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -30,6 +30,9 @@ msgstr ""
 
 #. Default: "Text"
 #: components/blocks/Accordion/EditItem
+#: components/blocks/IconsAndText/Edit
+#: components/blocks/IconsAndText/EditItem
+#: components/blocks/IconsAndText/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
 #: components/blocks/Text1/Edit
@@ -39,10 +42,18 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
+#. Default: "Type header text..."
+#: components/blocks/IconsAndText/EditItem
+msgid "Text placeholder"
+msgstr ""
+
 #. Default: "Title"
 #: components/blocks/Accordion/Edit
 #: components/blocks/Accordion/EditItem
 #: components/blocks/Accordion/schema
+#: components/blocks/IconsAndText/Edit
+#: components/blocks/IconsAndText/EditItem
+#: components/blocks/IconsAndText/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
 #: components/blocks/Text1/Edit
@@ -52,6 +63,121 @@ msgstr ""
 #: components/blocks/Text7/Edit
 #: components/blocks/Text7/schema
 msgid "Title"
+msgstr ""
+
+#. Default: "Add column"
+#: components/blocks/IconsAndText/schema
+msgid "addColumn"
+msgstr ""
+
+#. Default: "After title"
+#: components/blocks/IconsAndText/schema
+msgid "after_title"
+msgstr ""
+
+#. Default: "Before header text"
+#: components/blocks/IconsAndText/schema
+msgid "before_header_text"
+msgstr ""
+
+#. Default: "Before title"
+#: components/blocks/IconsAndText/schema
+msgid "before_title"
+msgstr ""
+
+#. Default: "Column"
+#: components/blocks/IconsAndText/schema
+msgid "column"
+msgstr ""
+
+#. Default: "Number of columns"
+#: components/blocks/IconsAndText/schema
+msgid "columnsNumber"
+msgstr ""
+
+#. Default: "The image must be a PNG or SVG. The maximum recommended size for PNG is 200x200px."
+#: components/blocks/IconsAndText/schema
+msgid "description"
+msgstr ""
+
+#. Default: "Divider position"
+#: components/blocks/IconsAndText/schema
+msgid "divider_position"
+msgstr ""
+
+#. Default: "Header text position"
+#: components/blocks/IconsAndText/schema
+msgid "header_text_position"
+msgstr ""
+
+#. Default: "Icon"
+#: components/blocks/IconsAndText/schema
+msgid "icon"
+msgstr ""
+
+#. Default: "Define the number of columns for this block"
+#: components/blocks/IconsAndText/schema
+msgid "icon_and_text_column_number_description"
+msgstr ""
+
+#. Default: "Column Number"
+#: components/blocks/IconsAndText/schema
+msgid "icon_and_text_column_number_title"
+msgstr ""
+
+#. Default: "Icon & Text block"
+#: components/blocks/IconsAndText/schema
+msgid "icons_and_text_title"
+msgstr ""
+
+#. Default: "Image size"
+#: components/blocks/IconsAndText/schema
+msgid "image_size"
+msgstr ""
+
+#. Default: "Large"
+#: components/blocks/IconsAndText/schema
+msgid "large"
+msgstr ""
+
+#. Default: "Link"
+#: components/blocks/IconsAndText/schema
+msgid "link"
+msgstr ""
+
+#. Default: "Link title"
+#: components/blocks/IconsAndText/schema
+msgid "link_title"
+msgstr ""
+
+#. Default: "If no title is entered, and a link is selected, the link will be added to the block title."
+#: components/blocks/IconsAndText/schema
+msgid "link_title_description"
+msgstr ""
+
+#. Default: "Medium"
+#: components/blocks/IconsAndText/schema
+msgid "medium"
+msgstr ""
+
+#. Default: "Do not fit the columns to the available space"
+#: components/blocks/IconsAndText/schema
+msgid "noAdaptColumns"
+msgstr ""
+
+#. Default: "Hide divider"
+#: components/blocks/IconsAndText/schema
+msgid "no_divider"
+msgstr ""
+
+#. Default: "On bottom"
+#: components/blocks/IconsAndText/schema
+msgid "on_bottom"
+msgstr ""
+
+#. Default: "On right"
+#: components/blocks/IconsAndText/schema
+msgid "on_right"
 msgstr ""
 
 #. Default: "Columns"
@@ -132,4 +258,9 @@ msgstr ""
 #. Default: "Text 7"
 #: components/blocks/Text7/schema
 msgid "redturtle__volto-blocks__text7_title"
+msgstr ""
+
+#. Default: "Small"
+#: components/blocks/IconsAndText/schema
+msgid "small"
 msgstr ""

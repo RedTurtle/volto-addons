@@ -1,0 +1,141 @@
+// Titolo e descrizione del blocco centrato
+.block-content-header {
+  align-items: center;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+// Gestione titolo a destra o sotto immagine dell'header
+.header-text-right {
+  .header-text {
+    margin-left: 1.2rem;
+  }
+}
+
+.header-text-bottom {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.header-text {
+  width: 100%;
+  margin-top: 0.85rem;
+}
+
+// Separatore (linea grigia) prima del titolo, dopo il titolo o prima dell'header
+.divider_before_title {
+  .column-head {
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.divider_after_title {
+  h4 {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.divider_before_header_text {
+  .column-head {
+    padding-top: 0.5rem;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+// Gestione delle colonne del blocco
+.column-number-4 {
+  .column-block {
+    flex-basis: 25%;
+  }
+}
+
+.column-number-3 {
+  .column-block {
+    flex-basis: 33.33%;
+  }
+}
+
+.column-number-2 {
+  .column-block {
+    flex-basis: 50%;
+  }
+}
+
+// Gestione del blocco con icone e testo
+
+.block_icons_text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+
+  // Gestione dimensione immagine di testata
+  .column_icon {
+    /* size di default */
+    img {
+      min-height: 2.7rem;
+      max-height: 2.7rem;
+    }
+
+    &.size_s {
+      img {
+        min-height: 2.7rem;
+        max-height: 2.7rem;
+      }
+    }
+
+    &.size_m {
+      img {
+        min-height: 5rem;
+        max-height: 5rem;
+      }
+    }
+
+    &.size_l {
+      img {
+        min-height: 8rem;
+        max-height: 8rem;
+      }
+
+      img[src*='png'],
+      img[src*='jpg'],
+      img[src*='jpeg'],
+      img[src*='gif'] {
+        width: 100%;
+        min-height: unset;
+        max-height: unset;
+        aspect-ratio: var(--grid-images-aspect-ratio, 1.77777778);
+        object-fit: cover;
+        object-position: var(--grid-images-object-position, top left);
+      }
+    }
+  }
+
+  .block-columns-wrapper,
+  .columns-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -1.15rem;
+    margin-left: -1.15rem;
+
+    .column-block {
+      position: relative;
+      display: flex;
+      flex: 1 1 25%;
+      flex-direction: column;
+      padding: 1.15rem;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+
+      .column-head {
+        display: flex;
+        align-items: center;
+        padding-bottom: 0.85rem;
+        margin-bottom: 0.85rem;
+      }
+    }
+  }
+}
