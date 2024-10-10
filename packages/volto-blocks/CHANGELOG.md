@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.2.0 (2024-10-10)
+
+### Feature
+
+- Added Icons and Text block @luca-bellenghi [#58009](https://redturtle.tpondemand.com/entity/58009)
+
 ## 1.1.0 (2024-09-04)
 
 ### Feature
