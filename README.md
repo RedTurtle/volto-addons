@@ -1,79 +1,16 @@
 # RedTurtle Add-ons (@redturtle/volto-addons)
 
-Common blocks to reuse for building Plone sites
+Common add-ons to reuse for building Plone sites
 
-[![npm](https://img.shields.io/npm/v/@redturtle/volto-addons)](https://www.npmjs.com/package/@redturtle/volto-addons)
-[![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://redturtle.github.io/volto-addons/)
-[![Code analysis checks](https://github.com/redturtle/volto-addons/actions/workflows/code.yml/badge.svg)](https://github.com/redturtle/volto-addons/actions/workflows/code.yml)
-[![Unit tests](https://github.com/redturtle/volto-addons/actions/workflows/unit.yml/badge.svg)](https://github.com/redturtle/volto-addons/actions/workflows/unit.yml)
+## Add-ons
 
-## Features
-
-<!-- List your awesome features here -->
-
-## Installation
-
-To install your project, you must choose the method appropriate to your version of Volto.
-
-
-### Volto 17 and earlier
-
-Create a new Volto project (you can skip this step if you already have one):
-
-```
-npm install -g yo @plone/generator-volto
-yo @plone/volto my-volto-project --addon @redturtle/volto-blocks
-cd my-volto-project
-```
-
-Add `@redturtle/volto-blocks` to your package.json:
-
-```JSON
-"addons": [
-    "@redturtle/volto-blocks"
-],
-
-"dependencies": {
-    "@redturtle/volto-blocks": "*"
-}
-```
-
-Download and install the new add-on by running:
-
-```
-yarn install
-```
-
-Start volto with:
-
-```
-yarn start
-```
-
-### Volto 18 and later
-
-Add `@redturtle/volto-blocks` to your `package.json`:
-
-```json
-"dependencies": {
-    "@redturtle/volto-blocks": "*"
-}
-```
-
-Add `@redturtle/volto-blocks` to your `volto.config.js`:
-
-```javascript
-const addons = ['@redturtle/volto-blocks'];
-```
-
-## Test installation
-
-Visit http://localhost:3000/ in a browser, login, and check the awesome new features.
+- [@redturtle/volto-blocks](./packages/volto-blocks)
+- [@redturtle/volto-slate-extras](./packages/volto-slate-extras)
 
 
 ## Development
 
-The development of this add-on is done in isolation using a new approach using pnpm workspaces and latest `mrs-developer` and other Volto core improvements.
+The development of this add-ons is done in isolation using a new approach using pnpm workspaces and latest `mrs-developer` and other Volto core improvements.
 For this reason, it only works with pnpm and Volto 18 (currently in alpha).
 
 
