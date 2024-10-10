@@ -187,7 +187,7 @@ importers:
         version: 3.11.11(react@18.2.0)
       '@storybook/test':
         specifier: ^8.0.4
-        version: 8.2.7(@jest/globals@29.7.0)(@types/jest@29.5.12)(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.1.2(@types/node@22.1.0)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.26.0)(sass@1.77.8)(terser@5.31.3))
+        version: 8.2.7(@jest/globals@29.7.0)(@types/jest@29.5.12)(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.1.2)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1423,7 +1423,7 @@ importers:
         version: 10.0.1(cypress@13.13.2)
       '@testing-library/jest-dom':
         specifier: 6.4.2
-        version: 6.4.2(@jest/globals@29.7.0)(@types/jest@29.5.12)(vitest@2.1.2)
+        version: 6.4.2(@jest/globals@29.7.0)(@types/jest@29.5.12)(vitest@2.1.2(@types/node@22.1.0)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.26.0)(sass@1.77.8)(terser@5.31.3))
       '@testing-library/react':
         specifier: 12.1.5
         version: 12.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -22042,7 +22042,7 @@ snapshots:
     dependencies:
       '@storybook/global': 5.0.0
       '@storybook/instrumenter': 8.2.7(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))
-      '@storybook/test': 8.2.7(@jest/globals@29.7.0)(@types/jest@29.5.12)(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.1.2(@types/node@22.1.0)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.26.0)(sass@1.77.8)(terser@5.31.3))
+      '@storybook/test': 8.2.7(@jest/globals@29.7.0)(@types/jest@29.5.12)(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.1.2)
       polished: 4.3.1
       storybook: 8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2))
       ts-dedent: 2.2.0
@@ -22378,24 +22378,6 @@ snapshots:
     optionalDependencies:
       typescript: 5.5.4
 
-  '@storybook/test@8.2.7(@jest/globals@29.7.0)(@types/jest@29.5.12)(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.1.2(@types/node@22.1.0)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.26.0)(sass@1.77.8)(terser@5.31.3))':
-    dependencies:
-      '@storybook/csf': 0.1.11
-      '@storybook/instrumenter': 8.2.7(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))
-      '@testing-library/dom': 10.1.0
-      '@testing-library/jest-dom': 6.4.5(@jest/globals@29.7.0)(@types/jest@29.5.12)(vitest@2.1.2(@types/node@22.1.0)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.26.0)(sass@1.77.8)(terser@5.31.3))
-      '@testing-library/user-event': 14.5.2(@testing-library/dom@10.1.0)
-      '@vitest/expect': 1.6.0
-      '@vitest/spy': 1.6.0
-      storybook: 8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2))
-      util: 0.12.5
-    transitivePeerDependencies:
-      - '@jest/globals'
-      - '@types/bun'
-      - '@types/jest'
-      - jest
-      - vitest
-
   '@storybook/test@8.2.7(@jest/globals@29.7.0)(@types/jest@29.5.12)(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.1.2)':
     dependencies:
       '@storybook/csf': 0.1.11
@@ -22600,36 +22582,6 @@ snapshots:
       '@types/jest': 29.5.12
       vitest: 2.1.2(@types/node@22.1.0)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.26.0)(sass@1.77.8)(terser@5.31.3)
 
-  '@testing-library/jest-dom@6.4.2(@jest/globals@29.7.0)(@types/jest@29.5.12)(vitest@2.1.2)':
-    dependencies:
-      '@adobe/css-tools': 4.4.0
-      '@babel/runtime': 7.20.6
-      aria-query: 5.3.0
-      chalk: 3.0.0
-      css.escape: 1.5.1
-      dom-accessibility-api: 0.6.3
-      lodash: 4.17.21
-      redent: 3.0.0
-    optionalDependencies:
-      '@jest/globals': 29.7.0
-      '@types/jest': 29.5.12
-      vitest: 2.1.2(@types/node@22.1.0)(jsdom@21.1.2)(less@3.11.1)(lightningcss@1.26.0)(sass@1.77.8)(terser@5.31.3)
-
-  '@testing-library/jest-dom@6.4.5(@jest/globals@29.7.0)(@types/jest@29.5.12)(vitest@2.1.2(@types/node@22.1.0)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.26.0)(sass@1.77.8)(terser@5.31.3))':
-    dependencies:
-      '@adobe/css-tools': 4.4.0
-      '@babel/runtime': 7.20.6
-      aria-query: 5.3.0
-      chalk: 3.0.0
-      css.escape: 1.5.1
-      dom-accessibility-api: 0.6.3
-      lodash: 4.17.21
-      redent: 3.0.0
-    optionalDependencies:
-      '@jest/globals': 29.7.0
-      '@types/jest': 29.5.12
-      vitest: 2.1.2(@types/node@22.1.0)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.26.0)(sass@1.77.8)(terser@5.31.3)
-
   '@testing-library/jest-dom@6.4.5(@jest/globals@29.7.0)(@types/jest@29.5.12)(vitest@2.1.2)':
     dependencies:
       '@adobe/css-tools': 4.4.0
@@ -22643,7 +22595,7 @@ snapshots:
     optionalDependencies:
       '@jest/globals': 29.7.0
       '@types/jest': 29.5.12
-      vitest: 2.1.2(@types/node@22.1.0)(jsdom@21.1.2)(less@3.11.1)(lightningcss@1.26.0)(sass@1.77.8)(terser@5.31.3)
+      vitest: 2.1.2(@types/node@22.1.0)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.26.0)(sass@1.77.8)(terser@5.31.3)
 
   '@testing-library/react-hooks@8.0.1(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react-test-renderer@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
