@@ -8,7 +8,7 @@ import type { Text1Data } from '@redturtle/volto-blocks/components/blocks/Text1/
 
 import config from '@plone/registry';
 
-type Props = Omit<BlockViewProps, 'data'> & {
+type Props = BlockViewProps & {
   data: Text1Data;
 };
 

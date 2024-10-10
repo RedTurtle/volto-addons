@@ -4,7 +4,7 @@ import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
 import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.scss';
-import { TextEditorWidget } from '@redturtle/volto-rt-slate';
+import { TextEditorWidget } from '@redturtle/volto-slate-extras';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
 type Props = {

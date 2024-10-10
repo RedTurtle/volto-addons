@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@plone/scripts": "^3.6.1",
-    "@plone/types": "workspace:1.0.0-alpha.19",
+    "@plone/types": "1.0.0-alpha.20",
     "@types/classnames": "^2.2.11",
     "@types/loadable__component": "^5.13.9",
     "@types/lodash": "^4.14.201",
@@ -48,8 +48,8 @@
   },
   "dependencies": {
     "@loadable/component": "5.14.1",
-    "@plone/components": "workspace:2.0.0-alpha.11",
-    "@plone/volto-slate": "workspace:18.0.0-alpha.17",
+    "@plone/components": "2.0.0-alpha.13",
+    "@plone/volto-slate": "18.0.0-alpha.19",
     "@redturtle/volto-slate-extras": "workspace:^2.0.1",
     "classnames": "2.2.6",
     "lodash": "4.17.21",

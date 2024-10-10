@@ -17,7 +17,7 @@ import type { AccordionData } from '@redturtle/volto-blocks/components/blocks/Ac
 
 import config from '@plone/registry';
 
-type AccordionEditProps = Omit<BlockEditProps, 'data'> & {
+type AccordionEditProps = BlockEditProps & {
   data: AccordionData;
 };
 

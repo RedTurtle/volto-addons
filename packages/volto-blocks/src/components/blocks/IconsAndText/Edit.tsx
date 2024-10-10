@@ -8,7 +8,7 @@ import blockIcon from '@redturtle/volto-blocks/icons/icons_and_text.svg';
 import {
   TextEditorWidget,
   useHandleDetachedBlockFocus,
-} from '@redturtle/volto-rt-slate';
+} from '@redturtle/volto-slate-extras';
 import cx from 'classnames';
 import React, { useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
@@ -16,7 +16,7 @@ import { v4 as uuid } from 'uuid';
 
 import config from '@plone/registry';
 
-type IconsAndTextEditProps = Omit<BlockEditProps, 'data'> & {
+type IconsAndTextEditProps = BlockEditProps & {
   data: IconsAndTextData;
 };
 

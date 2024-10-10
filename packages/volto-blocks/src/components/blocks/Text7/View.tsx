@@ -9,7 +9,7 @@ import type { Text7Data } from '@redturtle/volto-blocks/components/blocks/Text7/
 
 import config from '@plone/registry';
 
-type Props = Omit<BlockViewProps, 'data'> & {
+type Props = BlockViewProps & {
   data: Text7Data;
 };
 

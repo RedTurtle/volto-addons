@@ -7,7 +7,7 @@ import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks
 import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.scss';
 import cx from 'classnames';
 
-type Props = Omit<BlockViewProps, 'data'> & {
+type Props = BlockViewProps & {
   data: IconsAndTextData;
 };
 
@@ -31,9 +31,7 @@ export default function View({ data, className, style }: Props) {
             )}
           >
             {data.title && (
-              <h2
-                className={cx('block-iconsandtext-title', styles.title)}
-              >
+              <h2 className={cx('block-iconsandtext-title', styles.title)}>
                 {data.title}
               </h2>
             )}

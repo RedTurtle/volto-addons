@@ -16,7 +16,7 @@ import type { Text6Data } from '@redturtle/volto-blocks/components/blocks/Text6/
 
 import config from '@plone/registry';
 
-type Text6EditProps = Omit<BlockEditProps, 'data'> & {
+type Text6EditProps = BlockEditProps & {
   data: Text6Data;
 };
 

@@ -16,7 +16,7 @@ import type { TestimonialsData } from '@redturtle/volto-blocks/components/blocks
 
 import config from '@plone/registry';
 
-type TestimonialsEditProps = Omit<BlockEditProps, 'data'> & {
+type TestimonialsEditProps = BlockEditProps & {
   data: TestimonialsData;
 };
 

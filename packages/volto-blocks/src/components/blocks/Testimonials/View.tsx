@@ -8,7 +8,7 @@ import type { TestimonialsData } from '@redturtle/volto-blocks/components/blocks
 
 import config from '@plone/registry';
 
-type Props = Omit<BlockViewProps, 'data'> & {
+type Props = BlockViewProps & {
   data: TestimonialsData;
 };
 
