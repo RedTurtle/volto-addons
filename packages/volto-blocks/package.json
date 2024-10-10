@@ -23,6 +23,7 @@
     "access": "public"
   },
   "addons": [
+    "@plone/volto-slate",
     "@redturtle/volto-slate-extras"
   ],
   "scripts": {
@@ -33,12 +34,16 @@
     "release-alpha": "release-it --preRelease=alpha"
   },
   "peerDependencies": {
+    "@plone/volto": "17 || 18",
+    "@plone/volto-slate": "17 || 18",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@plone/scripts": "^3.6.1",
     "@plone/types": "1.0.0-alpha.20",
+    "@plone/volto": "workspace:^",
+    "@plone/volto-slate": "workspace:^",
     "@types/classnames": "^2.2.11",
     "@types/loadable__component": "^5.13.9",
     "@types/lodash": "^4.14.201",
@@ -49,7 +54,6 @@
   "dependencies": {
     "@loadable/component": "5.14.1",
     "@plone/components": "2.0.0-alpha.13",
-    "@plone/volto-slate": "18.0.0-alpha.19",
     "@redturtle/volto-slate-extras": "workspace:^2.0.1",
     "classnames": "2.2.6",
     "lodash": "4.17.21",

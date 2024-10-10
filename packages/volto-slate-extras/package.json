@@ -22,6 +22,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "addons": [
+    "@plone/volto-slate"
+  ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
     "dry-release": "release-it --dry-run",
@@ -30,15 +33,17 @@
     "release-alpha": "release-it --preRelease=alpha"
   },
   "peerDependencies": {
-    "@plone/volto": ">=17.0.0",
+    "@plone/volto": "17 || 18",
+    "@plone/volto-slate": "17 || 18",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@plone/scripts": "^3.6.1",
+    "@plone/volto": "workspace:^",
+    "@plone/volto-slate": "workspace:^",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "release-it": "^17.1.1"
-  },
-  "dependencies": {}
+  }
 }
