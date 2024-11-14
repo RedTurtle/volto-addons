@@ -7,6 +7,7 @@ import styles from '@redturtle/volto-blocks/components/blocks/Text1/styles.modul
 import type { Text1Data } from '@redturtle/volto-blocks/components/blocks/Text1/schema';
 
 import config from '@plone/registry';
+import CTA from '../commons/CTA';
 
 type Props = BlockViewProps & {
   data: Text1Data;
@@ -29,14 +30,12 @@ export default function View({ data, className, style }: Props) {
             </h2>
           )}
           {data.linkHref?.[0] && (
-            <div className={cx('block-text1-cta', styles.cta)}>
-              <UniversalLink
-                href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
-                openLinkInNewTab={false}
-              >
-                {data.linkTitle}
-              </UniversalLink>
-            </div>
+            <CTA
+              href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
+              linkTitle={data.linkTitle}
+              openLinkInNewTab={false}
+              {...data}
+            />
           )}
         </div>
         <div className={cx('block-text1-wide-col', styles.wide)}>

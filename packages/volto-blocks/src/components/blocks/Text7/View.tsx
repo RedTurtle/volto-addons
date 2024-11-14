@@ -8,6 +8,7 @@ import styles from '@redturtle/volto-blocks/components/blocks/Text7/styles.modul
 import type { Text7Data } from '@redturtle/volto-blocks/components/blocks/Text7/schema';
 
 import config from '@plone/registry';
+import CTA from '../commons/CTA';
 
 type Props = BlockViewProps & {
   data: Text7Data;
@@ -67,18 +68,16 @@ export default function View({ data, className, style }: Props) {
             </div>
           )}
           {data.linkHref?.[0] && (
-            <div className={cx('block-text7-cta', styles.cta)}>
-              <UniversalLink
-                href={
-                  data.linkHref
-                    ? flattenToAppURL(data.linkHref[0]['@id'])
-                    : undefined
-                }
-                openLinkInNewTab={false}
-              >
-                {data.linkTitle}
-              </UniversalLink>
-            </div>
+            <CTA
+              href={
+                data.linkHref
+                  ? flattenToAppURL(data.linkHref[0]['@id'])
+                  : undefined
+              }
+              linkTitle={data.linkTitle}
+              openLinkInNewTab={false}
+              {...data}
+            />
           )}
         </div>
       </Container>

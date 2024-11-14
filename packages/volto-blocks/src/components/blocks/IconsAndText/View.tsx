@@ -6,6 +6,7 @@ import ViewItem from '@redturtle/volto-blocks/components/blocks/IconsAndText/Vie
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
 import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.scss';
 import cx from 'classnames';
+import CTA from '../commons/CTA';
 
 type Props = BlockViewProps & {
   data: IconsAndTextData;
@@ -53,14 +54,12 @@ export default function View({ data, className, style }: Props) {
               ))}
           </div>
           {data.linkHref?.[0] && (
-            <div className={cx('block-iconsandtext-cta', styles.cta)}>
-              <UniversalLink
-                href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
-                openLinkInNewTab={false}
-              >
-                {data.linkTitle}
-              </UniversalLink>
-            </div>
+            <CTA
+              href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
+              linkTitle={data.linkTitle}
+              openLinkInNewTab={false}
+              {...data}
+            />
           )}
         </Container>
       </section>

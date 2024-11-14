@@ -15,6 +15,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { v4 as uuid } from 'uuid';
 
 import config from '@plone/registry';
+import CTA from '../commons/CTA';
 
 type IconsAndTextEditProps = BlockEditProps & {
   data: IconsAndTextData;
@@ -123,17 +124,15 @@ export default function Edit(props: IconsAndTextEditProps) {
               ))}
           </div>
           {data.linkHref?.[0] && (
-            <div className={cx('block-iconsandtext-cta', styles.cta)}>
-              <UniversalLink
-                href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
-                openLinkInNewTab={false}
-                onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
-                  e.preventDefault();
-                }}
-              >
-                {data.linkTitle}
-              </UniversalLink>
-            </div>
+            <CTA
+              href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
+              linkTitle={data.linkTitle}
+              onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
+                e.preventDefault();
+              }}
+              openLinkInNewTab={false}
+              {...data}
+            />
           )}
         </Container>
       </section>
