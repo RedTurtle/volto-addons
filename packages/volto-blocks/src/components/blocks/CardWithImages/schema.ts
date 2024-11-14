@@ -6,19 +6,19 @@ import {
   type CtaBlockExtender,
 } from '@redturtle/volto-blocks/components/blocks/extenders/cta';
 
-export interface Text7Data extends CtaBlockExtender {
-  '@type': 'text7';
+export interface CardWithImagesData extends CtaBlockExtender {
+  '@type': 'cardwithimages';
   images?: Array<{ '@id': string; image: string }>;
   img_column_width?: string;
   title?: string;
   text?: object;
 }
 
-export const Text7Schema = ({
+export const CardWithImagesSchema = ({
   data,
   intl,
 }: {
-  data: Text7Data;
+  data: CardWithImagesData;
   intl: IntlShape;
 }): JSONSchema => {
   const schema = {
@@ -87,7 +87,7 @@ export const Text7Schema = ({
     schema,
     intl,
     formData: data,
-    alignments: ['left', 'right'],
+    alignments: ['left', 'center', 'right'],
   });
 
   return schema;
@@ -95,23 +95,23 @@ export const Text7Schema = ({
 
 const messages = defineMessages({
   title: {
-    id: 'redturtle__volto-blocks__text7_title',
-    defaultMessage: 'Text 7',
+    id: 'redturtle__volto-blocks__cardwithimages_title',
+    defaultMessage: 'Card with images',
   },
   images_title: {
-    id: 'redturtle__volto-blocks__text7_images_title',
+    id: 'redturtle__volto-blocks__cardwithimages_images_title',
     defaultMessage: 'Images',
   },
   image_title: {
-    id: 'redturtle__volto-blocks__text7_image_title',
+    id: 'redturtle__volto-blocks__cardwithimages_image_title',
     defaultMessage: 'Image',
   },
   img_column_width_title: {
-    id: 'redturtle__volto-blocks__text7_img_column_width_title',
+    id: 'redturtle__volto-blocks__cardwithimages_img_column_width_title',
     defaultMessage: 'Image column width',
   },
   img_column_width_description: {
-    id: 'redturtle__volto-blocks__text7_img_column_width_description',
+    id: 'redturtle__volto-blocks__cardwithimages_img_column_width_description',
     defaultMessage: 'Width of the image column',
   },
   title_title: {
@@ -124,6 +124,7 @@ const messages = defineMessages({
   },
 });
 
-export interface Text7Config extends Omit<BlockConfigBase, 'blockSchema'> {
-  blockSchema: typeof Text7Schema;
+export interface CardWithImagesConfig
+  extends Omit<BlockConfigBase, 'blockSchema'> {
+  blockSchema: typeof CardWithImagesSchema;
 }

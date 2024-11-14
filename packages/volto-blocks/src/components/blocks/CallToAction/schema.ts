@@ -6,17 +6,17 @@ import {
   type CtaBlockExtender,
 } from '@redturtle/volto-blocks/components/blocks/extenders/cta';
 
-export interface Text1Data extends CtaBlockExtender {
-  '@type': 'text1';
+export interface CallToActionData extends CtaBlockExtender {
+  '@type': 'calltoaction';
   title?: string;
   text?: object;
 }
 
-export const Text1Schema = ({
+export const CallToActionSchema = ({
   data,
   intl,
 }: {
-  data: Text1Data;
+  data: CallToActionData;
   intl: IntlShape;
 }): JSONSchema => {
   const schema = {
@@ -46,7 +46,8 @@ export const Text1Schema = ({
     schema,
     intl,
     formData: data,
-    alignments: ['left', 'right'],
+    alignments: ['left', 'center'],
+    defaultAlign: 'center',
   });
 
   return schema;
@@ -54,8 +55,8 @@ export const Text1Schema = ({
 
 const messages = defineMessages({
   title: {
-    id: 'redturtle__volto-blocks__text1_title',
-    defaultMessage: 'Text 1',
+    id: 'redturtle__volto-blocks__calltoaction_title',
+    defaultMessage: 'Call To Action',
   },
   // text: {
   //   id: 'Text',
@@ -67,6 +68,6 @@ const messages = defineMessages({
   },
 });
 
-export interface Text1Config extends Omit<BlockConfigBase, 'blockSchema'> {
-  blockSchema: typeof Text1Schema;
+export interface CallToActionConfig extends Omit<BlockConfigBase, 'blockSchema'> {
+  blockSchema: typeof CallToActionSchema;
 }

@@ -3,13 +3,13 @@ import cx from 'classnames';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import type { BlockViewProps } from '@plone/types';
 
-import styles from '@redturtle/volto-blocks/components/blocks/Text1/styles.module.css';
-import type { Text1Data } from '@redturtle/volto-blocks/components/blocks/Text1/schema';
+import styles from '@redturtle/volto-blocks/components/blocks/PageIntro/styles.module.css';
+import type { PageIntroData } from '@redturtle/volto-blocks/components/blocks/PageIntro/schema';
 
 import config from '@plone/registry';
 
 type Props = BlockViewProps & {
-  data: Text1Data;
+  data: PageIntroData;
 };
 
 export default function View({ data, className, style }: Props) {
@@ -17,19 +17,19 @@ export default function View({ data, className, style }: Props) {
 
   return (
     <section
-      className={cx('block-text1', styles.block, className)}
+      className={cx('block-pageintro', styles.block, className)}
       style={style}
       aria-label={data.title}
     >
-      <Container className={cx('block-text1-container', styles.container)}>
-        <div className={cx('block-text1-narrow-col', styles.narrow)}>
+      <Container className={cx('block-pageintro-container', styles.container)}>
+        <div className={cx('block-pageintro-narrow-col', styles.narrow)}>
           {data.title && (
-            <h2 className={cx('block-text1-title', styles.title)}>
+            <h2 className={cx('block-pageintro-title', styles.title)}>
               {data.title}
             </h2>
           )}
           {data.linkHref?.[0] && (
-            <div className={cx('block-text1-cta', styles.cta)}>
+            <div className={cx('block-pageintro-cta', styles.cta)}>
               <UniversalLink
                 href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
                 openLinkInNewTab={false}
@@ -39,9 +39,9 @@ export default function View({ data, className, style }: Props) {
             </div>
           )}
         </div>
-        <div className={cx('block-text1-wide-col', styles.wide)}>
+        <div className={cx('block-pageintro-wide-col', styles.wide)}>
           {data.text && (
-            <div className={cx('block-text1-text', styles.text)}>
+            <div className={cx('block-pageintro-text', styles.text)}>
               <TextBlockView data={{ value: data.text ?? {} }} />
             </div>
           )}

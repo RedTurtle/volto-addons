@@ -10,20 +10,24 @@ import {
   useHandleDetachedBlockFocus,
 } from '@redturtle/volto-slate-extras';
 
-import styles from '@redturtle/volto-blocks/components/blocks/Text1/styles.module.css';
-import blockIcon from '@redturtle/volto-blocks/icons/text1.svg';
-import type { Text1Data } from '@redturtle/volto-blocks/components/blocks/Text1/schema';
+import styles from '@redturtle/volto-blocks/components/blocks/CardWithImages/styles.module.css';
+import blockIcon from '@redturtle/volto-blocks/icons/cardwithimages.svg';
+import type { CardWithImagesData } from '@redturtle/volto-blocks/components/blocks/CardWithImages/schema';
 
 import config from '@plone/registry';
 
-type Text1EditProps = BlockEditProps & {
-  data: Text1Data;
+type CardWithImagesEditProps = BlockEditProps & {
+  data: CardWithImagesData;
 };
 
-export default function Edit(props: Text1EditProps) {
+export default function Edit(props: CardWithImagesEditProps) {
   const { data, selected, block, onChangeBlock, blocksConfig, blocksErrors } =
     props;
   const intl = useIntl();
+
+  const img_column_width = data.img_column_width
+    ? parseInt(data.img_column_width)
+    : 6;
 
   const { selectedField, setSelectedField } = useHandleDetachedBlockFocus(
     props,
@@ -40,18 +44,51 @@ export default function Edit(props: Text1EditProps) {
   }
 
   const Container = config.getComponent('Container').component || 'div';
+  const Image = config.getComponent('Image').component;
 
   return (
     <>
       <section
-        className={cx('block-text1', styles.block)}
+        className={cx('block-cardiwithimages', styles.block)}
         aria-label={data.title}
       >
-        <Container className={cx('block-text1-container', styles.container)}>
-          <div className={cx('block-text1-narrow-col', styles.narrow)}>
+        <Container
+          className={cx('block-cardiwithimages-container', styles.container)}
+        >
+          <div
+            className={cx(
+              'block-tecardiwithimagesxt7-image-wrapper',
+              `column-width-${img_column_width}`,
+              styles['image-wrapper'],
+              styles[`column-width-${img_column_width}`],
+            )}
+          >
+            {data.images?.length > 0 ? (
+              data.images.map((img) => (
+                <Image
+                  key={img['@id']}
+                  className={cx('block-cardiwithimages-image', styles.image)}
+                  // TODO serialize image brain in the backend
+                  src={`${img.image}/@@images/image/large`}
+                  loading="lazy"
+                  alt=""
+                />
+              ))
+            ) : (
+              <div className="image-add">Upload image</div>
+            )}
+          </div>
+          <div
+            className={cx(
+              'block-cardiwithimages-body',
+              `column-width-${12 - img_column_width}`,
+              styles.body,
+              styles[`column-width-${12 - img_column_width}`],
+            )}
+          >
             <TextEditorWidget
               {...props}
-              className={cx('block-text1-title', styles.title)}
+              className={cx('block-cardiwithimages-title', styles.title)}
               as="h2"
               data={data}
               fieldName="title"
@@ -63,8 +100,18 @@ export default function Edit(props: Text1EditProps) {
               showToolbar={false}
               placeholder={intl.formatMessage(messages.title)}
             />
+            <TextEditorWidget
+              {...props}
+              fieldName="text"
+              selected={selected && selectedField === 'text'}
+              setSelected={setSelectedField}
+              focusPrevField={() => {
+                setSelectedField('title');
+              }}
+              placeholder={intl.formatMessage(messages.text)}
+            />
             {data.linkHref?.[0] && (
-              <div className={cx('block-text1-cta', styles.cta)}>
+              <div className={cx('block-cardiwithimages-cta', styles.cta)}>
                 <UniversalLink
                   href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
                   openLinkInNewTab={false}
@@ -77,21 +124,8 @@ export default function Edit(props: Text1EditProps) {
               </div>
             )}
           </div>
-          <div className={cx('block-text1-wide-col', styles.wide)}>
-            <TextEditorWidget
-              {...props}
-              fieldName="text"
-              selected={selected && selectedField === 'text'}
-              setSelected={setSelectedField}
-              focusPrevField={() => {
-                setSelectedField('title');
-              }}
-              placeholder={intl.formatMessage(messages.text)}
-            />
-          </div>
         </Container>
       </section>
-      {/* @ts-expect-error TODO */}
       <SidebarPortal selected={selected}>
         {schema && (
           <BlockDataForm
@@ -124,4 +158,12 @@ const messages = defineMessages({
     id: 'Text',
     defaultMessage: 'Text',
   },
+  // placeholder: {
+  //   id: 'Upload a new image',
+  //   defaultMessage: 'Upload a new image',
+  // },
+  // image: {
+  //   id: 'Image',
+  //   defaultMessage: 'Image',
+  // },
 });

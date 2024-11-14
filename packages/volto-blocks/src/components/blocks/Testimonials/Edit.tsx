@@ -106,7 +106,6 @@ export default function Edit(props: TestimonialsEditProps) {
           </div>
         </Container>
       </section>
-      {/* @ts-expect-error TODO */}
       <SidebarPortal selected={selected}>
         {schema && (
           <BlockDataForm

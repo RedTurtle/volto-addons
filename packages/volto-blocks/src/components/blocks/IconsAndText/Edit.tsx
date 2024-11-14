@@ -137,7 +137,6 @@ export default function Edit(props: IconsAndTextEditProps) {
           )}
         </Container>
       </section>
-      {/* @ts-expect-error TODO */}
       <SidebarPortal selected={selected}>
         {schema && (
           <BlockDataForm

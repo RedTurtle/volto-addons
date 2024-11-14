@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="36" viewBox="0 0 40 36">
+  <defs>
+    <clipPath id="clip-text7">
+      <path d="M0 0h40v36H0z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip-text7)" data-name="Raggruppa 3">
+    <g fill-rule="evenodd">
+      <path d="M21.122 7H40V5H21.122Z" data-name="Tracciato 5"/>
+      <path d="M21.122 15H40v-2H21.122Z" data-name="Tracciato 6"/>
+      <path d="M21.122 23H40v-2H21.122Z" data-name="Tracciato 7"/>
+      <path d="M21.122 31H40v-2H21.122Z" data-name="Tracciato 8"/>
+    </g>
+    <g fill-rule="evenodd">
+      <path d="M1.406 17.657h15.47V6.406H1.406ZM0 19.22h18.283V5H0Z" data-name="Tracciato 16"/>
+      <path d="m7.04 10.652 2.65 4.638 2.205-2.205 2.322 2.9 1.1-.879-3.3-4.129-2.014 2.014-2.98-5.204-4.122 7.42 1.229.682Z" data-name="Tracciato 17"/>
+    </g>
+  </g>
+</svg>

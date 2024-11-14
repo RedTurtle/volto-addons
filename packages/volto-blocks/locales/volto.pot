@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-09-04T09:44:50.487Z\n"
+"POT-Creation-Date: 2024-11-14T10:06:05.695Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -30,15 +30,15 @@ msgstr ""
 
 #. Default: "Text"
 #: components/blocks/Accordion/EditItem
+#: components/blocks/CallToAction/Edit
+#: components/blocks/CardWithImages/Edit
+#: components/blocks/CardWithImages/schema
 #: components/blocks/IconsAndText/Edit
 #: components/blocks/IconsAndText/EditItem
 #: components/blocks/IconsAndText/schema
+#: components/blocks/PageIntro/Edit
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
-#: components/blocks/Text1/Edit
-#: components/blocks/Text6/Edit
-#: components/blocks/Text7/Edit
-#: components/blocks/Text7/schema
 msgid "Text"
 msgstr ""
 
@@ -51,17 +51,17 @@ msgstr ""
 #: components/blocks/Accordion/Edit
 #: components/blocks/Accordion/EditItem
 #: components/blocks/Accordion/schema
+#: components/blocks/CallToAction/Edit
+#: components/blocks/CallToAction/schema
+#: components/blocks/CardWithImages/Edit
+#: components/blocks/CardWithImages/schema
 #: components/blocks/IconsAndText/Edit
 #: components/blocks/IconsAndText/EditItem
 #: components/blocks/IconsAndText/schema
+#: components/blocks/PageIntro/Edit
+#: components/blocks/PageIntro/schema
 #: components/blocks/Testimonials/Edit
 #: components/blocks/Testimonials/schema
-#: components/blocks/Text1/Edit
-#: components/blocks/Text1/schema
-#: components/blocks/Text6/Edit
-#: components/blocks/Text6/schema
-#: components/blocks/Text7/Edit
-#: components/blocks/Text7/schema
 msgid "Title"
 msgstr ""
 
@@ -200,6 +200,36 @@ msgstr ""
 msgid "redturtle__volto-blocks__accordion_title"
 msgstr ""
 
+#. Default: "Call To Action"
+#: components/blocks/CallToAction/schema
+msgid "redturtle__volto-blocks__calltoaction_title"
+msgstr ""
+
+#. Default: "Image"
+#: components/blocks/CardWithImages/schema
+msgid "redturtle__volto-blocks__cardwithimages_image_title"
+msgstr ""
+
+#. Default: "Images"
+#: components/blocks/CardWithImages/schema
+msgid "redturtle__volto-blocks__cardwithimages_images_title"
+msgstr ""
+
+#. Default: "Width of the image column"
+#: components/blocks/CardWithImages/schema
+msgid "redturtle__volto-blocks__cardwithimages_img_column_width_description"
+msgstr ""
+
+#. Default: "Image column width"
+#: components/blocks/CardWithImages/schema
+msgid "redturtle__volto-blocks__cardwithimages_img_column_width_title"
+msgstr ""
+
+#. Default: "Card with images"
+#: components/blocks/CardWithImages/schema
+msgid "redturtle__volto-blocks__cardwithimages_title"
+msgstr ""
+
 #. Default: "Call to action"
 #: components/blocks/extenders/cta
 msgid "redturtle__volto-blocks__cta_fieldset_title"
@@ -208,6 +238,11 @@ msgstr ""
 #. Default: "Read more"
 #: components/blocks/extenders/cta
 msgid "redturtle__volto-blocks__cta_title_default"
+msgstr ""
+
+#. Default: "Page intro"
+#: components/blocks/PageIntro/schema
+msgid "redturtle__volto-blocks__pageintro_title"
 msgstr ""
 
 #. Default: "Testimonial"
@@ -223,41 +258,6 @@ msgstr ""
 #. Default: "Testimonials"
 #: components/blocks/Testimonials/schema
 msgid "redturtle__volto-blocks__testimonials_title"
-msgstr ""
-
-#. Default: "Text 1"
-#: components/blocks/Text1/schema
-msgid "redturtle__volto-blocks__text1_title"
-msgstr ""
-
-#. Default: "Text 6"
-#: components/blocks/Text6/schema
-msgid "redturtle__volto-blocks__text6_title"
-msgstr ""
-
-#. Default: "Image"
-#: components/blocks/Text7/schema
-msgid "redturtle__volto-blocks__text7_image_title"
-msgstr ""
-
-#. Default: "Images"
-#: components/blocks/Text7/schema
-msgid "redturtle__volto-blocks__text7_images_title"
-msgstr ""
-
-#. Default: "Width of the image column"
-#: components/blocks/Text7/schema
-msgid "redturtle__volto-blocks__text7_img_column_width_description"
-msgstr ""
-
-#. Default: "Image column width"
-#: components/blocks/Text7/schema
-msgid "redturtle__volto-blocks__text7_img_column_width_title"
-msgstr ""
-
-#. Default: "Text 7"
-#: components/blocks/Text7/schema
-msgid "redturtle__volto-blocks__text7_title"
 msgstr ""
 
 #. Default: "Small"

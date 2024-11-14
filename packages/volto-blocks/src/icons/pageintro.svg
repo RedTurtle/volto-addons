@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
   <defs>
-    <clipPath id="clip-text1">
+    <clipPath id="clip-pageintro">
       <path d="M0 0h36v36H0z"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#clip-text1)" data-name="text1">
+  <g clip-path="url(#clip-pageintro)" data-name="pageintro">
     <path fill-rule="evenodd" d="M6.022 5H0v2.409h1.2V6.2h3.613v9.52h-1.2v1.2h3.613v-1.2h-1.2V6.2h3.613v1.2h1.2V5Z" data-name="Raggruppa 2"/>
     <g fill-rule="evenodd">
       <path d="M15 7h21V5H15Z" data-name="Tracciato 5"/>
