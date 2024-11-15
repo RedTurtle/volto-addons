@@ -87,7 +87,7 @@ export const CardWithImagesSchema = ({
     schema,
     intl,
     formData: data,
-    alignments: ['left', 'center', 'right'],
+    alignments: ['left', 'right'],
   });
 
   return schema;
