@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@plone/scripts": "^3.6.1",
-    "@plone/types": "1.0.0-alpha.20",
+    "@plone/types": "workspace:^",
     "@plone/volto": "workspace:^",
     "@plone/volto-slate": "workspace:^",
     "@types/classnames": "^2.2.11",
@@ -53,7 +53,7 @@
   },
   "dependencies": {
     "@loadable/component": "5.14.1",
-    "@plone/components": "2.0.0-alpha.13",
+    "@plone/components": "workspace:^",
     "@redturtle/volto-slate-extras": "workspace:^2.0.1",
     "classnames": "2.2.6",
     "lodash": "4.17.21",
