@@ -1436,12 +1436,6 @@ importers:
       '@plone/types':
         specifier: workspace:^
         version: link:../../core/packages/types
-      '@plone/volto':
-        specifier: workspace:^
-        version: link:../../core/packages/volto
-      '@plone/volto-slate':
-        specifier: workspace:^
-        version: link:../../core/packages/volto-slate
       '@types/classnames':
         specifier: ^2.2.11
         version: 2.2.11
@@ -1473,12 +1467,6 @@ importers:
       '@plone/scripts':
         specifier: ^3.6.1
         version: 3.6.2
-      '@plone/volto':
-        specifier: workspace:^
-        version: link:../../core/packages/volto
-      '@plone/volto-slate':
-        specifier: workspace:^
-        version: link:../../core/packages/volto-slate
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
