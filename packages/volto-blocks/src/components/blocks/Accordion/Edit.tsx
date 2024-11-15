@@ -102,6 +102,7 @@ export default function Edit(props: AccordionEditProps) {
           </div>
         </Container>
       </section>
+      {/* @ts-expect-error TODO fix */}
       <SidebarPortal selected={selected}>
         {schema && (
           <BlockDataForm
