@@ -50,9 +50,7 @@ export default function ViewItem({ data }: Props) {
         {data.headerTextPosition && (
           <div className={cx(styles['header-text'])}>
             {data.title && (
-              <h3
-                className={cx('block-iconsandtext-title', styles.title)}
-              >
+              <h3 className={cx('block-iconsandtext-title', styles.title)}>
                 {data.headerText}
               </h3>
             )}
