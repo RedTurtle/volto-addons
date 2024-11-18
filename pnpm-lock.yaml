@@ -1450,8 +1450,8 @@ importers:
         specifier: 5.14.1
         version: 5.14.1(react@18.2.0)
       '@plone/components':
-        specifier: workspace:^
-        version: link:../../core/packages/components
+        specifier: 2.0.0-alpha.13
+        version: 2.0.0-alpha.13(@jest/globals@29.7.0)(@types/jest@29.5.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.1.2)
       '@redturtle/volto-slate-extras':
         specifier: workspace:^2.0.1
         version: link:../volto-slate-extras
@@ -1481,8 +1481,14 @@ importers:
         specifier: ^3.6.1
         version: 3.6.2
       '@plone/types':
+        specifier: 1.0.0-alpha.20
+        version: 1.0.0-alpha.20(history@5.3.0)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
+      '@plone/volto':
         specifier: workspace:^
-        version: link:../../core/packages/types
+        version: link:../../core/packages/volto
+      '@plone/volto-slate':
+        specifier: workspace:^
+        version: link:../../core/packages/volto-slate
       '@types/classnames':
         specifier: ^2.2.11
         version: 2.2.11
@@ -1514,6 +1520,12 @@ importers:
       '@plone/scripts':
         specifier: ^3.6.1
         version: 3.6.2
+      '@plone/volto':
+        specifier: workspace:^
+        version: link:../../core/packages/volto
+      '@plone/volto-slate':
+        specifier: workspace:^
+        version: link:../../core/packages/volto-slate
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
@@ -3705,9 +3717,29 @@ packages:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
+  '@plone/components@2.0.0-alpha.13':
+    resolution: {integrity: sha512-7NBhJgFZtaGCp52KvWZGQWaoIWvo3flWFjDgmgtPjkWc24N0rTNYpdKx/EL23OiYRVbXgLAE7279zWzGvwvKZA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+
   '@plone/scripts@3.6.2':
     resolution: {integrity: sha512-52S2Nb8sUDnHobzoYBstn6UkXxri+UGEh5DWZfy0xJ9h/ia6n9XI+mjtSEG3vKkr+hsbLH9sO8RlX4tpG3Kyhg==}
     hasBin: true
+
+  '@plone/types@1.0.0-alpha.20':
+    resolution: {integrity: sha512-DYyPTPGtnr6NqbW8rk/hDRUtmQ0CSR74menpXxLP9KHRnsoEO3zf5YzemIo+yzIw+qxX/mPLQ97brukVX42VuA==}
+    peerDependencies:
+      history: ^5.3.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-intl: 3.12.1
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
 
   '@pmmmwh/react-refresh-webpack-plugin@0.4.3':
     resolution: {integrity: sha512-br5Qwvh8D2OQqSXpd1g/xqXKnK0r+Jz6qVKBbWmpUcrbGOxUrf39V5oZ1876084CGn18uMdR5uvPqBv9UqtBjQ==}
@@ -18772,6 +18804,24 @@ snapshots:
 
   '@pkgr/core@0.1.1': {}
 
+  '@plone/components@2.0.0-alpha.13(@jest/globals@29.7.0)(@types/jest@29.5.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.1.2)':
+    dependencies:
+      '@react-aria/utils': 3.25.3(react@18.2.0)
+      '@react-spectrum/utils': 3.11.11(react@18.2.0)
+      '@storybook/test': 8.2.7(@jest/globals@29.7.0)(@types/jest@29.5.12)(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.1.2)
+      clsx: 2.1.1
+      react: 18.2.0
+      react-aria-components: 1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    optionalDependencies:
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - '@jest/globals'
+      - '@types/bun'
+      - '@types/jest'
+      - jest
+      - storybook
+      - vitest
+
   '@plone/scripts@3.6.2':
     dependencies:
       '@babel/core': 7.25.2
@@ -18792,6 +18842,14 @@ snapshots:
     transitivePeerDependencies:
       - debug
       - supports-color
+
+  '@plone/types@1.0.0-alpha.20(history@5.3.0)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      history: 5.3.0
+      react: 18.2.0
+      react-intl: 3.12.1(react@18.2.0)
+    optionalDependencies:
+      react-dom: 18.2.0(react@18.2.0)
 
   '@pmmmwh/react-refresh-webpack-plugin@0.4.3(react-refresh@0.9.0)(sockjs-client@1.4.0)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.21.5)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.21.5))':
     dependencies:
@@ -21341,6 +21399,24 @@ snapshots:
       - jest
       - vitest
 
+  '@storybook/test@8.2.7(@jest/globals@29.7.0)(@types/jest@29.5.12)(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.1.2)':
+    dependencies:
+      '@storybook/csf': 0.1.11
+      '@storybook/instrumenter': 8.2.7(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))
+      '@testing-library/dom': 10.1.0
+      '@testing-library/jest-dom': 6.4.5(@jest/globals@29.7.0)(@types/jest@29.5.12)(vitest@2.1.2)
+      '@testing-library/user-event': 14.5.2(@testing-library/dom@10.1.0)
+      '@vitest/expect': 1.6.0
+      '@vitest/spy': 1.6.0
+      storybook: 8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2))
+      util: 0.12.5
+    transitivePeerDependencies:
+      - '@jest/globals'
+      - '@types/bun'
+      - '@types/jest'
+      - jest
+      - vitest
+
   '@storybook/theming@8.2.7(storybook@8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2)))':
     dependencies:
       storybook: 8.2.7(@babel/preset-env@7.25.3(@babel/core@7.25.2))
@@ -21538,6 +21614,21 @@ snapshots:
       '@jest/globals': 29.7.0
       '@types/jest': 29.5.12
       vitest: 2.1.2(@types/node@22.1.0)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.26.0)(sass@1.77.8)(terser@5.31.3)
+
+  '@testing-library/jest-dom@6.4.5(@jest/globals@29.7.0)(@types/jest@29.5.12)(vitest@2.1.2)':
+    dependencies:
+      '@adobe/css-tools': 4.4.0
+      '@babel/runtime': 7.20.6
+      aria-query: 5.3.0
+      chalk: 3.0.0
+      css.escape: 1.5.1
+      dom-accessibility-api: 0.6.3
+      lodash: 4.17.21
+      redent: 3.0.0
+    optionalDependencies:
+      '@jest/globals': 29.7.0
+      '@types/jest': 29.5.12
+      vitest: 2.1.2
 
   '@testing-library/react-hooks@8.0.1(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react-test-renderer@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:

@@ -33,11 +33,15 @@
     "release-alpha": "release-it --preRelease=alpha"
   },
   "peerDependencies": {
+    "@plone/volto": "17 || 18",
+    "@plone/volto-slate": "17 || 18",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@plone/scripts": "^3.6.1",
+    "@plone/volto": "workspace:^",
+    "@plone/volto-slate": "workspace:^",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "release-it": "^17.1.1"
