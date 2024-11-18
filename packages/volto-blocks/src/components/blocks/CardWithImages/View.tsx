@@ -4,13 +4,14 @@ import cx from 'classnames';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import type { BlockViewProps } from '@plone/types';
 
-import styles from '@redturtle/volto-blocks/components/blocks/Text7/styles.module.css';
-import type { Text7Data } from '@redturtle/volto-blocks/components/blocks/Text7/schema';
+import styles from '@redturtle/volto-blocks/components/blocks/CardWithImages/styles.module.css';
+import type { CardWithImagesData } from '@redturtle/volto-blocks/components/blocks/CardWithImages/schema';
 
 import config from '@plone/registry';
+import CTA from '../commons/CTA';
 
 type Props = BlockViewProps & {
-  data: Text7Data;
+  data: CardWithImagesData;
 };
 
 export default function View({ data, className, style }: Props) {
@@ -23,14 +24,16 @@ export default function View({ data, className, style }: Props) {
 
   return (
     <section
-      className={cx('block-text7', styles.block, className)}
+      className={cx('block-cardiwithimages', styles.block, className)}
       style={style}
       aria-label={data.title}
     >
-      <Container className={cx('block-text7-container', styles.container)}>
+      <Container
+        className={cx('block-cardiwithimages-container', styles.container)}
+      >
         <div
           className={cx(
-            'block-text7-image-wrapper',
+            'block-cardiwithimages-image-wrapper',
             `column-width-${img_column_width}`,
             styles['image-wrapper'],
             styles[`column-width-${img_column_width}`],
@@ -40,7 +43,7 @@ export default function View({ data, className, style }: Props) {
             data.images.map((img) => (
               <Image
                 key={img['@id']}
-                className={cx('block-text7-image', styles.image)}
+                className={cx('block-cardiwithimages-image', styles.image)}
                 // TODO serialize image brain in the backend
                 src={`${img.image}/@@images/image/large`}
                 loading="lazy"
@@ -50,35 +53,33 @@ export default function View({ data, className, style }: Props) {
         </div>
         <div
           className={cx(
-            'block-text7-body',
+            'block-cardiwithimages-body',
             `column-width-${12 - img_column_width}`,
             styles.body,
             styles[`column-width-${12 - img_column_width}`],
           )}
         >
           {data.title && (
-            <h2 className={cx('block-text7-title', styles.title)}>
+            <h2 className={cx('block-cardiwithimages-title', styles.title)}>
               {data.title}
             </h2>
           )}
           {data.text && (
-            <div className={cx('block-text7-text', styles.text)}>
+            <div className={cx('block-cardiwithimages-text', styles.text)}>
               <TextBlockView data={{ value: data.text ?? {} }} />
             </div>
           )}
           {data.linkHref?.[0] && (
-            <div className={cx('block-text7-cta', styles.cta)}>
-              <UniversalLink
-                href={
-                  data.linkHref
-                    ? flattenToAppURL(data.linkHref[0]['@id'])
-                    : undefined
-                }
-                openLinkInNewTab={false}
-              >
-                {data.linkTitle}
-              </UniversalLink>
-            </div>
+            <CTA
+              href={
+                data.linkHref
+                  ? flattenToAppURL(data.linkHref[0]['@id'])
+                  : undefined
+              }
+              linkTitle={data.linkTitle}
+              openLinkInNewTab={false}
+              {...data}
+            />
           )}
         </div>
       </Container>

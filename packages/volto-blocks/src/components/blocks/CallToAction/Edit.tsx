@@ -15,6 +15,7 @@ import blockIcon from '@redturtle/volto-blocks/icons/calltoaction.svg';
 import type { CallToActionData } from '@redturtle/volto-blocks/components/blocks/CallToAction/schema';
 
 import config from '@plone/registry';
+import CTA from '../commons/CTA';
 
 type CallToActionEditProps = BlockEditProps & {
   data: CallToActionData;
@@ -75,17 +76,15 @@ export default function Edit(props: CallToActionEditProps) {
             placeholder={intl.formatMessage(messages.text)}
           />
           {data.linkHref?.[0] && (
-            <div className={cx('block-calltoaction-cta', styles.cta)}>
-              <UniversalLink
-                href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
-                openLinkInNewTab={false}
-                onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
-                  e.preventDefault();
-                }}
-              >
-                {data.linkTitle}
-              </UniversalLink>
-            </div>
+            <CTA
+              href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
+              linkTitle={data.linkTitle}
+              onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
+                e.preventDefault();
+              }}
+              openLinkInNewTab={false}
+              {...data}
+            />
           )}
         </Container>
       </section>

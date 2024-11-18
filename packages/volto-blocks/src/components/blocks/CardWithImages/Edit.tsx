@@ -15,6 +15,7 @@ import blockIcon from '@redturtle/volto-blocks/icons/cardwithimages.svg';
 import type { CardWithImagesData } from '@redturtle/volto-blocks/components/blocks/CardWithImages/schema';
 
 import config from '@plone/registry';
+import CTA from '../commons/CTA';
 
 type CardWithImagesEditProps = BlockEditProps & {
   data: CardWithImagesData;
@@ -111,17 +112,15 @@ export default function Edit(props: CardWithImagesEditProps) {
               placeholder={intl.formatMessage(messages.text)}
             />
             {data.linkHref?.[0] && (
-              <div className={cx('block-cardiwithimages-cta', styles.cta)}>
-                <UniversalLink
-                  href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
-                  openLinkInNewTab={false}
-                  onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
-                    e.preventDefault();
-                  }}
-                >
-                  {data.linkTitle}
-                </UniversalLink>
-              </div>
+              <CTA
+                href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
+                linkTitle={data.linkTitle}
+                onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
+                  e.preventDefault();
+                }}
+                openLinkInNewTab={false}
+                {...data}
+              />
             )}
           </div>
         </Container>
