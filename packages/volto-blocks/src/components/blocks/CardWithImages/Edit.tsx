@@ -10,17 +10,17 @@ import {
   useHandleDetachedBlockFocus,
 } from '@redturtle/volto-slate-extras';
 
-import styles from '@redturtle/volto-blocks/components/blocks/Text7/styles.module.css';
-import blockIcon from '@redturtle/volto-blocks/icons/text7.svg';
-import type { Text7Data } from '@redturtle/volto-blocks/components/blocks/Text7/schema';
+import styles from '@redturtle/volto-blocks/components/blocks/CardWithImages/styles.module.css';
+import blockIcon from '@redturtle/volto-blocks/icons/cardwithimages.svg';
+import type { CardWithImagesData } from '@redturtle/volto-blocks/components/blocks/CardWithImages/schema';
 
 import config from '@plone/registry';
 
-type Text7EditProps = BlockEditProps & {
-  data: Text7Data;
+type CardWithImagesEditProps = BlockEditProps & {
+  data: CardWithImagesData;
 };
 
-export default function Edit(props: Text7EditProps) {
+export default function Edit(props: CardWithImagesEditProps) {
   const { data, selected, block, onChangeBlock, blocksConfig, blocksErrors } =
     props;
   const intl = useIntl();
@@ -49,13 +49,15 @@ export default function Edit(props: Text7EditProps) {
   return (
     <>
       <section
-        className={cx('block-text7', styles.block)}
+        className={cx('block-cardiwithimages', styles.block)}
         aria-label={data.title}
       >
-        <Container className={cx('block-text7-container', styles.container)}>
+        <Container
+          className={cx('block-cardiwithimages-container', styles.container)}
+        >
           <div
             className={cx(
-              'block-text7-image-wrapper',
+              'block-tecardiwithimagesxt7-image-wrapper',
               `column-width-${img_column_width}`,
               styles['image-wrapper'],
               styles[`column-width-${img_column_width}`],
@@ -65,7 +67,7 @@ export default function Edit(props: Text7EditProps) {
               data.images.map((img) => (
                 <Image
                   key={img['@id']}
-                  className={cx('block-text7-image', styles.image)}
+                  className={cx('block-cardiwithimages-image', styles.image)}
                   // TODO serialize image brain in the backend
                   src={`${img.image}/@@images/image/large`}
                   loading="lazy"
@@ -78,7 +80,7 @@ export default function Edit(props: Text7EditProps) {
           </div>
           <div
             className={cx(
-              'block-text7-body',
+              'block-cardiwithimages-body',
               `column-width-${12 - img_column_width}`,
               styles.body,
               styles[`column-width-${12 - img_column_width}`],
@@ -86,7 +88,7 @@ export default function Edit(props: Text7EditProps) {
           >
             <TextEditorWidget
               {...props}
-              className={cx('block-text7-title', styles.title)}
+              className={cx('block-cardiwithimages-title', styles.title)}
               as="h2"
               data={data}
               fieldName="title"
@@ -109,7 +111,7 @@ export default function Edit(props: Text7EditProps) {
               placeholder={intl.formatMessage(messages.text)}
             />
             {data.linkHref?.[0] && (
-              <div className={cx('block-text7-cta', styles.cta)}>
+              <div className={cx('block-cardiwithimages-cta', styles.cta)}>
                 <UniversalLink
                   href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
                   openLinkInNewTab={false}
@@ -124,7 +126,7 @@ export default function Edit(props: Text7EditProps) {
           </div>
         </Container>
       </section>
-      {/* @ts-expect-error TODO */}
+      {/* @ts-expect-error TODO fix */}
       <SidebarPortal selected={selected}>
         {schema && (
           <BlockDataForm

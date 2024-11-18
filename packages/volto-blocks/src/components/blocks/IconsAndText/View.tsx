@@ -19,7 +19,11 @@ export default function View({ data, className, style }: Props) {
   return (
     <>
       <section
-        className={cx('block block-icons-text', styles.block_icons_text)}
+        className={cx(
+          'block block-icons-text',
+          styles.block_icons_text,
+          className,
+        )}
         aria-label={data.title}
       >
         <Container className={cx('block-iconsandtext-container')}>

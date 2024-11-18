@@ -1,0 +1,4 @@
+:global(.block-calltoaction.has--align--center),
+:global(.block-editor-calltoaction.has--align--center) .block {
+  text-align: center;
+}

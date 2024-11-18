@@ -10,29 +10,29 @@ import {
 } from '@redturtle/volto-blocks/components/blocks/Accordion/schema';
 import AccordionView from '@redturtle/volto-blocks/components/blocks/Accordion/View';
 
-import { Text1Edit } from '@redturtle/volto-blocks/components/blocks/Text1';
+import { PageIntroEdit } from '@redturtle/volto-blocks/components/blocks/PageIntro';
 import {
-  Text1Schema,
-  type Text1Config,
-} from '@redturtle/volto-blocks/components/blocks/Text1/schema';
-import Text1View from '@redturtle/volto-blocks/components/blocks/Text1/View';
-import text1SVG from '@redturtle/volto-blocks/icons/text1.svg';
+  PageIntroSchema,
+  type PageIntroConfig,
+} from '@redturtle/volto-blocks/components/blocks/PageIntro/schema';
+import PageIntroView from '@redturtle/volto-blocks/components/blocks/PageIntro/View';
+import pageintroSVG from '@redturtle/volto-blocks/icons/pageintro.svg';
 
-import { Text6Edit } from '@redturtle/volto-blocks/components/blocks/Text6';
+import { CallToActionEdit } from '@redturtle/volto-blocks/components/blocks/CallToAction';
 import {
-  Text6Schema,
-  type Text6Config,
-} from '@redturtle/volto-blocks/components/blocks/Text6/schema';
-import Text6View from '@redturtle/volto-blocks/components/blocks/Text6/View';
-import text6SVG from '@redturtle/volto-blocks/icons/text6.svg';
+  CallToActionSchema,
+  type CallToActionConfig,
+} from '@redturtle/volto-blocks/components/blocks/CallToAction/schema';
+import CallToActionView from '@redturtle/volto-blocks/components/blocks/CallToAction/View';
+import calltoactionSVG from '@redturtle/volto-blocks/icons/calltoaction.svg';
 
-import { Text7Edit } from '@redturtle/volto-blocks/components/blocks/Text7';
+import { CardWithImagesEdit } from '@redturtle/volto-blocks/components/blocks/CardWithImages';
 import {
-  Text7Schema,
-  type Text7Config,
-} from '@redturtle/volto-blocks/components/blocks/Text7/schema';
-import Text7View from '@redturtle/volto-blocks/components/blocks/Text7/View';
-import text7SVG from '@redturtle/volto-blocks/icons/text7.svg';
+  CardWithImagesSchema,
+  type CardWithImagesConfig,
+} from '@redturtle/volto-blocks/components/blocks/CardWithImages/schema';
+import CardWithImagesView from '@redturtle/volto-blocks/components/blocks/CardWithImages/View';
+import CardWithImagesSVG from '@redturtle/volto-blocks/icons/cardwithimages.svg';
 
 import { TestimonialsEdit } from '@redturtle/volto-blocks/components/blocks/Testimonials';
 import {
@@ -52,9 +52,9 @@ import iconsAndTextSVG from '@redturtle/volto-blocks/icons/icons_and_text.svg';
 declare module '@plone/types' {
   interface BlocksConfigData {
     accordion: AccordionConfig;
-    text1: Text1Config;
-    text6: Text6Config;
-    text7: Text7Config;
+    pageintro: PageIntroConfig;
+    calltoaction: CallToActionConfig;
+    cardwithimages: CardWithImagesConfig;
     testimonials: TestimonialsConfig;
     iconsandtext: IconsAndTextConfig;
   }
@@ -62,7 +62,12 @@ declare module '@plone/types' {
 
 type RtBlocksConfig = Pick<
   BlocksConfigData,
-  'accordion' | 'text1' | 'text6' | 'text7' | 'testimonials' | 'iconsandtext'
+  | 'accordion'
+  | 'pageintro'
+  | 'calltoaction'
+  | 'cardwithimages'
+  | 'testimonials'
+  | 'iconsandtext'
 >;
 
 const defaultBlocksConfig = {
@@ -88,45 +93,45 @@ export const blocks: RtBlocksConfig = {
     blockHasOwnFocusManagement: true,
     blockSchema: AccordionSchema,
   },
-  text1: {
+  pageintro: {
     ...defaultBlocksConfig,
-    id: 'text1',
-    title: 'Text 1',
-    icon: text1SVG,
+    id: 'pageintro',
+    title: 'Page intro',
+    icon: pageintroSVG,
     group: 'text',
-    view: Text1View,
-    edit: Text1Edit,
+    view: PageIntroView,
+    edit: PageIntroEdit,
     blockHasOwnFocusManagement: true,
-    blockSchema: Text1Schema,
+    blockSchema: PageIntroSchema,
   },
-  text6: {
+  calltoaction: {
     ...defaultBlocksConfig,
-    id: 'text6',
-    title: 'Text 6',
-    icon: text6SVG,
+    id: 'calltoaction',
+    title: 'Call To Action',
+    icon: calltoactionSVG,
     group: 'text',
-    view: Text6View,
-    edit: Text6Edit,
+    view: CallToActionView,
+    edit: CallToActionEdit,
     blockHasOwnFocusManagement: true,
-    blockSchema: Text6Schema,
+    blockSchema: CallToActionSchema,
   },
-  text7: {
+  cardwithimages: {
     ...defaultBlocksConfig,
-    id: 'text7',
-    title: 'Text 7',
-    icon: text7SVG,
+    id: 'cardwithimages',
+    title: 'Card with Image',
+    icon: CardWithImagesSVG,
     group: 'text',
-    view: Text7View,
-    edit: Text7Edit,
+    view: CardWithImagesView,
+    edit: CardWithImagesEdit,
     mostUsed: true,
     blockHasOwnFocusManagement: true,
-    blockSchema: Text7Schema,
+    blockSchema: CardWithImagesSchema,
   },
   testimonials: {
     ...defaultBlocksConfig,
     id: 'testimonials',
     title: 'Testimonials',
-    icon: text7SVG,
+    icon: CardWithImagesSVG,
     group: 'text',
     view: TestimonialsView,
     edit: TestimonialsEdit,

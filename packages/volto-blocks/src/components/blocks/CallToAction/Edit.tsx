@@ -10,17 +10,17 @@ import {
   useHandleDetachedBlockFocus,
 } from '@redturtle/volto-slate-extras';
 
-import styles from '@redturtle/volto-blocks/components/blocks/Text6/styles.module.css';
-import blockIcon from '@redturtle/volto-blocks/icons/text6.svg';
-import type { Text6Data } from '@redturtle/volto-blocks/components/blocks/Text6/schema';
+import styles from '@redturtle/volto-blocks/components/blocks/CallToAction/styles.module.css';
+import blockIcon from '@redturtle/volto-blocks/icons/calltoaction.svg';
+import type { CallToActionData } from '@redturtle/volto-blocks/components/blocks/CallToAction/schema';
 
 import config from '@plone/registry';
 
-type Text6EditProps = BlockEditProps & {
-  data: Text6Data;
+type CallToActionEditProps = BlockEditProps & {
+  data: CallToActionData;
 };
 
-export default function Edit(props: Text6EditProps) {
+export default function Edit(props: CallToActionEditProps) {
   const { data, selected, block, onChangeBlock, blocksConfig, blocksErrors } =
     props;
   const intl = useIntl();
@@ -44,13 +44,15 @@ export default function Edit(props: Text6EditProps) {
   return (
     <>
       <section
-        className={cx('block-text6', styles.block)}
+        className={cx('block-calltoaction', styles.block)}
         aria-label={data.title}
       >
-        <Container className={cx('block-text6-container', styles.container)}>
+        <Container
+          className={cx('block-calltoaction-container', styles.container)}
+        >
           <TextEditorWidget
             {...props}
-            className={cx('block-text6-title', styles.title)}
+            className={cx('block-calltoaction-title', styles.title)}
             as="h2"
             data={data}
             fieldName="title"
@@ -73,7 +75,7 @@ export default function Edit(props: Text6EditProps) {
             placeholder={intl.formatMessage(messages.text)}
           />
           {data.linkHref?.[0] && (
-            <div className={cx('block-text6-cta', styles.cta)}>
+            <div className={cx('block-calltoaction-cta', styles.cta)}>
               <UniversalLink
                 href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
                 openLinkInNewTab={false}
@@ -87,7 +89,7 @@ export default function Edit(props: Text6EditProps) {
           )}
         </Container>
       </section>
-      {/* @ts-expect-error TODO */}
+      {/* @ts-expect-error TODO fix */}
       <SidebarPortal selected={selected}>
         {schema && (
           <BlockDataForm
