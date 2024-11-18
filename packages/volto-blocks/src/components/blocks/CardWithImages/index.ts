@@ -1,5 +1,5 @@
 import loadable from '@loadable/component';
 
-export const Text6Edit = loadable(
+export const CardWithImagesEdit = loadable(
   () => import(/* webpackChunkName: "redturtle__volto-blocks" */ './Edit'),
 );

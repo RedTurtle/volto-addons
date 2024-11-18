@@ -10,18 +10,18 @@ import {
   useHandleDetachedBlockFocus,
 } from '@redturtle/volto-slate-extras';
 
-import styles from '@redturtle/volto-blocks/components/blocks/Text1/styles.module.css';
-import blockIcon from '@redturtle/volto-blocks/icons/text1.svg';
-import type { Text1Data } from '@redturtle/volto-blocks/components/blocks/Text1/schema';
+import styles from '@redturtle/volto-blocks/components/blocks/PageIntro/styles.module.css';
+import blockIcon from '@redturtle/volto-blocks/icons/pageintro.svg';
+import type { PageIntroData } from '@redturtle/volto-blocks/components/blocks/PageIntro/schema';
 
 import config from '@plone/registry';
 import CTA from '../commons/CTA';
 
-type Text1EditProps = BlockEditProps & {
-  data: Text1Data;
+type PageIntroEditProps = BlockEditProps & {
+  data: PageIntroData;
 };
 
-export default function Edit(props: Text1EditProps) {
+export default function Edit(props: PageIntroEditProps) {
   const { data, selected, block, onChangeBlock, blocksConfig, blocksErrors } =
     props;
   const intl = useIntl();
@@ -45,14 +45,16 @@ export default function Edit(props: Text1EditProps) {
   return (
     <>
       <section
-        className={cx('block-text1', styles.block)}
+        className={cx('block-pageintro', styles.block)}
         aria-label={data.title}
       >
-        <Container className={cx('block-text1-container', styles.container)}>
-          <div className={cx('block-text1-narrow-col', styles.narrow)}>
+        <Container
+          className={cx('block-pageintro-container', styles.container)}
+        >
+          <div className={cx('block-pageintro-narrow-col', styles.narrow)}>
             <TextEditorWidget
               {...props}
-              className={cx('block-text1-title', styles.title)}
+              className={cx('block-pageintro-title', styles.title)}
               as="h2"
               data={data}
               fieldName="title"
@@ -76,7 +78,7 @@ export default function Edit(props: Text1EditProps) {
               />
             )}
           </div>
-          <div className={cx('block-text1-wide-col', styles.wide)}>
+          <div className={cx('block-pageintro-wide-col', styles.wide)}>
             <TextEditorWidget
               {...props}
               fieldName="text"
@@ -90,7 +92,7 @@ export default function Edit(props: Text1EditProps) {
           </div>
         </Container>
       </section>
-      {/* @ts-expect-error TODO */}
+      {/* @ts-expect-error TODO fix */}
       <SidebarPortal selected={selected}>
         {schema && (
           <BlockDataForm

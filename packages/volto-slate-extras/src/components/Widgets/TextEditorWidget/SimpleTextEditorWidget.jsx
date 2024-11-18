@@ -12,7 +12,6 @@ import { defineMessages, useIntl } from 'react-intl';
 import { useInView } from 'react-intersection-observer';
 
 import './simpleTextEditorWidget.css';
-import Caret from './Caret';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -101,6 +100,7 @@ const SimpleTextEditorWidget = (props) => {
       fieldRef.current.focus();
       setDefaultCaretPosition();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
 
   useEffect(() => {
@@ -110,6 +110,7 @@ const SimpleTextEditorWidget = (props) => {
       fieldRef.current.innerText = _value;
       if (selected) setDefaultCaretPosition();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value, data]);
 
   const selectThis = () => {

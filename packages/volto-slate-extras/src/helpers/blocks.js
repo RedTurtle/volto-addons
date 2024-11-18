@@ -50,12 +50,14 @@ export const useHandleDetachedBlockFocus = (
     } else if (!selected) {
       setSelectedField(null);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
 
   useEffect(() => {
     if (!selected && selectedField && onSelectBlock) {
       onSelectBlock(block);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedField]);
 
   useEffect(() => {
@@ -74,6 +76,7 @@ export const useHandleDetachedBlockFocus = (
         }
       };
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected, selectedField]);
 
   return { selectedField, setSelectedField };

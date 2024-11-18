@@ -2,13 +2,13 @@
   container-type: inline-size;
 }
 
-:global(.block-text1.has--align--right) .wide,
-:global(.block-editor-text1.has--align--right) .wide {
+:global(.block-pageintro.has--align--right) .wide,
+:global(.block-editor-pageintro.has--align--right) .wide {
   order: 1;
 }
 
-:global(.block-text1.has--align--right) .narrow,
-:global(.block-editor-text1.has--align--right) .narrow {
+:global(.block-pageintro.has--align--right) .narrow,
+:global(.block-editor-pageintro.has--align--right) .narrow {
   order: 2;
 }
 
