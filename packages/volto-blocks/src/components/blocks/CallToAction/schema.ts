@@ -68,6 +68,7 @@ const messages = defineMessages({
   },
 });
 
-export interface CallToActionConfig extends Omit<BlockConfigBase, 'blockSchema'> {
+export interface CallToActionConfig
+  extends Omit<BlockConfigBase, 'blockSchema'> {
   blockSchema: typeof CallToActionSchema;
 }
