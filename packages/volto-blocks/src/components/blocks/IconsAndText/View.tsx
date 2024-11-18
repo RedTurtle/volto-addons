@@ -5,7 +5,7 @@ import ViewItem from '@redturtle/volto-blocks/components/blocks/IconsAndText/Vie
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
 import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.scss';
 import cx from 'classnames';
-import CTA from '../commons/CTA';
+import CTA from '@redturtle/volto-blocks/components/blocks/commons/CTA';
 
 type Props = BlockViewProps & {
   data: IconsAndTextData;

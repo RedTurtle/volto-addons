@@ -15,7 +15,7 @@ import blockIcon from '@redturtle/volto-blocks/icons/text7.svg';
 import type { TestimonialsData } from '@redturtle/volto-blocks/components/blocks/Testimonials/schema';
 
 import config from '@plone/registry';
-import CTA from '../commons/CTA';
+import CTA from '@redturtle/volto-blocks/components/blocks/commons/CTA';
 
 type TestimonialsEditProps = BlockEditProps & {
   data: TestimonialsData;

@@ -15,7 +15,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { v4 as uuid } from 'uuid';
 
 import config from '@plone/registry';
-import CTA from '../commons/CTA';
+import CTA from '@redturtle/volto-blocks/components/blocks/commons/CTA';
 
 type IconsAndTextEditProps = BlockEditProps & {
   data: IconsAndTextData;

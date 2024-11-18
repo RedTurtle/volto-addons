@@ -15,7 +15,7 @@ import blockIcon from '@redturtle/volto-blocks/icons/calltoaction.svg';
 import type { CallToActionData } from '@redturtle/volto-blocks/components/blocks/CallToAction/schema';
 
 import config from '@plone/registry';
-import CTA from '../commons/CTA';
+import CTA from '@redturtle/volto-blocks/components/blocks/commons/CTA';
 
 type CallToActionEditProps = BlockEditProps & {
   data: CallToActionData;

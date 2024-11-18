@@ -7,7 +7,7 @@ import styles from '@redturtle/volto-blocks/components/blocks/CardWithImages/sty
 import type { CardWithImagesData } from '@redturtle/volto-blocks/components/blocks/CardWithImages/schema';
 
 import config from '@plone/registry';
-import CTA from '../commons/CTA';
+import CTA from '@redturtle/volto-blocks/components/blocks/commons/CTA';
 
 type Props = BlockViewProps & {
   data: CardWithImagesData;

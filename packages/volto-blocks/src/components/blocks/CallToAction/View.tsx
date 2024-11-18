@@ -6,7 +6,7 @@ import styles from '@redturtle/volto-blocks/components/blocks/CallToAction/style
 import type { CallToActionData } from '@redturtle/volto-blocks/components/blocks/CallToAction/schema';
 
 import config from '@plone/registry';
-import CTA from '../commons/CTA';
+import CTA from '@redturtle/volto-blocks/components/blocks/commons/CTA';
 
 type Props = BlockViewProps & {
   data: CallToActionData;
