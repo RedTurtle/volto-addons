@@ -1,6 +1,6 @@
 import { useIntl, defineMessages } from 'react-intl';
 import cx from 'classnames';
-import { SidebarPortal, Icon, UniversalLink } from '@plone/volto/components';
+import { SidebarPortal, Icon } from '@plone/volto/components';
 import { BlockDataForm } from '@plone/volto/components/manage/Form';
 
 import type { BlockEditProps } from '@plone/types';

@@ -1,5 +1,4 @@
 import { flattenToAppURL } from '@plone/volto/helpers';
-import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import type { BlockViewProps } from '@plone/types';

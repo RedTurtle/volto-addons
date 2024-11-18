@@ -1,7 +1,6 @@
 import config from '@plone/registry';
 import type { BlockViewProps } from '@plone/types';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
-import { UniversalLink } from '@plone/volto/components';
 import ViewItem from '@redturtle/volto-blocks/components/blocks/IconsAndText/ViewItem';
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
 import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.scss';

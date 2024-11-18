@@ -1,5 +1,5 @@
 import type { BlockEditProps } from '@plone/types';
-import { Icon, SidebarPortal, UniversalLink } from '@plone/volto/components';
+import { Icon, SidebarPortal } from '@plone/volto/components';
 import { BlockDataForm } from '@plone/volto/components/manage/Form';
 import EditItem from '@redturtle/volto-blocks/components/blocks/IconsAndText/EditItem';
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
