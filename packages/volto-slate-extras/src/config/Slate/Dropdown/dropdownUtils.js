@@ -215,7 +215,7 @@ export const isLinkStyleActive = (editor, style) => {
   }
 
   if (found.length) {
-    for (const [n, p] of found) {
+    for (const [n] of found) {
       if (n?.styleName?.indexOf(style) >= 0) {
         return true;
       }
