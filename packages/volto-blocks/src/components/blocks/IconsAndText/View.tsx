@@ -1,11 +1,12 @@
 import config from '@plone/registry';
 import type { BlockViewProps } from '@plone/types';
+import { flattenToAppURL } from '@plone/volto/helpers';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
-import { UniversalLink } from '@plone/volto/components';
 import ViewItem from '@redturtle/volto-blocks/components/blocks/IconsAndText/ViewItem';
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
 import styles from '@redturtle/volto-blocks/components/blocks/IconsAndText/styles.module.scss';
 import cx from 'classnames';
+import CTA from '@redturtle/volto-blocks/components/blocks/commons/CTA';
 
 type Props = BlockViewProps & {
   data: IconsAndTextData;
@@ -57,14 +58,17 @@ export default function View({ data, className, style }: Props) {
               ))}
           </div>
           {data.linkHref?.[0] && (
-            <div className={cx('block-iconsandtext-cta', styles.cta)}>
-              <UniversalLink
-                href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
-                openLinkInNewTab={false}
-              >
-                {data.linkTitle}
-              </UniversalLink>
-            </div>
+            <CTA
+              href={
+                data.linkHref
+                  ? flattenToAppURL(data.linkHref[0]['@id'])
+                  : undefined
+              }
+              openLinkInNewTab={false}
+              {...data}
+            >
+              {data.linkTitle}
+            </CTA>
           )}
         </Container>
       </section>

@@ -1,12 +1,13 @@
-import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import type { BlockViewProps } from '@plone/types';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 import styles from '@redturtle/volto-blocks/components/blocks/Testimonials/styles.module.css';
 import type { TestimonialsData } from '@redturtle/volto-blocks/components/blocks/Testimonials/schema';
 
 import config from '@plone/registry';
+import CTA from '@redturtle/volto-blocks/components/blocks/commons/CTA';
 
 type Props = BlockViewProps & {
   data: TestimonialsData;
@@ -14,6 +15,7 @@ type Props = BlockViewProps & {
 
 export default function View({ data, className, style }: Props) {
   const Container = config.getComponent('Container').component || 'div';
+
   // const Image = config.getComponent('Image').component;
 
   return (
@@ -48,14 +50,17 @@ export default function View({ data, className, style }: Props) {
             </div>
           )}
           {data.linkHref?.[0] && (
-            <div className={cx('block-testimonials-cta', styles.cta)}>
-              <UniversalLink
-                href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
-                openLinkInNewTab={false}
-              >
-                {data.linkTitle}
-              </UniversalLink>
-            </div>
+            <CTA
+              href={
+                data.linkHref
+                  ? flattenToAppURL(data.linkHref[0]['@id'])
+                  : undefined
+              }
+              openLinkInNewTab={false}
+              {...data}
+            >
+              {data.linkTitle}
+            </CTA>
           )}
         </div>
       </Container>

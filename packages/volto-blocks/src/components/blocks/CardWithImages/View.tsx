@@ -1,5 +1,4 @@
 import { flattenToAppURL } from '@plone/volto/helpers';
-import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import type { BlockViewProps } from '@plone/types';
@@ -8,6 +7,7 @@ import styles from '@redturtle/volto-blocks/components/blocks/CardWithImages/sty
 import type { CardWithImagesData } from '@redturtle/volto-blocks/components/blocks/CardWithImages/schema';
 
 import config from '@plone/registry';
+import CTA from '@redturtle/volto-blocks/components/blocks/commons/CTA';
 
 type Props = BlockViewProps & {
   data: CardWithImagesData;
@@ -69,18 +69,17 @@ export default function View({ data, className, style }: Props) {
             </div>
           )}
           {data.linkHref?.[0] && (
-            <div className={cx('block-cardiwithimages-cta', styles.cta)}>
-              <UniversalLink
-                href={
-                  data.linkHref
-                    ? flattenToAppURL(data.linkHref[0]['@id'])
-                    : undefined
-                }
-                openLinkInNewTab={false}
-              >
-                {data.linkTitle}
-              </UniversalLink>
-            </div>
+            <CTA
+              href={
+                data.linkHref
+                  ? flattenToAppURL(data.linkHref[0]['@id'])
+                  : undefined
+              }
+              openLinkInNewTab={false}
+              {...data}
+            >
+              {data.linkTitle}
+            </CTA>
           )}
         </div>
       </Container>

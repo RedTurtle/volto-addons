@@ -1,5 +1,5 @@
 import type { BlockEditProps } from '@plone/types';
-import { Icon, SidebarPortal, UniversalLink } from '@plone/volto/components';
+import { Icon, SidebarPortal } from '@plone/volto/components';
 import { BlockDataForm } from '@plone/volto/components/manage/Form';
 import EditItem from '@redturtle/volto-blocks/components/blocks/IconsAndText/EditItem';
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
@@ -15,6 +15,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { v4 as uuid } from 'uuid';
 
 import config from '@plone/registry';
+import CTA from '@redturtle/volto-blocks/components/blocks/commons/CTA';
 
 type IconsAndTextEditProps = BlockEditProps & {
   data: IconsAndTextData;
@@ -123,17 +124,16 @@ export default function Edit(props: IconsAndTextEditProps) {
               ))}
           </div>
           {data.linkHref?.[0] && (
-            <div className={cx('block-iconsandtext-cta', styles.cta)}>
-              <UniversalLink
-                href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
-                openLinkInNewTab={false}
-                onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
-                  e.preventDefault();
-                }}
-              >
-                {data.linkTitle}
-              </UniversalLink>
-            </div>
+            <CTA
+              href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
+              onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
+                e.preventDefault();
+              }}
+              openLinkInNewTab={false}
+              {...data}
+            >
+              {data.linkTitle}
+            </CTA>
           )}
         </Container>
       </section>

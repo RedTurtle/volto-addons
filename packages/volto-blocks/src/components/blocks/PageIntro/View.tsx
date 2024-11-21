@@ -1,12 +1,13 @@
-import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import type { BlockViewProps } from '@plone/types';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 import styles from '@redturtle/volto-blocks/components/blocks/PageIntro/styles.module.css';
 import type { PageIntroData } from '@redturtle/volto-blocks/components/blocks/PageIntro/schema';
 
 import config from '@plone/registry';
+import CTA from '@redturtle/volto-blocks/components/blocks/commons/CTA';
 
 type Props = BlockViewProps & {
   data: PageIntroData;
@@ -29,14 +30,17 @@ export default function View({ data, className, style }: Props) {
             </h2>
           )}
           {data.linkHref?.[0] && (
-            <div className={cx('block-pageintro-cta', styles.cta)}>
-              <UniversalLink
-                href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
-                openLinkInNewTab={false}
-              >
-                {data.linkTitle}
-              </UniversalLink>
-            </div>
+            <CTA
+              href={
+                data.linkHref
+                  ? flattenToAppURL(data.linkHref[0]['@id'])
+                  : undefined
+              }
+              openLinkInNewTab={false}
+              {...data}
+            >
+              {data.linkTitle}
+            </CTA>
           )}
         </div>
         <div className={cx('block-pageintro-wide-col', styles.wide)}>

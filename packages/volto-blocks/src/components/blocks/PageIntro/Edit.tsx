@@ -1,6 +1,6 @@
 import { useIntl, defineMessages } from 'react-intl';
 import cx from 'classnames';
-import { SidebarPortal, Icon, UniversalLink } from '@plone/volto/components';
+import { SidebarPortal, Icon } from '@plone/volto/components';
 import { BlockDataForm } from '@plone/volto/components/manage/Form';
 
 import type { BlockEditProps } from '@plone/types';
@@ -15,6 +15,7 @@ import blockIcon from '@redturtle/volto-blocks/icons/pageintro.svg';
 import type { PageIntroData } from '@redturtle/volto-blocks/components/blocks/PageIntro/schema';
 
 import config from '@plone/registry';
+import CTA from '@redturtle/volto-blocks/components/blocks/commons/CTA';
 
 type PageIntroEditProps = BlockEditProps & {
   data: PageIntroData;
@@ -66,17 +67,16 @@ export default function Edit(props: PageIntroEditProps) {
               placeholder={intl.formatMessage(messages.title)}
             />
             {data.linkHref?.[0] && (
-              <div className={cx('block-pageintro-cta', styles.cta)}>
-                <UniversalLink
-                  href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
-                  openLinkInNewTab={false}
-                  onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
-                    e.preventDefault();
-                  }}
-                >
-                  {data.linkTitle}
-                </UniversalLink>
-              </div>
+              <CTA
+                href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
+                onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
+                  e.preventDefault();
+                }}
+                openLinkInNewTab={false}
+                {...data}
+              >
+                {data.linkTitle}
+              </CTA>
             )}
           </div>
           <div className={cx('block-pageintro-wide-col', styles.wide)}>
