@@ -14,6 +14,10 @@ type Props = BlockViewProps & {
 
 export default function View({ data, className, style }: Props) {
   const Container = config.getComponent('Container').component || 'div';
+  function flattenToAppURL(arg0: any) {
+    throw new Error('Function not implemented.');
+  }
+
   // const Image = config.getComponent('Image').component;
 
   return (
@@ -49,7 +53,11 @@ export default function View({ data, className, style }: Props) {
           )}
           {data.linkHref?.[0] && (
             <CTA
-              href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
+              href={
+                data.linkHref
+                  ? flattenToAppURL(data.linkHref[0]['@id'])
+                  : undefined
+              }
               openLinkInNewTab={false}
               {...data}
             >
