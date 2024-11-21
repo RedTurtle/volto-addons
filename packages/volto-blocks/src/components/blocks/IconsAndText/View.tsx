@@ -1,5 +1,6 @@
 import config from '@plone/registry';
 import type { BlockViewProps } from '@plone/types';
+import { flattenToAppURL } from '@plone/volto/helpers';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import ViewItem from '@redturtle/volto-blocks/components/blocks/IconsAndText/ViewItem';
 import type { IconsAndTextData } from '@redturtle/volto-blocks/components/blocks/IconsAndText/schema';
@@ -15,10 +16,6 @@ export default function View({ data, className, style }: Props) {
   const column_number = data.column_number ? parseInt(data.column_number) : 3;
 
   const Container = config.getComponent('Container').component || 'div';
-
-  function flattenToAppURL(arg0: any) {
-    throw new Error('Function not implemented.');
-  }
 
   return (
     <>

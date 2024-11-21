@@ -1,6 +1,7 @@
 import cx from 'classnames';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import type { BlockViewProps } from '@plone/types';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 import styles from '@redturtle/volto-blocks/components/blocks/CallToAction/styles.module.css';
 import type { CallToActionData } from '@redturtle/volto-blocks/components/blocks/CallToAction/schema';
@@ -14,11 +15,6 @@ type Props = BlockViewProps & {
 
 export default function View({ data, className, style }: Props) {
   const Container = config.getComponent('Container').component || 'div';
-
-  function flattenToAppURL(arg0: any) {
-    throw new Error('Function not implemented.');
-  }
-
   return (
     <section
       className={cx('block-calltoaction', styles.block, className)}
