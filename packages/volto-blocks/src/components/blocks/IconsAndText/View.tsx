@@ -59,10 +59,11 @@ export default function View({ data, className, style }: Props) {
           {data.linkHref?.[0] && (
             <CTA
               href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
-              linkTitle={data.linkTitle}
               openLinkInNewTab={false}
               {...data}
-            />
+            >
+              {data.linkTitle}
+            </CTA>
           )}
         </Container>
       </section>

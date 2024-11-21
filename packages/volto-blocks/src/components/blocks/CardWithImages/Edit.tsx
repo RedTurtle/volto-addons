@@ -114,13 +114,14 @@ export default function Edit(props: CardWithImagesEditProps) {
             {data.linkHref?.[0] && (
               <CTA
                 href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
-                linkTitle={data.linkTitle}
                 onClick={(e: React.SyntheticEvent<HTMLLinkElement>) => {
                   e.preventDefault();
                 }}
                 openLinkInNewTab={false}
                 {...data}
-              />
+              >
+                {data.linkTitle}
+              </CTA>
             )}
           </div>
         </Container>

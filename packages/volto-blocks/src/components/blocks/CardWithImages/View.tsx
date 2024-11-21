@@ -70,15 +70,12 @@ export default function View({ data, className, style }: Props) {
           )}
           {data.linkHref?.[0] && (
             <CTA
-              href={
-                data.linkHref
-                  ? flattenToAppURL(data.linkHref[0]['@id'])
-                  : undefined
-              }
-              linkTitle={data.linkTitle}
+              href={data.linkHref ? data.linkHref[0]['@id'] : undefined}
               openLinkInNewTab={false}
               {...data}
-            />
+            >
+              {data.linkTitle}
+            </CTA>
           )}
         </div>
       </Container>
