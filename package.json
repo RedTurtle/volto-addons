@@ -41,7 +41,8 @@
     "@plone/registry": "workspace:*",
     "@plone/volto": "workspace:*",
     "@redturtle/volto-blocks": "workspace:*",
-    "@redturtle/volto-slate-extras": "workspace:*"
+    "@redturtle/volto-slate-extras": "workspace:*",
+    "@redturtle/volto-carousel": "workspace:*"
   },
   "devDependencies": {
     "mrs-developer": "^2.2.0",
