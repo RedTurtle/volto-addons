@@ -17,13 +17,7 @@
       "@redturtle/volto-carousel/*": ["./src/*"]
     }
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "src/components/index.js",
-    "src/components/Carousel/Carousel.jsx",
-    "src/components/Carousel/CarouselSlide.jsx"
-  ],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": [
     "node_modules",
     "build",

@@ -1,17 +1,23 @@
-module.exports = function (api) {
-  api.cache(true);
-  const presets = ['razzle'];
-  const plugins = [
-    [
-      'react-intl', // React Intl extractor, required for the whole i18n infrastructure to work
+module.exports = {
+  module: {
+    rules: [
       {
-        messagesDir: './build/messages/',
+        test: /\.(js|jsx|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+              '@babel/preset-typescript',
+            ],
+          },
+        },
       },
     ],
-  ];
-
-  return {
-    plugins,
-    presets,
-  };
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
 };

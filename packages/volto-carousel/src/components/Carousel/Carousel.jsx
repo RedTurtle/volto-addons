@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import cx from 'classnames';
-import { injectLazyLibs } from '@plone/volto/src/helpers/Loadable/Loadable';
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import PlayIcon from './PlayIcon';
 import PauseIcon from './PauseIcon';
 
@@ -63,6 +63,7 @@ const Carousel = ({
   full_width,
   className,
   isEditMode,
+  modules,
   ...carouselConfig
 }) => {
   const intl = useIntl();
@@ -75,6 +76,7 @@ const Carousel = ({
     label: intl.formatMessage(messages.play),
     icon: PlayIcon,
   });
+
   const _autoplay = autoplay
     ? {
         delay: autoplayDelay,
@@ -94,18 +96,26 @@ const Carousel = ({
   }
 
   let swiperConfig = {
-    modules: [Navigation, Pagination, A11y, Autoplay, Keyboard],
+    modules: [
+      ...new Set([
+        ...modules,
+        Navigation,
+        Pagination,
+        A11y,
+        Autoplay,
+        Keyboard,
+      ]),
+    ],
     slidesPerView: 1, //default, for mobile is 1 slide.
     spaceBetween,
     loop,
     centeredSlides: slidesPerView > 1 ? false : true,
-    navigation: true,
     lazy: true,
     keyboard: {
       enabled: true,
       onlyInViewport: true,
     },
-    className: 'rt-carousel',
+    className: 'volto-carousel',
     a11y: {
       enabled: true,
       containerMessage: intl.formatMessage(messages.carousel),
@@ -122,6 +132,7 @@ const Carousel = ({
     ...breakpointsConfig,
     ...(carouselConfig ?? {}),
   };
+
   if (autoplay) {
     swiperConfig.autoplay = _autoplay;
   }
@@ -159,7 +170,7 @@ const Carousel = ({
 
   return (
     <div
-      className={cx('rt-carousel-wrapper', {
+      className={cx('volto-carousel-wrapper', {
         'full-width': full_width,
         'ui container': !full_width,
         ['appearance-' + className]: className,

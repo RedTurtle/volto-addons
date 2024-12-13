@@ -4,7 +4,7 @@
   --swiper-bullet-color: #fff;
   --swiper-navigation-color: #fff;
   --swiper-navigation-shadow: #000;
-  --rt-carousel-height: 30rem;
+  --volto-carousel-height: 30rem;
 }
 .swiper {
   width: 100%;
@@ -49,17 +49,17 @@
     0 0 2px var(--swiper-navigation-shadow),
     0 0 2px var(--swiper-navigation-shadow);
 }
-.rt-carousel-wrapper {
-  height: var(--rt-carousel-height, 30rem);
+.volto-carousel-wrapper {
+  height: var(--volto-carousel-height, 30rem);
 }
 
 @media (max-width: 1200px) {
-  .rt-carousel-wrapper {
+  .volto-carousel-wrapper {
     height: auto;
   }
 }
 
-.rt-carousel-wrapper .play-pause-wrapper {
+.volto-carousel-wrapper .play-pause-wrapper {
   position: absolute;
   z-index: 10;
   top: var(--swiper-pagination-top, auto);
@@ -68,7 +68,7 @@
   height: 2.5rem;
   color: #000;
 }
-.rt-carousel-wrapper .play-pause-wrapper button {
+.volto-carousel-wrapper .play-pause-wrapper button {
   width: 25px;
   height: 25px;
   border: none;
@@ -79,17 +79,17 @@
   cursor: pointer;
   line-height: 15px;
 }
-.rt-carousel-wrapper .play-pause-wrapper svg {
+.volto-carousel-wrapper .play-pause-wrapper svg {
   width: 10px;
   height: 10px;
 }
 
-.rt-carousel-wrapper.full-width .swiper-button-prev {
+.volto-carousel-wrapper.full-width .swiper-button-prev {
   left: 2rem;
 }
-.rt-carousel-wrapper.full-width .swiper-button-next {
+.volto-carousel-wrapper.full-width .swiper-button-next {
   right: 2rem;
 }
-.rt-carousel-wrapper.full-width .play-pause-wrapper {
+.volto-carousel-wrapper.full-width .play-pause-wrapper {
   right: 2rem;
 }

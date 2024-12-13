@@ -35,6 +35,7 @@ module.exports = {
             '@redturtle/volto-slate-extras',
             './packages/volto-slate-extras/src',
           ],
+          ['@redturtle/volto-carousel', './packages/volto-carousel/src'],
           ...addonAliases,
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],

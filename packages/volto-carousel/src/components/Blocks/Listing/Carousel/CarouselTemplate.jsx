@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Carousel } from '@redturtle/volto-rt-carousel';
+import { Carousel } from '@redturtle/volto-carousel';
 import config from '@plone/volto/registry';
 import './carouselTemplate.less';
+import { EffectCoverflow } from 'swiper/modules';
+import 'swiper/css/effect-coverflow';
 
 const CarouselTemplate = (props) => {
   const {
@@ -16,6 +18,8 @@ const CarouselTemplate = (props) => {
     full_width,
     head_position,
     slide_appearance = 'default',
+    showCarouselButtons = 'true',
+    sliderEffect3d,
     ...data
   } = props;
 
@@ -30,17 +34,30 @@ const CarouselTemplate = (props) => {
   const TitleTag = headlineTag ? getTitleTag(headlineTag) : 'h3';
 
   const SlideComponent =
-    config.settings['volto-rt-carousel'].slide_appearances[slide_appearance]
+    config.settings['volto-carousel'].slide_appearances[slide_appearance]
       .component;
 
   const TopSlotComponent =
-    config.settings['volto-rt-carousel'].slots?.['top']?.component;
+    config.settings['volto-carousel'].slots?.['top']?.component;
   const BottomSlotComponent =
-    config.settings['volto-rt-carousel'].slots?.['bottom']?.component;
+    config.settings['volto-carousel'].slots?.['bottom']?.component;
   //options
   let carouselOptions = {
     slidesPerView: slides_to_show,
     displayDots: display_dots,
+    enabled: showCarouselButtons,
+    // autoHeight: true,
+    modules: sliderEffect3d ? [EffectCoverflow] : [],
+    effect: sliderEffect3d ? 'coverflow' : null,
+    coverflowEffect: sliderEffect3d
+      ? {
+          rotate: 50,
+          stretch: -50,
+          depth: 0,
+          modifier: 1,
+          slideShadows: false,
+        }
+      : {},
   };
   if (autoplay) {
     carouselOptions.autoplay = true;
@@ -63,7 +80,7 @@ const CarouselTemplate = (props) => {
   }
   return (
     <div
-      className={`ui container carousel-template-wrapper head-position-${
+      className={`ui container volto-carousel-template-wrapper head-position-${
         head_position ?? 'top'
       }`}
     >

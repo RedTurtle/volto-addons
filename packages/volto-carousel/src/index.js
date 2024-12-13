@@ -70,19 +70,20 @@ const messages = defineMessages({
 });
 
 const applyConfig = (config) => {
+  console.log(config);
   config.settings.loadables = {
     ...(config.settings.loadables ?? {}),
     swiper: loadable.lib(() => import('swiper/react')),
     swiperModules: loadable.lib(() => import('swiper/modules')),
   };
-  config.settings['volto-rt-carousel'] = {
-    ...(config.settings['volto-rt-carousel'] ?? {}),
+  config.settings['volto-carousel'] = {
+    ...(config.settings['volto-carousel'] ?? {}),
     slide_appearances: {
       default: {
         name: 'Default',
         component: DefaultSlideAppearance,
       },
-      ...(config.settings['volto-rt-carousel']?.slide_appearances ?? {}),
+      ...(config.settings['volto-carousel']?.slide_appearances ?? {}),
     },
     slots: {
       top: { component: TopCarouselSlot },
@@ -199,7 +200,7 @@ const applyConfig = (config) => {
 
           position++;
 
-          //appearance slide
+          // appearance slide
           // let choices = [
           //   [
           //     SliderTemplateAppearance_SIMPLECARD,
@@ -213,11 +214,11 @@ const applyConfig = (config) => {
 
           let choices = [];
           Object.keys(
-            config.settings['volto-rt-carousel'].slide_appearances,
+            config.settings['volto-carousel'].slide_appearances,
           ).forEach((a) => {
             choices.push([
               a,
-              config.settings['volto-rt-carousel'].slide_appearances[a].name,
+              config.settings['volto-carousel'].slide_appearances[a].name,
             ]);
           });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { injectLazyLibs } from '@plone/volto/src/helpers/Loadable/Loadable';
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
 const CarouselSlide = ({ swiper, children }) => {
   const { SwiperSlide } = swiper;
