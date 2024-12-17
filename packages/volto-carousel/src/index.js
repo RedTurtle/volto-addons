@@ -3,7 +3,6 @@ import { defineMessages } from 'react-intl';
 import {
   CarouselTemplate,
   DefaultSlideAppearance,
-  BottomCarouselSlot,
   TopCarouselSlot,
 } from '@redturtle/volto-carousel/components';
 

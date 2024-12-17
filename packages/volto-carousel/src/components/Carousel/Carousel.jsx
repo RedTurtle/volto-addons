@@ -166,7 +166,7 @@ const Carousel = ({
     if (isEditMode) {
       setKey(new Date().getTime());
     }
-  }, [displayDots]);
+  }, [displayDots, isEditMode]);
 
   return (
     <div
