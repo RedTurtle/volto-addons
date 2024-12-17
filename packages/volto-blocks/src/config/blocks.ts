@@ -51,7 +51,7 @@ import iconsAndTextSVG from '@redturtle/volto-blocks/icons/icons_and_text.svg';
 
 declare module '@plone/types' {
   interface BlocksConfigData {
-    // accordion: AccordionConfig;
+    accordion: AccordionConfig;
     pageintro: PageIntroConfig;
     calltoaction: CallToActionConfig;
     cardwithimages: CardWithImagesConfig;
