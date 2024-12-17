@@ -51,7 +51,7 @@ import iconsAndTextSVG from '@redturtle/volto-blocks/icons/icons_and_text.svg';
 
 declare module '@plone/types' {
   interface BlocksConfigData {
-    accordion: AccordionConfig;
+    // accordion: AccordionConfig;
     pageintro: PageIntroConfig;
     calltoaction: CallToActionConfig;
     cardwithimages: CardWithImagesConfig;
@@ -62,7 +62,7 @@ declare module '@plone/types' {
 
 type RtBlocksConfig = Pick<
   BlocksConfigData,
-  | 'accordion'
+  // | 'accordion'
   | 'pageintro'
   | 'calltoaction'
   | 'cardwithimages'
@@ -82,17 +82,17 @@ const defaultBlocksConfig = {
 } as const;
 
 export const blocks: RtBlocksConfig = {
-  accordion: {
-    ...defaultBlocksConfig,
-    id: 'accordion',
-    title: 'Accordion',
-    icon: accordionSVG,
-    group: 'common',
-    view: AccordionView,
-    edit: AccordionEdit,
-    blockHasOwnFocusManagement: true,
-    blockSchema: AccordionSchema,
-  },
+  // accordion: {
+  //   ...defaultBlocksConfig,
+  //   id: 'accordion',
+  //   title: 'Accordion',
+  //   icon: accordionSVG,
+  //   group: 'common',
+  //   view: AccordionView,
+  //   edit: AccordionEdit,
+  //   blockHasOwnFocusManagement: true,
+  //   blockSchema: AccordionSchema,
+  // },
   pageintro: {
     ...defaultBlocksConfig,
     id: 'pageintro',

@@ -70,7 +70,6 @@ const messages = defineMessages({
 });
 
 const applyConfig = (config) => {
-  console.log(config);
   config.settings.loadables = {
     ...(config.settings.loadables ?? {}),
     swiper: loadable.lib(() => import('swiper/react')),

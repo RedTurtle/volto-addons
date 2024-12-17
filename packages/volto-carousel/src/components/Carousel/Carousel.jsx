@@ -110,7 +110,7 @@ const Carousel = ({
     spaceBetween,
     loop,
     centeredSlides: slidesPerView > 1 ? false : true,
-    lazy: true,
+    lazy: 'true',
     keyboard: {
       enabled: true,
       onlyInViewport: true,

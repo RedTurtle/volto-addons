@@ -9,13 +9,7 @@ const PlayIcon = (
     xmlns="http://www.w3.org/2000/svg"
   >
     <defs></defs>
-    <g
-      id="Page-1"
-      stroke="none"
-      stroke-width="1"
-      fill="none"
-      fill-rule="evenodd"
-    >
+    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         id="Icon-Set-Filled"
         transform="translate(-419.000000, -571.000000)"
