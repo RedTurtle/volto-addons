@@ -1,0 +1,1 @@
+Added clamp function to limit offset to avoid breaking when copying-pasting or reverting actions. @sabrina-bongiovanni

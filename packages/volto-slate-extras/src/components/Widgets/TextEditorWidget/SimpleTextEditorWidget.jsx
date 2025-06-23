@@ -81,10 +81,14 @@ const SimpleTextEditorWidget = (props) => {
   }
 
   function setCaret(el, offset) {
-    let sel = window.getSelection();
-    let range = document.createRange();
+    const sel = window.getSelection();
+    const range = document.createRange();
+
     if (el.childNodes?.length > 0) {
-      range.setStart(el.childNodes[0], offset);
+      const node = el.childNodes[0];
+      const maxOffset = node.textContent?.length ?? 0;
+      const clampedOffset = Math.min(offset, maxOffset);
+      range.setStart(node, clampedOffset);
       range.collapse(true);
       sel.removeAllRanges();
       sel.addRange(range);
