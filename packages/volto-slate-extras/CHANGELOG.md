@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.2 (2025-06-23)
+
+### Bugfix
+
+- Added clamp function to limit offset to avoid breaking when copying-pasting or reverting actions. @sabrina-bongiovanni [#6](https://redturtle.tpondemand.com/entity/6)
+
 ## 2.0.1 (2024-09-04)
 
 ### Documentation

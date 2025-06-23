@@ -1,6 +1,6 @@
 {
   "name": "@redturtle/volto-slate-extras",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "volto-slate-extras: Volto add-on with RedTurtle's Slate customizations",
   "main": "src/index.js",
   "license": "MIT",
