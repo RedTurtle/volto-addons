@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.3 (2025-06-25)
+
+### Internal
+
+- Cleanup and rerelase latest release 2.0.2 @pnicolli [#7](https://redturtle.tpondemand.com/entity/7)
+
 ## 2.0.2 (2025-06-23)
 
 ### Bugfix
