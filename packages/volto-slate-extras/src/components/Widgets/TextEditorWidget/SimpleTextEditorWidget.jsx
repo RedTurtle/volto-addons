@@ -117,7 +117,11 @@ const SimpleTextEditorWidget = (props) => {
   useEffect(() => {
     //inizializzazione del valore nel campo
     const _value = value ?? data[fieldName];
-    if (fieldRef.current && _value?.length > 0 && _value !== lastValueRef.current) {
+    if (
+      fieldRef.current &&
+      _value?.length > 0 &&
+      _value !== lastValueRef.current
+    ) {
       lastValueRef.current = _value;
       fieldRef.current.innerText = _value;
       if (selected) setDefaultCaretPosition();
