@@ -54,5 +54,3 @@ jobs:
       - name: Release to npm
         run: npm publish --provenance --access public
         working-directory: ./packages/${{ steps.get_package.outputs.PACKAGE }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
