@@ -42,6 +42,7 @@ const SimpleTextEditorWidget = (props) => {
 
   const fieldRef = useRef();
   const caretPos = useRef();
+  const lastValueRef = useRef();
 
   const handleKey = (event) => {
     const { slate } = config.settings;
@@ -81,6 +82,7 @@ const SimpleTextEditorWidget = (props) => {
   }
 
   function setCaret(el, offset) {
+    if (!Number.isFinite(offset)) return;
     const sel = window.getSelection();
     const range = document.createRange();
 
@@ -101,8 +103,13 @@ const SimpleTextEditorWidget = (props) => {
 
   useEffect(() => {
     if (selected) {
-      fieldRef.current.focus();
-      setDefaultCaretPosition();
+      setTimeout(() => {
+        if (document.activeElement !== fieldRef.current) {
+          fieldRef.current.focus();
+        } else if (Number.isFinite(caretPos.current)) {
+          setDefaultCaretPosition();
+        }
+      }, 0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
@@ -110,7 +117,12 @@ const SimpleTextEditorWidget = (props) => {
   useEffect(() => {
     //inizializzazione del valore nel campo
     const _value = value ?? data[fieldName];
-    if (fieldRef.current && _value?.length > 0) {
+    if (
+      fieldRef.current &&
+      _value?.length > 0 &&
+      _value !== lastValueRef.current
+    ) {
+      lastValueRef.current = _value;
       fieldRef.current.innerText = _value;
       if (selected) setDefaultCaretPosition();
     }
@@ -166,6 +178,7 @@ const SimpleTextEditorWidget = (props) => {
           onChangeBlock(block, { ...data, ...retVal });
         }}
         onFocus={(e) => {
+          caretPos.current = getCaret(fieldRef.current);
           if (!selected) {
             selectThis();
           }

@@ -1,7 +1,6 @@
 import React from 'react';
 import HeadingsMenu from '@redturtle/volto-slate-extras/config/Slate/Headings/HeadingsMenu';
 import { insertToolbarButtons } from '@redturtle/volto-slate-extras/config/Slate/utils';
-import { renderLinkElement } from '@plone/volto-slate/editor/render';
 
 export default function install(config) {
   const { slate } = config.settings;
@@ -10,38 +9,25 @@ export default function install(config) {
     <HeadingsMenu {...props} title="Titolo" />
   );
 
-  //sovrascivo gli elements h2,h3,h4 per fare in modo che usino anche le classi di blocco (es allineamento)
-  slate.elements['h2'] = ({ attributes, children }) =>
-    renderLinkElement('h2')({
-      attributes,
-      children,
-      className: attributes.className,
-    });
-  slate.elements['h3'] = ({ attributes, children }) =>
-    renderLinkElement('h3')({
-      attributes,
-      children,
-      className: attributes.className,
-    });
-  slate.elements['h4'] = ({ attributes, children }) =>
-    renderLinkElement('h4')({
-      attributes,
-      children,
-      className: attributes.className,
-    });
-  //aggiungo gli elements h5, h6 perchè non previsti da volto
-  slate.elements['h5'] = ({ attributes, children }) =>
-    renderLinkElement('h5')({
-      attributes,
-      children,
-      className: attributes.className,
-    });
-  slate.elements['h6'] = ({ attributes, children }) =>
-    renderLinkElement('h6')({
-      attributes,
-      children,
-      className: attributes.className,
-    });
+  // Render headings as native tags so Slate attributes (ref, contentEditable, data-*) land on the
+  // actual DOM node. renderLinkElement applied tabIndex={0}, which broke caret positioning inside
+  // contentEditable headings. The block className (e.g. alignment) is preserved via {...attributes}.
+  slate.elements['h2'] = ({ attributes, children }) => (
+    <h2 {...attributes}>{children}</h2>
+  );
+  slate.elements['h3'] = ({ attributes, children }) => (
+    <h3 {...attributes}>{children}</h3>
+  );
+  slate.elements['h4'] = ({ attributes, children }) => (
+    <h4 {...attributes}>{children}</h4>
+  );
+  // h5, h6 are not provided by volto by default
+  slate.elements['h5'] = ({ attributes, children }) => (
+    <h5 {...attributes}>{children}</h5>
+  );
+  slate.elements['h6'] = ({ attributes, children }) => (
+    <h6 {...attributes}>{children}</h6>
+  );
 
   // rimuovo i bottoni di heading di volto
   slate.toolbarButtons = slate.toolbarButtons.filter(
