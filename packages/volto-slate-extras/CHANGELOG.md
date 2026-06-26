@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.4 (2026-06-26)
+
+### Bugfix
+
+- Fixed caret positioning in SimpleTextEditorWidget and render of heading blocks (h2-h6). @Wagner3UB @giuliaghisini [#8](https://redturtle.tpondemand.com/entity/8)
+
 ## 2.0.3 (2025-06-25)
 
 ### Internal
