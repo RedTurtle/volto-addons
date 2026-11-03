@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.5 (2026-11-03)
+
+### Bugfix
+
+- Fixed errors while editing blocks: detached block focus management no longer intercepts key events already handled or coming from editable fields. @ilariamassa96 [#9](https://redturtle.tpondemand.com/entity/9)
+
 ## 2.0.4 (2026-06-26)
 
 ### Bugfix
